@@ -2,27 +2,38 @@ const translations = {
     'zh-CN': {
         title: '欢迎访问！',
         paragraph: '这是一个段落',
-        button: {
-            en: 'English',
-            zh: '简体中文'
-        }
     },
     'en-US': {
         title: 'Welcome!',
         paragraph: 'This is a paragraph',
-        button: {
-            en: 'English',
-            zh: '简体中文'
-        }
     }
 };
 
+// 检测浏览器语言的函数
+function detectBrowserLanguage() {
+    const userLang = navigator.language || navigator.userLanguage;
+    return userLang.startsWith('zh') ? 'zh-CN' : 'en-US';
+}
+// 更新语言的函数
+function updateContent() {
+    document.getElementById('title').textContent = translations[currentLanguage].title;
+    document.getElementById('paragraph').textContent = translations[currentLanguage].paragraph;
+}
+// 切换到中文的函数
 function switchLanguageToChinese() {
-    document.getElementById('title').textContent = translations['zh-CN'].title;
-    document.getElementById('paragraph').textContent = translations['zh-CN'].paragraph;
+    currentLanguage = 'zh-CN';
+    updateContent();
+}
+// 切换到英文的函数
+function switchLanguageToEnglish() {
+    currentLanguage = 'en-US';
+    updateContent();
 }
 
-function switchLanguageToEnglish() {
-    document.getElementById('title').textContent = translations['en-US'].title;
-    document.getElementById('paragraph').textContent = translations['en-US'].paragraph;
-}
+
+// 初始化语言设置
+let currentLanguage = detectBrowserLanguage();
+// 页面加载时初始化
+window.addEventListener('DOMContentLoaded', () => {
+  updateContent();
+});
