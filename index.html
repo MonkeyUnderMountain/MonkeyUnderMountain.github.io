@@ -1,25 +1,47 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-    <meta charset="UTF-8">
-    <title>Tianle Yang</title>
-    <script src="translation.js"></script>
+    <meta charset="UTF-8"><!-- 编码方案为UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- 视口设置为设备宽度，初始缩放比例为1.0 -->
+    <title>Tianle Yang</title><!-- 网页标题 -->
+    <script src="translation.js"></script><!-- 引入翻译文件 -->
+    <script src="https://cdn.tailwindcss.com/3.3.3"></script><!-- 引入Tailwind CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"><!-- 引入Font Awesome图标库 -->
+    <link rel="stylesheet" href="styles.css"><!-- 引入自定义样式文件 -->
 </head>
 <body>
-    <!-- 英文语言切换按钮 -->
-    <button class="lang-switcher" onclick="switchLanguageToEnglish()">
-        <span class="lang-en">English</span>
-        <!-- <span class="lang-zh">简体中文</span> -->
-    </button>
+    <!-- 头部区域 -->
+    <header class="p-8 text-center pixel-animation">
+        <!-- 语言切换按钮（新增） -->
+        <div class="absolute top-4 right-4 md:top-6 md:right-6">
+            <button id="lang-switch-to-English" 
+                    class="px-3 py-1 rounded-md 
+                    bg-purple-500 text-white font-bold 
+                    hover:bg-purple-700 transition-colors 
+                    pixel-button"
+                    onclick="switchLanguageToEnglish()">
+                <span class="lang-en">English</span>
+            </button>
+            <button id="lang-switch-to-Chinese" 
+                    class="px-3 py-1 rounded-md 
+                    bg-purple-500 text-white font-bold 
+                    hover:bg-purple-700 transition-colors 
+                    pixel-button"
+                    onclick="switchLanguageToChinese()">
+                <span class="lang-en">简体中文</span>
+            </button>
+        </div>
 
-    <!-- 中文语言切换按钮 -->
-    <button class="lang-switcher" onclick="switchLanguageToChinese()">
-        <!-- <span class="lang-en">English</span> -->
-        <span class="lang-zh">简体中文</span>
-    </button>
+        <h1 class="text-4xl md:text-5xl font-bold mb-2 text-purple-300" id="title"></h1>
 
-    <h1 id="title"></h1>
-    <p id="paragraph"></p>
+        <p class="text-xl text-gray-300" id="greeting"></p>
+    </header>
+    
+    <!-- 主页内容 -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- 这里可以添加更多内容 -->
+           <p id="simpleIntroductionOfMyself"></p>
+    </main>
 
 </body>
 </html>
