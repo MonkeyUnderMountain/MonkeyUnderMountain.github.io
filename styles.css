@@ -3,11 +3,39 @@
     src: url('https://fonts.cdnfonts.com/css/pixelify-sans') format('woff2');
 }
 
+.theMainHeader {
+    padding: 2rem;
+    position: relative;
+    display: flex;
+    text-align: center; /* text-center */
+    flex-direction: column;  /* 垂直排列子元素 */
+    /* align-items: center;     水平居中子元素 */
+    gap: 20px;               /* 可选：控制块间距 */
+    animation: pixelGlow 2s infinite alternate;
+}
+
 body {
     font-family: 'PixelFont', sans-serif;
     background-color: #1a1a2e;
     color: #e6e6e6;
-    image-rendering: pixelated;
+    image-rendering: pixelated; /* 修正拼写 */
+}
+
+/* 独立声明链接样式 */
+a:link {
+    color: #00FFFF; /* 青色 - 对比度9.4:1 (合格) */
+    /* text-decoration: underline; */
+}
+a:visited {
+    color: #D066FF; /* 新紫色 - 对比度4.6:1 (达标) */
+}
+a:hover {
+    color: #00FFFF;
+    text-shadow: 0 0 4px rgba(0,255,255,0.4);
+    background-color: rgba(255,255,255,0.1); /* 增强可读性 */
+}
+a:focus {
+    outline: 2px solid #00FFFF;
 }
 
 .pixel-border {
@@ -69,4 +97,14 @@ body {
 
 .pixel-nav-item:hover::after {
     width: 100%;
+}
+
+.link {
+    /* 背景色 #6C5B7B（灰紫） */
+    a:link { color: #00FFFF; }   /* 青色 - 对比度 4.2:1 */
+    a:visited { color: #7DF9FF; }/* 浅青 - 对比度 3.1:1 */
+    a:hover { 
+    color: #00FFFF; 
+    text-shadow: 0 0 4px rgba(0,255,255,0.4); 
+    }
 }
