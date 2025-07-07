@@ -16,7 +16,7 @@ const translations = {
         research_preprints_Title: '预印本',
         research_publications_Title: '发表',
 
-        simpleIntroductionOfMyself: '我是<a href="https://math.ecnu.edu.cn/" target="_blank" >华东师范大学数学科学学院</a>的一名本科生。',
+        simpleIntroductionOfMyself: '我本科毕业于<a href="https://math.ecnu.edu.cn/" target="_blank" >华东师范大学数学科学学院</a>。',
         academicInterest: '我的研究方向为代数几何，特别是代数动力系统。',
         mySupervisor: '我的导师是<a href="https://math.ecnu.edu.cn/facultydetail.html?uid=smeng" target="_blank" >孟晟研究员</a>。',
         myEmail: '我的邮箱是 <a href="mailto:10211510098@stu.ecnu.edu.cn">10211510098@stu.ecnu.edu.cn</a>。',
@@ -47,7 +47,7 @@ const translations = {
         research_preprints_Title: 'Preprints',
         research_publications_Title: 'Publications',
 
-        simpleIntroductionOfMyself: 'I am a undergraduate student from <a href="https://math.ecnu.edu.cn/" target="_blank" >School of Mathematical Science, East China Normal University</a>.',
+        simpleIntroductionOfMyself: 'I get my Bachelor Degree from <a href="https://math.ecnu.edu.cn/" target="_blank" >School of Mathematical Science, East China Normal University</a>.',
         academicInterest: 'My academic interest is on algebraic geometry, especially algebraic dynamics.',
         mySupervisor: 'My supervisor is <a href="https://math.ecnu.edu.cn/facultydetail.html?uid=smeng" target="_blank" >Researcher Seng Meng</a>.',
         myEmail: 'My email is <a href="mailto:10211510098@stu.ecnu.edu.cn">10211510098@stu.ecnu.edu.cn</a>.',
