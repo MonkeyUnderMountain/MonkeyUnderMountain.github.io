@@ -21,7 +21,7 @@ const translations = {
         mySupervisor: '我的导师是<a href="https://math.ecnu.edu.cn/facultydetail.html?uid=smeng" target="_blank" >孟晟研究员</a>。',
         myEmail: '我的邮箱是 <a href="mailto:10211510098@stu.ecnu.edu.cn">10211510098@stu.ecnu.edu.cn</a>。',
 
-        notes_for_ag: '一份我正在写的代数几何笔记，<a href="https://github.com/MonkeyUnderMountain/Note_on_Algebraic_Geometry" target="_blank">点击这里查看</a>。', 
+        notes_for_ag: '一份我正在写的代数几何笔记 <a href="notes/notebook_ag.pdf" target="_blank">pdf</a> <a href="https://github.com/MonkeyUnderMountain/Note_on_Algebraic_Geometry" target="_blank">源码</a>', 
     
         research_publications_none: '现在还什么都没有',
 
@@ -52,7 +52,7 @@ const translations = {
         mySupervisor: 'My supervisor is <a href="https://math.ecnu.edu.cn/facultydetail.html?uid=smeng" target="_blank" >Researcher Seng Meng</a>.',
         myEmail: 'My email is <a href="mailto:10211510098@stu.ecnu.edu.cn">10211510098@stu.ecnu.edu.cn</a>.',
 
-        notes_for_ag: 'A note on algebraic geometry that I am currently writing, <a href="https://github.com/MonkeyUnderMountain/Note_on_Algebraic_Geometry" target="_blank">click here to view</a>.',
+        notes_for_ag: 'A note on algebraic geometry that I am currently writing <a href="notes/notebook_ag.pdf" target="_blank">pdf</a> <a href="https://github.com/MonkeyUnderMountain/Note_on_Algebraic_Geometry" target="_blank">source</a>',
     
         research_publications_none: 'Nothing here yet',
 
