@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8"><!-- 编码方案为UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- 视口设置为设备宽度，初始缩放比例为1.0 -->
+    <title>Git commands</title><!-- 网页标题 -->
+    <link rel="icon" href="../../figs/hxj_no_bg.ico" type="image/jpeg"><!-- 网站图标 -->
+    <script src="../../translation.js"></script><!-- 引入翻译文件 -->
+    <script src="https://cdn.tailwindcss.com/3.3.3"></script><!-- 引入Tailwind CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"><!-- 引入Font Awesome图标库 -->
+    <link rel="stylesheet" href="../../styles.css"><!-- 引入自定义样式文件 -->
+    <style>
+        /* Floating header */
+        .theMainHeader_fictions {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #1a1a2e; /* 深色背景 */
+            /* display: flex; */
+            text-align: center; /* text-center */
+            flex-direction: column;  /* 垂直排列子元素 */
+            gap: 20px;               /* 可选：控制块间距 */
+            animation: pixelGlow 2s infinite alternate;
+        }
+        /* Floating footer */
+        .theMainFooter_fictions {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: #1a1a2e; /* 深色背景 */
+            /* display: flex; */
+            text-align: center; /* text-center */
+            flex-direction: column;  /* 垂直排列子元素 */
+            gap: 20px;               /* 可选：控制块间距 */
+            animation: pixelGlow 2s infinite alternate;
+        }
+        /* Add padding to main to prevent overlap */
+        main {
+            padding-top: 100px; /* Adjust based on header height */
+            padding-bottom: 60px; /* Adjust based on footer height */
+        }
+    </style>
+    <header class="theMainHeader_fictions">
+        <!--</header> 返回主页按扭, 置于左侧 -->
+        <div class="flex justify-start p-4 space-x-2">
+            <button onclick="window.location.href='../../index.html'" 
+                    class="px-3 py-1 rounded-md 
+                    bg-purple-500 text-white font-bold 
+                    hover:bg-purple-700 transition-colors 
+                    pixel-button">
+                <i class="fas fa-home"></i> 返回主页
+            </button>
+        </div>
+        <div class="text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-2 text-purple-300"></h1>
+        </div>
+    </header>
+    
+    <!-- 主页内容 -->
+    <main class="container mx-auto px-4 py-8">
+        <div class="prose prose-lg max-w-none text-gray-100" style="font-family: 'Noto Serif SC', serif;">
+            <style>
+                body {
+                    margin-top: 120px;
+                    margin-bottom: 80px;
+                }
+                .first-line-indent p {
+                    text-indent: 2em;
+                    margin-bottom: 1.2em;
+                }
+            </style>
+            <div class="first-line-indent" id="Misc_Blogs_GitCommands_Content">
+                <!-- Markdown rendering area -->
+                <div id="markdown-content"></div>
+                <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+                <script>
+                fetch('command_git.md')
+                    .then(response => response.text())
+                    .then(md => {
+                        document.getElementById('markdown-content').innerHTML = marked.parse(md);
+                    });
+                </script>
+            </div> 
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="theMainFooter_fictions pixel-animation bg-2a2a4a text-gray-300 py-4">
+        <div class="space-y-4 container mx-auto text-center">
+            <p id="footerText"></p>
+            <p class="text-sm">© 2025 Tianle Yang</p>
+        </div>
+    </footer>
+
+
+    <script>
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // 像素动画效果
+        const pixelElements = document.querySelectorAll('.pixel-card, .pixel-button');
+        pixelElements.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                el.classList.add('pixel-animation');
+            });
+            el.addEventListener('mouseleave', () => {
+                el.classList.remove('pixel-animation');
+            });
+        });
+    </script>
+
+</body>
+</html>

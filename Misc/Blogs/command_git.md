@@ -35,6 +35,10 @@
     Push changes to remote.
 - `git pull origin <branch>`  
     Fetch and merge changes from remote.
+- `git push --set-upstream origin <branch>`
+    Set the upstream for a branch and push.
+- `git push --force origin <branch>`  
+    Force push changes to remote.
 
 ## Viewing History
 - `git log`  

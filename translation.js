@@ -15,6 +15,7 @@ const translations = {
         MiscTitleText: '其它',
         research_preprints_Title: '预印本',
         research_publications_Title: '发表',
+        research_talks_Title: '报告',
 
         simpleIntroductionOfMyself: '我本科毕业于<a href="https://math.ecnu.edu.cn/" target="_blank" >华东师范大学数学科学学院</a>。',
         academicInterest: '我的研究方向为代数几何，特别是代数动力系统。',
@@ -25,6 +26,8 @@ const translations = {
     
         research_publications_none: '现在还什么都没有',
 
+        Misc_Blogs_Title: '博客',
+        Misc_Blogs_GitCommands_Link: 'Git 常用命令',
         Misc_TexTemplate_Title: 'LaTeX 模板',
         Misc_Links_Title: '一些网站',
         Misc_Lean4_Title: 'Lean 4',
@@ -46,6 +49,7 @@ const translations = {
         MiscTitleText: 'Misc',
         research_preprints_Title: 'Preprints',
         research_publications_Title: 'Publications',
+        research_talks_Title: 'Talks',
 
         simpleIntroductionOfMyself: 'I get my Bachelor Degree from <a href="https://math.ecnu.edu.cn/" target="_blank" >School of Mathematical Science, East China Normal University</a>.',
         academicInterest: 'My academic interest is on algebraic geometry, especially algebraic dynamics.',
@@ -56,6 +60,8 @@ const translations = {
     
         research_publications_none: 'Nothing here yet',
 
+        Misc_Blogs_Title: 'Blogs',
+        Misc_Blogs_GitCommands_Link: 'Common Git Commands',
         Misc_TexTemplate_Title: 'LaTeX Template',
         Misc_Links_Title: 'Some Links',
         Misc_Lean4_Title: 'Lean 4',
@@ -80,6 +86,7 @@ function updateContent() {
     document.getElementById('MiscTitleText').textContent = translations[currentLanguage].MiscTitleText;
     document.getElementById('research_preprints_Title').textContent = translations[currentLanguage].research_preprints_Title;
     document.getElementById('research_publications_Title').textContent = translations[currentLanguage].research_publications_Title;
+    document.getElementById('research_talks_Title').textContent = translations[currentLanguage].research_talks_Title;
 
     document.getElementById('simpleIntroductionOfMyself').innerHTML = translations[currentLanguage].simpleIntroductionOfMyself;
     document.getElementById('academicInterest').textContent = translations[currentLanguage].academicInterest;
@@ -90,6 +97,8 @@ function updateContent() {
 
     document.getElementById('research_publications_none').textContent = translations[currentLanguage].research_publications_none;
 
+    document.getElementById('Misc_Blogs_Title').textContent = translations[currentLanguage].Misc_Blogs_Title;
+    document.getElementById('Misc_Blogs_GitCommands_Link').textContent = translations[currentLanguage].Misc_Blogs_GitCommands_Link;
     document.getElementById('Misc_TexTemplate_Title').textContent = translations[currentLanguage].Misc_TexTemplate_Title;
     document.getElementById('Misc_Links_Title').textContent = translations[currentLanguage].Misc_Links_Title;
     document.getElementById('Misc_Lean4_Title').textContent = translations[currentLanguage].Misc_Lean4_Title;
