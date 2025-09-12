@@ -23,8 +23,13 @@ const translations = {
         myEmail: '我的邮箱是 <a href="mailto:10211510098@stu.ecnu.edu.cn">10211510098@stu.ecnu.edu.cn</a>。',
 
         notes_for_ag: '一份我正在写的代数几何笔记 <a href="notes/notebook_ag.pdf" target="_blank">pdf</a> <a href="https://github.com/MonkeyUnderMountain/Note_on_Algebraic_Geometry" target="_blank">源码</a>', 
-    
-        research_publications_none: '现在还什么都没有',
+        notes_for_ag_TitleText: '代数几何笔记',
+        notes_for_ag_Text: '代数几何笔记（草稿）',
+        notes_for_ag_Link: '点击查看笔记',
+        misc_notes_Title: '其它笔记',
+        misc_notes_Hodge_index_theorem_by_linear_algebra_Text: 'Hodge Index 定理中的线性代数部分',
+        misc_notes_Hodge_index_theorem_by_linear_algebra_Link: '点击查看笔记',
+
 
         Misc_Blogs_Title: '博客',
         Misc_Blogs_GitCommands_Link: 'Git 常用命令',
@@ -57,7 +62,13 @@ const translations = {
         myEmail: 'My email is <a href="mailto:10211510098@stu.ecnu.edu.cn">10211510098@stu.ecnu.edu.cn</a>.',
 
         notes_for_ag: 'A note on algebraic geometry that I am currently writing <a href="notes/notebook_ag.pdf" target="_blank">pdf</a> <a href="https://github.com/MonkeyUnderMountain/Note_on_Algebraic_Geometry" target="_blank">source</a>',
-    
+        notes_for_ag_TitleText: 'Note on Algebraic Geometry',
+        notes_for_ag_Text: 'Note on Algebraic Geometry (draft)',
+        notes_for_ag_Link: 'Click to view the note',
+        misc_notes_TitleText: 'Misc Notes',
+        misc_notes_Hodge_index_theorem_by_linear_algebra_Text: 'Hodge Index Theorem via Linear Algebra',
+        misc_notes_Hodge_index_theorem_by_linear_algebra_Link: 'Click to view the note',
+
         research_publications_none: 'Nothing here yet',
 
         Misc_Blogs_Title: 'Blogs',
@@ -93,7 +104,13 @@ function updateContent() {
     document.getElementById('mySupervisor').innerHTML = translations[currentLanguage].mySupervisor;
     document.getElementById('myEmail').innerHTML = translations[currentLanguage].myEmail;
 
-    document.getElementById('notes_for_ag').innerHTML = translations[currentLanguage].notes_for_ag;
+    // document.getElementById('notes_for_ag').innerHTML = translations[currentLanguage].notes_for_ag;
+    document.getElementById('notes_for_ag_TitleText').textContent = translations[currentLanguage].notes_for_ag_TitleText;
+    document.getElementById('notes_for_ag_Text').textContent = translations[currentLanguage].notes_for_ag_Text;
+    document.getElementById('notes_for_ag_Link').textContent = translations[currentLanguage].notes_for_ag_Link;
+    document.getElementById('misc_notes_TitleText').textContent = translations[currentLanguage].misc_notes_TitleText;
+    document.getElementById('misc_notes_Hodge_index_theorem_by_linear_algebra_Text').textContent = translations[currentLanguage].misc_notes_Hodge_index_theorem_by_linear_algebra_Text;
+    document.getElementById('misc_notes_Hodge_index_theorem_by_linear_algebra_Link').textContent = translations[currentLanguage].misc_notes_Hodge_index_theorem_by_linear_algebra_Link;
 
     document.getElementById('research_publications_none').textContent = translations[currentLanguage].research_publications_none;
 
