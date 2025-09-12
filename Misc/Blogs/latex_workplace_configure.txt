@@ -1,0 +1,122 @@
+"latex-workshop.latex.autoClean.run": "onBuilt",
+    "latex-workshop.latex.clean.method": "glob",
+    "latex-workshop.latex.clean.fileTypes": [
+        "*.aux",
+        // "*.bbl",
+        "*.bcf",
+        "*.blg",
+        "*.idx",
+        "*.ind",
+        "*.lof",
+        "*.lot",
+        "*.out",
+        "*.toc",
+        "*.acn",
+        "*.acr",
+        "*.alg",
+        "*.glg",
+        "*.glo",
+        "*.gls",
+        "*.fls",
+        "*.log",
+        "*.fdb_latexmk",
+        "*.snm",
+        "*.synctex(busy)",
+        "*.synctex.gz(busy)",
+        "*.nav",
+        "*.vrb",
+        "*.xdv",
+        "*.run.xml",
+    ],
+    "latex-workshop.latex.autoBuild.run": "never",
+    // "editor.formatOnSave": true,
+    "latex-workshop.linting.run": "onType",
+    "latex-workshop.linting.chktex.enabled": false, // 禁用chktex检查
+    "latex-workshop.view.pdf.viewer": "tab", // 使用内置PDF查看器
+    "latex-workshop.synctex.afterBuild.enabled": true, // 编译后自动同步位置
+    "latex-workshop.view.pdf.internal.synctex.keybinding": "double-click",
+    "latex-workshop.view.pdf.zoom": "page-width",
+    "latex-workshop.view.pdf.color.dark.backgroundColor": "#1e1e1e",
+    "latex-workshop.latex.recipe.default": "xelatex*3",
+    "latex-workshop.latex.tools": [
+        {
+            "name": "xelatex",
+            "command": "xelatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%"
+            ],
+        },
+        {
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%"
+            ],
+        },
+        {
+            "name": "biber",
+            "command": "biber",
+            "args": [
+                "%DOCFILE%"
+            ],
+        },
+        {
+            "name": "bibtex",
+            "command": "bibtex",
+            "args": [
+                "%DOCFILE%"
+            ],
+        }
+    ],
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "xelatex*3",
+            "tools": [
+                "xelatex",
+                "xelatex",
+                "xelatex"
+            ]
+        },
+        {
+            "name": "pdflatex*3",
+            "tools": [
+                "pdflatex",
+                "pdflatex",
+                "pdflatex"
+            ]
+        },
+        {
+            "name": "biber-process",
+            "tools": [
+                "xelatex",
+                "biber",
+                "xelatex",
+                "xelatex"
+            ]
+        },
+        {
+            "name": "bibtex-process",
+            "tools": [
+                "xelatex",
+                "bibtex",
+                "xelatex",
+                "xelatex"
+            ]
+        },
+        {
+            "name": "pdflatex->bibtex->pdflatex*2",
+            "tools": [
+                "pdflatex",
+                "bibtex",
+                "pdflatex",
+                "pdflatex"
+            ]
+        }
+    ],
+    "latex-workshop.texcount.autorun": "onSave",
