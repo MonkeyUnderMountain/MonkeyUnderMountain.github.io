@@ -29,7 +29,8 @@ const translations = {
         misc_notes_Title: '其它笔记',
         misc_notes_Hodge_index_theorem_by_linear_algebra_Text: 'Hodge Index 定理中的线性代数部分',
         misc_notes_Hodge_index_theorem_by_linear_algebra_Link: '点击查看笔记',
-
+        misc_notes_birational_group_of_varieties_of_general_type_Text: '一般类型的簇的双有理群',
+        misc_notes_birational_group_of_varieties_of_general_type_Link: '点击查看笔记',
 
         Misc_Blogs_Title: '博客',
         Misc_Blogs_GitCommands_Link: 'Git 常用命令',
@@ -68,6 +69,8 @@ const translations = {
         misc_notes_TitleText: 'Misc Notes',
         misc_notes_Hodge_index_theorem_by_linear_algebra_Text: 'Hodge Index Theorem via Linear Algebra',
         misc_notes_Hodge_index_theorem_by_linear_algebra_Link: 'Click to view the note',
+        misc_notes_birational_group_of_varieties_of_general_type_Text: 'Birational Group of Varieties of General Type',
+        misc_notes_birational_group_of_varieties_of_general_type_Link: 'Click to view the note',
 
         research_publications_none: 'Nothing here yet',
 
@@ -111,6 +114,8 @@ function updateContent() {
     document.getElementById('misc_notes_TitleText').textContent = translations[currentLanguage].misc_notes_TitleText;
     document.getElementById('misc_notes_Hodge_index_theorem_by_linear_algebra_Text').textContent = translations[currentLanguage].misc_notes_Hodge_index_theorem_by_linear_algebra_Text;
     document.getElementById('misc_notes_Hodge_index_theorem_by_linear_algebra_Link').textContent = translations[currentLanguage].misc_notes_Hodge_index_theorem_by_linear_algebra_Link;
+    document.getElementById('misc_notes_birational_group_of_varieties_of_general_type_Text').textContent = translations[currentLanguage].misc_notes_birational_group_of_varieties_of_general_type_Text;
+    document.getElementById('misc_notes_birational_group_of_varieties_of_general_type_Link').textContent = translations[currentLanguage].misc_notes_birational_group_of_varieties_of_general_type_Link;
 
     document.getElementById('research_publications_none').textContent = translations[currentLanguage].research_publications_none;
 
