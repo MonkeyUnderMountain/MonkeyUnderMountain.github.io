@@ -1,0 +1,6 @@
+[submodule "Notes/Note_on_Algebraic_Geometry"]
+	path = Notes/Note_on_Algebraic_Geometry
+	url = https://github.com/MonkeyUnderMountain/Note_on_Algebraic_Geometry.git
+[submodule "Arithmetic_geometry"]
+	path = Notes/Arithmetic_geometry
+	url = https://github.com/MonkeyUnderMountain/Arithmetic_geometry.git
