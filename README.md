@@ -1,3 +1,5 @@
+
+
 # MonkeyUnderMountain.github.io
 
 My personal website.
@@ -129,3 +131,38 @@ Limitations
 The scanner uses simple regex heuristics (id attributes and common DOM access
 patterns). It is intentionally dependency-free and fast, but it may miss
 ids constructed dynamically at runtime.
+
+Translation checker
+-------------------
+
+This repository includes a small translation-validator script at `scripts/check_translations.py` which helps keep `translation/translations.json` in sync with the translatable DOM elements in the site's HTML/JS.
+
+What it does
+- Loads `translation/translations.json` and computes the union of translation keys across languages.
+- Scans the site files for DOM ids that are likely used to display text, and reports mismatches between the JSON keys and the detected DOM ids.
+
+How it determines which ids to check
+- The script uses lightweight regex heuristics (fast and dependency-free) to find HTML start-tags that carry an `id` attribute. It records the HTML tag name together with the id.
+- To avoid reporting structural/anchor ids (for example `id="Misc"` used for navigation or layout), the script only treats ids on a set of "text-bearing" tags as translation targets. By default these include: `p`, `span`, `a`, `li`, `h1`–`h6`, `button`, `label`, `strong`, `em`, `blockquote`, `small`, `cite`, `figcaption`.
+- The script also scans JS files for `getElementById(...)` and `querySelector('#...')` usages, but will include a JS-referenced id only if the same id appears in an HTML element whose tag is in the allowed set above. This ensures programmatic ids that don't correspond to visible text are not reported.
+
+Usage
+- Run the checker from the repository root:
+
+```sh
+python scripts/check_translations.py
+```
+
+- Exit codes:
+	- `0` — OK (no problems found)
+	- `1` — error (e.g. `translation/translations.json` missing)
+	- `2` — missing translation keys found (or ids referenced in HTML/JS missing from JSON)
+	- `3` — unused keys present in the JSON but not detected in HTML/JS
+
+Notes and limitations
+- The scanner intentionally uses regular expressions rather than a full HTML/JS parser. This keeps the tool simple and fast but means it may miss dynamically generated ids or id usage created at runtime.
+- If you want an id to be ignored even though it appears on a text-bearing tag, you can either remove the `id` (if unused by scripts), change the element to a non-text tag, or adjust the allowed tag list in `scripts/check_translations.py` to suit your needs.
+- To change which tags are considered translatable, edit the `allowed_tags` set in `scripts/check_translations.py::find_used_ids`.
+
+Example
+- Add a paragraph element in HTML with `id="notes_in_github_repositories_Title"` and then add a matching key in `translation/translations.json` under each language used. The script will detect the id and check for the translation key.

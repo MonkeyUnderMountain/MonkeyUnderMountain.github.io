@@ -74,25 +74,45 @@ def find_used_ids(root: Path):
 
     Returns a set of id strings.
     """
-    ids = set()
+    # We'll collect ids only when they appear on elements that typically
+    # contain visible text. This avoids anchoring/container ids like
+    # <section id="Misc"> which are used for navigation but not for
+    # translatable text content.
+    html_id_tags = {}  # id -> tag
 
-    # Scan HTML files for explicit id="..." attributes
+    # Scan HTML files: capture the tag name + id attribute from start tags
+    html_pattern = re.compile(r'<\s*([a-zA-Z0-9:-]+)\b[^>]*\bid=["\']([^"\']+)["\'][^>]*>', re.IGNORECASE)
     for p in root.rglob('*.html'):
         try:
             text = p.read_text(encoding='utf-8')
         except Exception:
-            # Ignore unreadable files
             continue
-        ids.update(re.findall(r'id=["\']([^"\']+)["\']', text))
+        for m in html_pattern.finditer(text):
+            tag = m.group(1).lower()
+            idval = m.group(2)
+            html_id_tags[idval] = tag
 
-    # Scan JS files for direct DOM access patterns
+    # Define tags we consider "text-bearing" / visible
+    allowed_tags = {
+        'p', 'span', 'a', 'li', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
+        'button', 'label', 'strong', 'em', 'blockquote', 'small', 'cite', 'figcaption'
+    }
+
+    ids = {i for i, t in html_id_tags.items() if t in allowed_tags}
+
+    # Scan JS files for DOM access, but only keep those that also appear
+    # in HTML on an allowed/tagged element (avoids including purely
+    # programmatic or anchor-only ids).
+    js_ids = set()
     for p in root.rglob('*.js'):
         try:
             text = p.read_text(encoding='utf-8')
         except Exception:
             continue
-        ids.update(re.findall(r"getElementById\(\s*['\"]([^'\"]+)['\"]\s*\)", text))
-        ids.update(re.findall(r"querySelector\(\s*['\"]#([^'\"]+)['\"]\s*\)", text))
+        js_ids.update(re.findall(r"getElementById\(\s*['\"]([^'\"]+)['\"]\s*\)", text))
+        js_ids.update(re.findall(r"querySelector\(\s*['\"]#([^'\"]+)['\"]\s*\)", text))
+
+    ids.update({i for i in js_ids if i in html_id_tags and html_id_tags[i] in allowed_tags})
 
     return ids
 
@@ -114,14 +134,19 @@ def main():
     # For each language list keys that are missing compared to the union
     missing = {lang: sorted(list(all_keys - keys_per_lang[lang])) for lang in langs}
 
+
     # Find ids referenced in the site's HTML/JS
     used_ids = find_used_ids(root)
 
     # Keys present in JSON but not referenced in any HTML/JS file
     unused = sorted([k for k in all_keys if k not in used_ids])
 
+    # IDs referenced in HTML/JS but not present in translations.json
+    missing_in_json = sorted([id for id in used_ids if id not in all_keys])
+
     any_missing = any(len(v) for v in missing.values())
     any_unused = len(unused) > 0
+    any_missing_in_json = len(missing_in_json) > 0
 
     # Print a concise, human-readable summary for CI logs and local runs
     print('Translation check result')
@@ -142,6 +167,12 @@ def main():
         print('No missing keys across languages.')
         print()
 
+    if any_missing_in_json:
+        print('IDs referenced in HTML/JS but missing from translations.json:')
+        for i in missing_in_json:
+            print(f'  {i}')
+        print()
+
     if any_unused:
         print(f'Unused translation keys (present in JSON but not found in HTML/JS): {len(unused)}')
         for k in unused:
@@ -151,9 +182,11 @@ def main():
         print('No unused translation keys detected.')
         print()
 
-    # Return codes: give precedence to missing keys (2) over unused (3)
+    # Return codes: give precedence to missing keys (2) over unused (3).
+    # We consider HTML ids missing from translations.json to be same severity
+    # as missing language keys.
     rc = 0
-    if any_missing:
+    if any_missing or any_missing_in_json:
         rc = 2
     elif any_unused:
         rc = 3

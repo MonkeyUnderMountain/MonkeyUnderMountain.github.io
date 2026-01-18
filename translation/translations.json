@@ -32,6 +32,9 @@
     "misc_notes_birational_group_of_varieties_of_general_type_Text": "一般类型的簇的双有理群",
     "misc_notes_birational_group_of_varieties_of_general_type_Link": { "text": "点击查看笔记", "href": "Notes/Misc_notes/Birational_group_of_varieties_of_general_type.pdf", "html": false },
 
+    "misc_notes_TitleText": "其它笔记",
+    "research_publications_none": "现在还什么都没有！",
+
     "Misc_Blogs_Title": "博客",
     "Misc_Blogs_GitCommands_Link": { "text": "Git 常用命令", "href": "Misc/Blogs/command_git.html", "html": false },
     "Misc_Links_Handbook_Link": { "text": "Handbook of Conference on Recent Progress in Algebraic Geometry", "href": "Misc/Links/Handbook.pdf", "html": false },
@@ -72,6 +75,9 @@
     "misc_notes_Hodge_index_theorem_by_linear_algebra_Link": { "text": "Click to view the note", "href": "Notes/Misc_notes/Hodge_index_theorem_by_linear_algebra.pdf", "html": false },
     "misc_notes_birational_group_of_varieties_of_general_type_Text": "Birational Group of Varieties of General Type",
     "misc_notes_birational_group_of_varieties_of_general_type_Link": { "text": "Click to view the note", "href": "Notes/Misc_notes/Birational_group_of_varieties_of_general_type.pdf", "html": false },
+
+    "misc_notes_Title": "Misc Notes",
+    
 
     "research_publications_none": "Nothing here yet",
 
