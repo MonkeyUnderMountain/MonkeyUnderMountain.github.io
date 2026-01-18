@@ -105,7 +105,11 @@
                             </li>
                         </ol>
                     </div>
-                </div>
+                        <div class="pixel-card p-4">
+                            <h3 class="text-xl font-semibold mb-2">Generated Notes</h3>
+                            <div id="notes_generated">Loading notes index…</div>
+                        </div>
+                    </div>
             </div>
         </section>
 
@@ -196,6 +200,61 @@
 
 
     <script>
+        // Fetch generated notes JSON and render collapsible cards using the
+        // same `pixel-card` style used elsewhere on the site. The code below
+        // keeps HTML simple and escapes text to avoid injection issues.
+        (function(){
+            function safe(text){ return String(text).replaceAll('<','&lt;').replaceAll('>','&gt;'); }
+            // Display-friendly formatting: replace underscores with spaces
+            function disp(text){ return safe(String(text).replaceAll('_',' ')); }
+
+            fetch('Notes/notes_index.json')
+            .then(resp => { if(!resp.ok) throw new Error('Not found'); return resp.json(); })
+            .then(data => {
+                const container = document.getElementById('notes_generated');
+                if(!container) return;
+                if(!data || data.length===0){ container.innerHTML = '<p>No generated notes found. Run the generator script.</p>'; return; }
+
+                // Build nested cards: module -> chapter -> section. Use
+                // `pixel-card p-4` for visual consistency with other cards.
+                let html = '';
+                data.forEach(mod => {
+                    html += `<details class="pixel-card p-4 mb-3"><summary class="font-semibold text-lg cursor-pointer">${disp(mod.name)}</summary><div class="mt-2 space-y-2">`;
+
+                    // PDFs directly under module
+                    if(mod.pdfs && mod.pdfs.length){
+                        mod.pdfs.forEach(p => html += `<div><a href="Notes/${p.relpath}" target="_blank" class="text-purple-300 hover:underline" title="${safe(p.name)}">pdf</a></div>`);
+                    }
+
+                    // Chapters
+                    if(mod.chapters && mod.chapters.length){
+                        mod.chapters.forEach(chap => {
+                            html += `<details class="pixel-card p-4 ml-4 mt-2"><summary class="font-medium">${disp(chap.name)}</summary><div class="mt-2 space-y-1">`;
+
+                            // PDFs directly under chapter
+                            if(chap.pdfs) chap.pdfs.forEach(p => html += `<div><a href="Notes/${p.relpath}" target="_blank" title="${safe(p.name)}">pdf</a></div>`);
+
+                            // Sections inside chapter
+                            if(chap.sections) chap.sections.forEach(sec => {
+                                html += `<details class="pixel-card p-3 ml-4 mt-1"><summary>${disp(sec.name)}</summary><div class="mt-1">`;
+                                if(sec.pdfs) sec.pdfs.forEach(sp => html += `<div><a href="Notes/${sp.relpath}" target="_blank" title="${safe(sp.name)}">pdf</a></div>`);
+                                html += `</div></details>`;
+                            });
+
+                            html += `</div></details>`;
+                        });
+                    }
+
+                    html += `</div></details>`;
+                });
+                container.innerHTML = html;
+            })
+            .catch(err => {
+                const container = document.getElementById('notes_generated');
+                if(container) container.innerHTML = '<p>Generated notes not available. Run <code>python scripts/generate_notes_index.py</code> to create Notes/notes_index.json</p>';
+            });
+        })();
+
         // 平滑滚动
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
