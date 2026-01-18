@@ -4,3 +4,6 @@
 [submodule "Arithmetic_geometry"]
 	path = Notes/Arithmetic_geometry
 	url = https://github.com/MonkeyUnderMountain/Arithmetic_geometry.git
+[submodule "Notes/Arithmetic_geometry"]
+	path = Notes/Arithmetic_geometry
+	url = https://github.com/MonkeyUnderMountain/Arithmetic_geometry.git
