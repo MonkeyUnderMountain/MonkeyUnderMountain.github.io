@@ -68,3 +68,26 @@ Contact
 If you want additional features (e.g., nicer link icons, glob patterns for the
 allowlist, or deeper recursive scanning), open an issue or ask me to implement
 them.
+
+Translations
+------------
+The site now centralizes all UI text under `translation/translations.json`.
+
+- Location: `translation/translations.json` — contains language keys (e.g. `zh-CN`, `en-US`).
+- Loader: `translation/translation.js` reads the JSON and updates DOM elements whose `id` matches a JSON key.
+
+How to add a new translatable element
+- Add an element with an `id` in `index.html` (for example `<span id="welcomeMsg"></span>`).
+- Add the same key to every language in `translation/translations.json` with the desired text.
+
+Value formats supported
+- Primitive string: set as `textContent` unless it contains HTML tags, then it is set as `innerHTML`.
+- Object form: allows setting `text`, `href`, `title`, and `html` (boolean). Example:
+
+```
+"myLink": { "text": "Click here", "href": "https://...", "html": false }
+```
+
+Notes
+- Editing `translation/translations.json` is sufficient; the page will reflect changes on the next reload.
+- Keep any HTML in values minimal and trusted (the loader uses `innerHTML` when it detects tags).
