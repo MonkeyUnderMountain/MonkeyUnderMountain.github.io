@@ -1,0 +1,189 @@
+\section{Valuation fields}
+
+\subsection{Absolute values and completion}
+
+    \begin{definition}\label{def:valuation_field}
+        Let \(\kk\) be a field.
+        An \emph{absolute value} on \(\kk\) is a function \(\|\cdot|:\kk\to\bbR_{\ge0}\) satisfying the following properties for all \(x,y\in\kk\):
+        \begin{enumerate}
+            \item \(\|x\|=0\) if and only if \(x=0\);
+            \item \(\|xy\|=\|x\|\cdot\|y\|\);
+            \item \(\|x+y\|\leq\|x\|+\|y\|\).
+        \end{enumerate}
+        A field \(\kk\) equipped with an absolute value \(\|\cdot\|\) is called a \emph{valuation field}.
+    \end{definition}
+
+    \begin{remark}\label{rmk:additive_and_multiplicative_valuation_on_a_field}
+        Let \(\kk\) be a field.
+        Recall that a (additive) valuation on \(\kk\) is a function \(v: \kk^\times \to \bbR\) such that
+        \begin{itemize}
+            \item \(\forall x,y \in \kk^\times, v(xy) = v(x) + v(y)\);
+            \item \(\forall x,y \in \kk^\times, v(x + y) \geq \min\{v(x), v(y)\}\).
+        \end{itemize}
+        We can extend \(v\) to the whole field \(\kk\) by defining \(v(0) = +\infty\).
+        Fix a real number \(\varepsilon \in (0,1)\).
+        Then \(v\) induces an absolute value \(|\cdot|_v: \kk \to \bbR_+\) defined by \(|x|_v = \varepsilon^{v(x)}\) for each \(x \in \kk\).
+
+        The valuation \(v\) defined above is called an \emph{additive valuation}.
+        And an absolute value \(|\cdot|\) on \(\kk\) is called a \emph{multiplicative valuation}.
+        In this note, the term \emph{valuation} may refer to either an additive valuation or a multiplicative valuation, depending on the context.
+    \end{remark}
+
+    \begin{example}\label{eg:trivial_absolute_value_on_any_fields}
+        Let \(\kk\) be a field.
+        The \emph{trivial absolute value} on \(\kk\) is defined as
+        \[ \|x\| := \begin{cases}
+            0, & x = 0; \\
+            1, & x \neq 0.
+        \end{cases} \]
+    \end{example}
+
+    \begin{definition}\label{def:valuation_group_of_a_valuation_field}
+        The \emph{(multiplicative) valuation group} of a valuation field \((\kk,\|\cdot\|)\) is defined as the subgroup of \(\bbR_{>0}\) given by
+        \[ |\kk^\times| := \{\|x\|\colon x \in \kk^\times\}. \]
+        We use the notation \(\sqrt{|\kk^\times|}\) to denote the set \(\{\|x\|^{1/n}\colon x \in \kk^\times, n \in \bbZ_{>0}\}\).
+    \end{definition}
+
+    Note that an absolute value \(\|\cdot\|\) is non-trivial if and only if its valuation group \(|\kk^\times|\) is not equal to \(\{1\}\).
+
+    \begin{definition}\label{def:complete_valuation_field}
+        Let \((\kk,\|\cdot\|)\) be a valuation field.
+        We say that \(\kk\) is \emph{complete} if the metric \(d(x,y) := \|x - y\|\) makes \(\kk\) a complete metric space.
+    \end{definition}
+
+    \begin{lemma}\label{lem:completion_of_valuation_field}
+        Let \((\kk,\|\cdot\|)\) be a valuation field and \((\widehat{\kk},\|\cdot\|)\) its completion as a metric space.
+        Then the operations of addition and multiplication on \(\kk\) can be extended to \(\widehat{\kk}\) uniquely, making \((\widehat{\kk},\|\cdot\|)\) a complete valuation field containing \(\kk\) as a dense subfield.
+    \end{lemma}
+    \begin{proof}
+        Simple analysis.
+    \end{proof}
+
+        \begin{proposition}\label{prop:non-trivial_complete_field_is_uncountable}
+        Let \((\kk,\|\cdot\|)\) be a complete valuation field with non-trivial absolute value.
+        Then \(\kk\) is uncountable.
+    \end{proposition}
+    \begin{proof}
+        Since the absolute value \(\|\cdot\|\) is non-trivial, we can construct a sequence \(\{x_n\}_{n=1}^\infty \subseteq \kk\) inductively such that \(\|x_n\| < \|x_{n-1}\|/2\) for any \(n\geq 1\) and \(\|x_0\| < 1\).
+        Then there is an injective map from \(\bbN^{\{0,1\}}\) to \(\kk\) defined by
+        \[ (a_n)_{n=1}^\infty \mapsto \sum_{n=1}^\infty a_n x_n, \quad a_n \in \{0,1\}. \]
+        Since \(\|x_n\| < 2^{-n}\), the series \(\sum_{n=1}^\infty a_n x_n\) converges in \(\kk\).
+        Note \(\|x_n\| > \|\sum_{m\geq n} x_m\|\) for each \(n\), we have that the map is injective.
+        Thus \(\kk\) is uncountable.
+    \end{proof}
+
+    Unlike the real number field \(\bbR\), even a valuation field is complete, we can not expect the theorem of nested intervals to hold.
+
+    \begin{definition}\label{def:spherically_complete}
+        A valuation field \((\kk,\|\cdot\|)\) is called \emph{spherically complete} if every decreasing sequence of closed balls in \(\kk\) has a non-empty intersection.
+    \end{definition}
+
+    \begin{example}\label{eg:p-adic_complex_field_is_not_spherically_complete}
+        The field \(\bbC_p\) of \(p\)-adic complex numbers is not spherically complete, see \Yang{to be added.}
+    \end{example}
+
+    \begin{example}\label{eg:usual_absolute_value_on_Q}
+        Let \(|\cdot|_\infty\) be the usual absolute value on the field \(\bbQ\) of rational numbers.
+        Then \((\bbQ, |\cdot|_\infty)\) is a valuation field.
+        Its completion is the field \(\bbR\) of real numbers equipped with the usual absolute value.
+    \end{example}
+
+    \begin{example}\label{eg:p-adic_absolute_value_on_Q}
+        Let \(p\) be a prime number.
+        For any non-zero rational number \(x \in \bbQ\), we can write it as \(x = p^n \frac{a}{b}\), where \(n \in \bbZ\) and \(a,b \in \bbZ\) are integers not divisible by \(p\).
+        The \emph{\(p\)-adic absolute value} on \(\bbQ\) is defined as
+        \[ |x|_p := \begin{cases}
+            0, & x = 0; \\
+            p^{-n}, & x = p^n \frac{a}{b} \text{ as above}.
+        \end{cases} \]
+        Then \((\bbQ, |\cdot|_p)\) is a valuation field.
+        Its completion is the field 
+        \[ \bbQ_p = \left\{\sum_{n = k}^{+\infty} a_n p^n \colon k \in \bbZ, a_n \in \{0,1,\ldots,p-1\}\right\} \]
+        of \(p\)-adic numbers equipped with the \(p\)-adic absolute value; see \Yang{to be added.}.
+    \end{example}
+    
+    \begin{definition}\label{def:archimedean_and_non-archimedean_valuation}
+        Let \((\kk,\|\cdot\|)\) be a valuation field.
+        We say that \(\kk\) is \emph{non-archimedean} if its absolute value \(\|\cdot\|\) satisfies the \emph{strong triangle inequality}:
+        \[ \|x+y\|\leq\max\{\|x\|,\|y\|\},\quad\forall x,y\in\kk. \]
+        Otherwise, we say that \(\kk\) is \emph{archimedean}.
+    \end{definition}
+
+    \begin{proposition}\label{prop:archimedean_iff_integer_are_unbound}
+        Let \((\kk,\|\cdot\|)\) be a valuation field.
+        Then \(\kk\) is archimedean if and only if the set \(\{\|n \cdot 1\|\colon n \in \bbZ\}\) is unbounded.
+    \end{proposition}
+    \begin{proof}
+        \Yang{To be added.}
+    \end{proof}
+
+\subsection{Places on a field}
+
+    \begin{definition}\label{def:equivalent_of_absolute_values}
+        Let \(\kk\) be a field.
+        Two absolute values \(\|\cdot\|_1\) and \(\|\cdot\|_2\) on \(\kk\) are said to be \emph{equivalent} if there exists a real number \(c \in (0,\infty)\) such that
+        \[ \|x\|_1 = \|x\|_2^c, \quad \forall x \in \kk. \]
+    \end{definition}
+
+    Note that equivalent absolute values induce the same topology on the field \(\kk\).
+    Moreover, the following lemma shows that the converse is also true.
+
+    \begin{lemma}\label{prop:equivalent_of_absolute_values_and_topology_and_unit_disk}
+        Let \(\kk\) be a field and \(\|\cdot\|_1\), \(\|\cdot\|_2\) be two absolute values on \(\kk\).
+        Then the following statements are equivalent:
+        \begin{enumerate}
+            \item \(\|\cdot\|_1\) and \(\|\cdot\|_2\) are equivalent;
+            \item \(\|\cdot\|_1\) and \(\|\cdot\|_2\) induce the same topology on \(\kk\);
+            \item The unit disks \(D_1 = \{x \in \kk\colon \|x\|_1 < 1\}\) and \(D_2 = \{x \in \kk\colon \|x\|_2 < 1\}\) are the same.
+        \end{enumerate}
+    \end{lemma}
+    \begin{proof}
+        The implications (a) \(\Rightarrow\) (b) is obvious.
+        Now we prove (b) \(\Rightarrow\) (c).
+        For any \(x \in D_1\), we have \(x^n \to 0\) as \(n \to \infty\) under the absolute value \(\|\cdot\|_1\) and thus under \(\|\cdot\|_2\).
+        Therefore, \(\|x\|_2^n \to 0\) as \(n \to \infty\), which implies that \(\|x\|_2 < 1\), i.e., \(x \in D_2\).
+        Similarly, we can prove that \(D_2 \subseteq D_1\).
+
+        Finally, we prove (c) \(\Rightarrow\) (a).
+        If \(\|\cdot\|_1\) is trivial, then \(D_1 = \{0\}\) and thus \(\|\cdot\|_2\) is also trivial.
+        In this case, they are equivalent.
+        Suppose that both \(\|\cdot\|_1\) and \(\|\cdot\|_2\) are non-trivial.
+        Pick any \(x,y \notin D_1 = D_2\).
+        Then there exist real numbers \(\alpha, \beta > 0\) such that \(\|x\|_1 = \|x\|_2^\alpha\) and \(\|y\|_1 = \|y\|_2^\beta\).
+        Suppose the contrary that \(\alpha \neq \beta\).
+        Consider the domain \(\Lambda \subseteq \bbZ^2\) defined by
+        \[ \begin{cases}
+            n \log \|x\|_2 < m \log \|y\|_2; \\
+            n \alpha \log \|x\|_2 > m \beta \log \|y\|_2.
+        \end{cases} \]
+        Since \(\alpha \neq \beta\), the two lines defined by the equalities are not parallel.
+        Thus \(\Lambda\) is non-empty.
+        Pick \((n,m) \in \Lambda\) and set \(z := x^n y^{-m}\).
+        Then we have \(\|z\|_2 < 1\) and \(\|z\|_1 > 1\), a contradiction.
+    \end{proof}
+
+    \begin{definition}\label{def:place_on_a_field}
+        Let \(\kk\) be a field.
+        A \emph{place} on \(\kk\) is an equivalence class of absolute values on \(\kk\).
+        We denote the set of all places on \(\kk\) by \(\upoperatorname{Pl}_\kk\).
+    \end{definition}
+
+    \begin{theorem}\label{thm:classification_of_archimedean_complete_fields}
+        Let \((\kk,\|\cdot\|)\) be an archimedean complete valuation field.
+        Then \(\kk\) is isomorphic to either the real number field \(\bbR\) or the complex number field \(\bbC\) equipped with the usual absolute value.
+        \Yang{To be revised.}
+    \end{theorem}
+    \begin{proof}
+        \Yang{To be added.}
+    \end{proof}
+
+    \begin{theorem}[Ostrowski's theorem]\label{theorem:ostrowski_theorem}
+        Every nontrivial absolute value on \(\bbQ\) is equivalent to either the usual absolute value \(|\cdot|_\infty\) or a \(p\)-adic absolute value \(|\cdot|_p\) for some prime number \(p\).
+        \Yang{To be revised.}
+    \end{theorem}
+    \begin{proof}
+        \Yang{To be added.}
+    \end{proof}
+
+
+

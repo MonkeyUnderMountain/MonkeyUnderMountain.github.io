@@ -1,0 +1,119 @@
+\section[Example: p-adic fields]{Example: \(p\)-adic fields}
+
+\subsection[p-adic fields]{\(p\)-adic fields}
+
+    \begin{construction}\label{constr:p-adic_absolute_value_on_number_field}
+        Let \(K\) be a number field and \(\frakp\) be a prime ideal of the ring of integers \(\calO_K\) of \(K\).
+        Considering the localization \((\calO_K)_\frakp\) of \(\calO_K\) at \(\frakp\), which is a discrete valuation ring, denote by \(v_\frakp: K^\times \to \bbZ\) the corresponding discrete valuation.
+        The \emph{\(p\)-adic absolute value} on \(K\) associated to \(\frakp\) is defined as
+        \[ |x|_\frakp := N(\frakp)^{-v_\frakp(x)},\quad\forall x \in K, \]
+        where \(N(\frakp) := \#(\calO_K / \frakp)\) is the norm of \(\frakp\).
+
+        The completion of \(K\) with respect to the \(p\)-adic absolute value \(|\cdot|_\frakp\) is denoted by \(K_\frakp\), called the \emph{\(\frakp\)-adic field}.
+    \end{construction}
+
+    We just focus on the case \(K = \bbQ\) and \(\frakp = (p)\) for a prime number \(p\) in the following.
+
+    \begin{example}\label{eg:p-adic_field}
+        Let \(p\) be a prime number. 
+        For every \(r \in \bbQ\), we can write \(r\) as \(r = p^n \frac{a}{b}\), where \(n \in \bbZ\) and \(a,b \in \bbZ\) are integers not divisible by \(p\).
+        The \emph{\(p\)-adic absolute value} on \(\bbQ\) is defined as
+        \[ |r|_p := p^{-n}. \]
+        The \(p\)-adic field \(\bbQ_p\) can be described concretely as follows:
+        \[ \bbQ_p = \left\{ \sum_{i = n}^{+\infty} a_i p^i \middle| n \in \bbZ, a_i \in \{0, 1, \ldots, p-1\} \right\}. \]
+        For \(x = \sum_{i = n}^{+\infty} a_i p^i \in \bbQ_p\) with \(a_n \neq 0\), its \(p\)-adic absolute value is given by \(|x|_p = p^{-n}\).
+        The operations of addition and multiplication on \(\bbQ_p\) are defined similarly as those on decimal expansions.
+    \end{example}
+
+    Unlike the field of real numbers \(\bbR\), the \(p\)-adic field \(\bbQ_p\) has many finite extensions.
+
+    \begin{proposition}\label{prop:irreducible_polynomial_over_Q_p}
+        There are infinitely many irreducible polynomials over the \(p\)-adic field \(\bbQ_p\).
+    \end{proposition}
+    \begin{proof}
+        Since there are infinitely many irreducible monic polynomials over the finite field \(\bbF_p\), consider any lift of such an irreducible monic polynomial to a monic polynomial with coefficients in \(\bbZ_p\).
+        If the lift is not irreducible over \(\bbQ_p\), 
+        then the factorization of the lift gives a nontrivial factorization of its reduction modulo \(p\) since the factors can be chosen to be monic and have coefficients in \(\bbZ_p\), 
+        which contradicts the irreducibility of the original polynomial over \(\bbF_p\).
+        Thus, the lift is irreducible over \(\bbQ_p\).
+
+        On the other hand, note that \(|\bbQ_p^\times|_p = p^\bbZ\).
+        It follows that \(f(T) = T^n - p\) is irreducible over \(\bbQ_p\) for every integer \(n \geq 1\).
+        Otherwise, suppose we have a monic factorization \(f(T) = g(T) h(T)\) with \(g(T), h(T) \in \bbZ_p[T]\) and \(\deg g, \deg h < n\). 
+        Then by considering the reduction modulo \(p\), we have \(g(0), h(0) \equiv 0 \mod p\).
+        It follows that \(|f(0)|_p = |g(0) h(0)|_p \leq p^{-2}\), which contradicts \(|f(0)|_p = |p|_p = p^{-1}\).
+    \end{proof}
+
+    % \begin{proposition}\label{prop:group_structure_of_Q_p_times}
+    %     The multiplicative group \(\bbQ_p^\times\) of the \(p\)-adic field \(\bbQ_p\) admits the following decomposition:
+    %     \[ \bbQ_p^\times \cong p^\bbZ \times \bbZ_p^\times, \]
+    %     where \(p^\bbZ := \{p^n \mid n \in \bbZ\}\) and \(\bbZ_p^\times := \{x \in \bbQ_p \mid |x|_p = 1\}\) is the group of units of the ring of \(p\)-adic integers \(\bbZ_p\).
+    %     \Yang{To be checked.}
+    % \end{proposition}
+
+    % \Yang{What is the relation between the finite extension of \(\bbQ_p\) and \(K_\frakp\)?}
+
+\subsection{Completion}
+
+    \begin{proposition}\label{prop:algebraically_closure_of_Q_p_is_not_complete}
+        The algebraic closure \(\overline{\bbQ_p}\) of \(\bbQ_p\) is not complete with respect to the extension of the \(p\)-adic absolute value \(|\cdot|_p\).
+    \end{proposition}
+    \begin{proof}
+        \Yang{To be completed.}
+    \end{proof}
+    
+    \begin{construction}\label{constr:p-adic_complex_number}
+        Let \(p\) be a prime number.
+        The \emph{field \(\bbC_p\) of \(p\)-adic complex numbers} is defined as the completion of the algebraic closure of \(\bbQ_p\) with respect to the unique extension of the \(p\)-adic absolute value \(|\cdot|_p\) on \(\bbQ_p\).
+    \end{construction}
+
+    The field \(\bbC_p\) is algebraically closed and complete with respect to \(|\cdot|_p\) by \cref{prop:completion_of_algebraically_closed_valuation_fields_is_algebraically_closed}.
+    By \cref{prop:valuation_group_of_completion_is_equal_to_the_original_fields,prop:residue_field_of_completion_is_equal_to_the_original_fields}, we have
+    \[ |\bbC_p^\times|_p = |\overline{\bbQ_p}^\times|_p = p^\bbQ, \quad \calk_{\bbC_p} \cong \calk_{\overline{\bbQ_p}} \cong \overline{\bbF_p}. \]
+
+    \begin{proposition}\label{prop:C_p_is_not_spherically_complete}
+        The field \(\bbC_p\) of \(p\)-adic complex numbers is not spherically complete.
+    \end{proposition}
+    \begin{proof}
+        \Yang{To be completed.}
+    \end{proof}
+
+    \begin{construction}\label{constr:spherically_complete_p-adic_fields}
+        Let \(p\) be a prime number.
+        \Yang{We construct the \emph{spherically complete \(p\)-adic field} \(\Omega_p\).}
+        \Yang{To be completed.}
+    \end{construction}
+
+\subsection{Elementary functions}
+
+    \begin{lemma}\label{lem:p-valuation_of_factorial}
+        Let \(p\) be a prime number and \(n \in \bbN\).
+        We have \(v_p(n!) = \).
+    \end{lemma}
+
+    \Yang{Exponential, logarithmic, and the interpolation functions.}
+
+    Fix a prime number \(p\) in the following and consider \(\kk = \bbQ_p, \bbC_p\), or \(\Omega_p\).
+    Let \(r_p := p^{-1/(p-1)}\).
+
+    \begin{construction}\label{constr:exponential_and_logarithmic_functions}
+        The \emph{exponential function} \(\exp: \kk \to \kk\) is defined by the power series
+        \[ \exp(x) := \sum_{n=0}^{+\infty} \frac{x^n}{n!}. \]
+        The radius of convergence of \(\exp(x)\) is \(+\infty\) if \(p = 2\) and \(p^{-1/(p-1)}\) if \(p > 2\).
+
+        The \emph{logarithmic function} \(\log: 1 + \kk^{\circ\circ} \to \kk\) is defined by the power series
+        \[ \log(1+x) := \sum_{n=1}^{+\infty} (-1)^{n+1} \frac{x^n}{n}. \]
+        The radius of convergence of \(\log(1+x)\) is \(1\).
+
+        Moreover, for every \(x\) in the domain of convergence of \(\exp\) and every \(y\) in the domain of convergence of \(\log\), we have
+        \[ \log(\exp(x)) = x, \quad \exp(\log(y)) = y. \]
+        \Yang{To be checked.}
+    \end{construction}
+
+    \begin{definition}\label{def:Malher_series}
+        Let 
+    \end{definition}
+
+    \begin{theorem}\label{thm:}
+        The series converges.
+    \end{theorem}

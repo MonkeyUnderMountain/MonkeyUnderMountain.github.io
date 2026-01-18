@@ -1,0 +1,82 @@
+\section{Analytic functions in one variable}
+
+
+
+    \begin{proposition}\label{prop:convergent_radius_of_power_series}
+        Let \(\kk\) be a complete non-archimedean field and \(f = \sum_{n=0}^{+\infty} a_n T^n \in \kk[[T]]\).
+        Set 
+        \[
+            R := \frac{1}{\limsup_{n \to +\infty} \|a_n\|^{1/n}} \in \bbR_{\geq 0} \cup \{+\infty\}.
+        \]
+        Then we have 
+        \begin{enumerate}
+            \item the series \(f(x)\) converges for all \(x \in \kk\) with \(\|x\| < R\) and diverges for all \(x \in \kk\) with \(\|x\| > R\);
+            \item if \(R < +\infty\), the series \(f(x)\) converges for all \(x \in \kk\) with \(\|x\| = R\) if and only if \(\lim_{n \to +\infty} \|a_n\| R^n = 0\).
+        \end{enumerate}
+    \end{proposition}
+    \begin{proof}
+        By \cref{prop:convergence_in_ultra-metric_space}, we only need to check when the terms \(a_n x^n\) tend to zero as \(n \to +\infty\).
+        If \(\|x\| < R\), there exists \(r \in (0,1)\) such that \(\|x\| < r^2R\).
+        Then there exists \(N \in \bbN\) such that for all \(n \geq N\), we have \(\|a_n\|^{1/n} < 1/(rR)\) and thus
+        \[
+            \|a_n x^n\| = \|a_n\| \|x\|^n < \|a_n\| (r^2R)^n < (r^2R)^n \cdot \frac{1}{(rR)^n} = r^n \to 0.
+        \]
+        Thus the series \(f(x)\) converges for all \(x \in \kk\) with \(\|x\| < R\).
+
+        Suppose that \(\|x\| > R\).
+        There exists \(s > 1\) such that \(\|x\| > R/s\).
+        By the definition of \(R\), there exist infinitely many \(n \in \bbN\) such that \(\|a_n\|^{1/n} > s/R\) and thus
+        \[
+            \|a_n x^n\| = \|a_n\| \|x\|^n > \|a_n\| \frac{R^n}{s^n} > \left(\frac{s}{R}\right)^n \cdot \frac{R^n}{s^n} = 1.
+        \]
+        Thus the series \(f(x)\) diverges for all \(x \in \kk\) with \(\|x\| > R\).
+
+        Finally, the case \(\|x\| = R\) is direct from \cref{prop:convergence_in_ultra-metric_space}.
+        \Yang{To be revised.}
+    \end{proof}
+
+    % \Yang{What about the multi-index?}
+
+
+    \begin{theorem}[Strassman]\label{prop:Strassman_theorem}
+        Let \(\kk\) be a complete non-archimedean field with non-trivial valuation and \(f = \sum a_n T^n \in \kk\{T/r\}\) be an analytic function.
+        Suppose that \(\|a_N\|r^N > \|a_n\|r^n\) for all \(n > N\).
+        Then \(f\) has at most \(N\) zeros in the closed ball \(E(0,r)\).
+        % \Yang{To be checked.}
+    \end{theorem}
+    \begin{proof}
+        We induct on \(N\).
+        The case \(N = 0\) is direct from \cref{prop:restricted_power_series_invertible_iff_the_constant_item_controls_others}.
+        Suppose that the conclusion holds for \(N-1\).
+        Let \(x\) be a zero of \(f\) in \(E(0,r)\).
+        Set 
+        \[ g(T) = \frac{f(T) - f(x)}{T - x} = \sum_{k=0}^{+\infty} \left( \sum_{n=k+1}^{+\infty} a_n x^{n-k-1} \right) T^{k} = \sum_{n=0}^{+\infty} b_k T^k. \]
+        That is,
+        \[ b_k = \sum_{n=0}^\infty a_{k+1+n} x^n. \]
+        Hence we have 
+        \[ \|b_k\|r^k = \max_{n\geq k+1} \|a_{n} x^{n-k-1}\|r^k \leq \max_{n \geq k+1}\|a_{n}\| r^{n-1} \to 0 \quad \text{ as } k \to \infty. \]
+        It follows that \(g(T) \in \kk\{T/r\}\).
+
+        For every \(n > N\), we have 
+        \[ \|a_N\| > \|a_{n}\|r^{n-N} \geq \|a_n x^{n-N}\|. \]
+        Hence 
+        \[ \left\|\sum_{n=N}^{N+m} a_n x^{n-N}\right\| = \|a_N\| \]
+        for every \(m \in \bbN\) by \cref{prop:all_triangles_in_ultra-metric_space_are_isosceles}.
+        Take \(m \to +\infty\), we have \(\|b_{N-1}\| = \|a_N\|\).
+        For every \(k > N - 1\), we have
+        \[ \|b_k\|r^k = \max_{n \geq k+1} \|a_n\| r^{n-1} \leq \max_{n > N} \|a_n\| r^{n-1} < \|a_N\| r^{N-1} = \|b_{N-1}\| r^{N-1}. \]
+        By the induction hypothesis, \(g\) has at most \(N-1\) zeros in \(E(0,r)\).
+        It follows that \(f\) has at most \(N\) zeros in \(E(0,r)\) since \(f(T) = (T - x) \cdot g(T)\).
+        % \Yang{To be add.}
+    \end{proof}
+
+    \Yang{Does the proof mean that \(\kk\{T\}\) with \(v(f) := n\) such that \(a_n = \max a_i\) and \(a_n > a_m\) for all \(m>n\) is an Euclidean ring?}
+
+
+    \Yang{There exist \(f \in \kk\{T\}\) with \(f(a) \neq 0\) for all \(|a|\leq 1\) but \(1/f \notin \kk\{T\}\).}
+    \Yang{Is this right?}
+
+\subsection{Entire functions}
+
+
+\subsection{Maximum principle}

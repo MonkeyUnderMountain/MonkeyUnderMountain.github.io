@@ -1,0 +1,300 @@
+\section{Non-archimedean valuations}
+
+\subsection{Topology: Ultra-metric space}
+
+    We will use \(B(x,r)\) (resp. \(E(x,r)\)) to denote the open ball (resp. closed ball) with center \(x\) and radius \(r\).
+    % We will use \(E(x,r)\) to denote the closed ball with center \(x\) and radius \(r\).
+
+    \begin{definition}\label{def:ultra-metric_space}
+        A metric space \((X,d)\) is called an \emph{ultra-metric space} if its metric \(d\) satisfies the \emph{strong triangle inequality}:
+        \[ d(x,z) \leq \max\{d(x,y), d(y,z)\},\quad\forall x,y,z\in X. \]
+    \end{definition}
+
+    \begin{remark}\label{rmk:Chinese_translation_of_ultra-metric_space}
+        The term \emph{ultra-metric space} should be translated into Chinese as ``\emph{奥特度量空间}''.
+        There is no special reason for this translation, except that I insist on using ``奥特'' to translate ``ultra''.
+    \end{remark}
+
+    If \((\kk,\|\cdot\|)\) is a non-archimedean field, then the metric \(d(x,y) := \|x-y\|\) on \(\kk\) makes \((\kk,d)\) an ultra-metric space.
+
+    \begin{proposition}\label{prop:all_triangles_in_ultra-metric_space_are_isosceles}
+        Let \((X,d)\) be an ultra-metric space.
+        Then for any \(x,y,z \in X\), at least two of the three distances \(d(x,y), d(y,z), d(z,x)\) are equal.
+        And the third distance is less than or equal to the common value of the other two.
+    \end{proposition}
+    \begin{proof}
+        Suppose that \(d(x,y) \geq d(y,z)\).
+        By the strong triangle inequality, we have
+        \[ d(x,z) \leq \max\{d(x,y), d(y,z)\} = d(x,y). \]
+        On the other hand, by the strong triangle inequality again, we have
+        \[ d(x,y) \leq \max\{d(x,z), d(z,y)\} = \max\{d(x,z), d(y,z)\} \leq d(x,y). \]
+        This shows that \(d(x,y) = \max\{d(x,z), d(y,z)\}\).
+        Thus either \(d(x,z) = d(x,y) \geq d(y,z)\) or \(d(y,z) = d(x,y) \geq d(x,z)\).
+        %\Yang{To be continued.}
+    \end{proof}
+
+    \begin{proposition}\label{prop:balls_in_ultra-metric_space_form_a_tree}
+        Let \((X,d)\) be an ultra-metric space.
+        Let \(D_i\) be (open or closed) ball in \(X\) for \(i=1,2\).
+        If \(D_1 \cap D_2 \neq \emptyset\), then either \(D_1 \subseteq D_2\) or \(D_2 \subseteq D_1\).
+    \end{proposition}
+    \begin{proof}
+        Suppose that \(D_i\) has center \(x_i\) and radius \(r_i\) for \(i=1,2\).
+        Let \(y \in D_1 \cap D_2\).
+        We have 
+        \[ d(x_1,x_2) \leq \max\{d(x_1,y), d(y,x_2)\}. \]
+        Without loss of generality, we may assume that \(d(x_1,x_2) \leq d(x_1,y)\).
+        It follows that \(x_2 \in D_1\) since \(d(x_1,y) < r_1\) (or \(\leq r_1\)).
+
+        If there exists \(z \in D_2 \setminus D_1\), we claim that \(D_1 \subseteq D_2\).
+        We have \(d(x_1,z) > d(x_1,x_2)\).
+        Then by \cref{prop:all_triangles_in_ultra-metric_space_are_isosceles},
+        \[ r_1 \leq d(x_1,z) = d(x_2,z) \leq r_2. \]
+        In particular, if \(D_2\) is an open ball, then we have strict inequality \(r_1 < r_2\).
+        For any \(w \in D_1\), we have 
+        \[ d(x_2,w) \leq \max\{d(x_2,x_1), d(x_1,w)\} \leq r_1 \leq r_2. \]
+        Thus \(w \in D_2\) whatever \(D_2\) is open or closed, and it shows that \(D_1 \subseteq D_2\).
+    \end{proof}
+
+    \begin{proposition}\label{prop:all_balls_in_ultra-metric_space_are_clopen}
+        Let \((X,d)\) be an ultra-metric space.
+        Then both \(B(x,r)\) and \(E(x,r)\) are closed and open subsets of \(X\) for any \(x \in X\) and \(r > 0\).
+    \end{proposition}
+    \begin{proof}
+        We show that the sphere \(S(x,r) := \{y \in X \mid d(x,y) = r\}\) is open in \(X\).
+        Note that if \(y \in S(x,r)\), then for any \(r' < r\), we have \(B(y,r') \cap E(x,r) \neq \emptyset\) and \(x \in E(x,r) \setminus B(y,r')\).
+        Thus by \cref{prop:balls_in_ultra-metric_space_form_a_tree}, we have \(B(y,r') \subseteq E(x,r)\).
+        If \(B(y,r') \cap B(x,r) \neq \emptyset\), then by \cref{prop:balls_in_ultra-metric_space_form_a_tree} again, we have \(B(y,r') \subseteq B(x,r)\).
+        However, \(y \in B(y,r') \setminus B(x,r)\), a contradiction.
+        Thus \(B(y,r') \subseteq E(x,r) \setminus B(x,r) = S(x,r)\).
+        It yields that \(S(x,r) = \bigcup_{y \in S(x,r)} B(y,r/2)\) is open in \(X\).
+
+        Since \(E(x,r) = B(x,r) \cup S(x,r)\) and \(B(x,r) = E(x,r) \setminus S(x,r)\), both \(B(x,r)\) and \(E(x,r)\) are open and closed in \(X\).
+    \end{proof}
+
+    \begin{corollary}\label{prop:ultra-metric_space_is_totally_disconnected}
+        Let \((X,d)\) be an ultra-metric space.
+        Then \(X\) is totally disconnected, i.e., the only connected subsets of \(X\) are the set with at most one point.
+    \end{corollary}
+    \begin{proof}
+        Suppose that \(S \subset X\) has at least two distinct points \(x,y \in S\).
+        Let \(r := d(x,y) > 0\).
+        Consider the open ball \(B(x,r/2)\).
+        By \cref{prop:all_balls_in_ultra-metric_space_are_clopen}, \(B(x,r/2)\) is both open and closed in \(X\).
+        Thus \(B(x,r/2) \cap S\) is both open and closed in \(S\), however, it is non-empty and not equal to \(S\) since it contains \(x\) but not \(y\).
+        This shows that \(S\) is disconnected.
+    \end{proof}
+
+    \begin{proposition}\label{prop:convergence_in_ultra-metric_space}
+        Let \((X,d)\) be an ultra-metric space.
+        A sequence \(\{x_n\}\) in \(X\) is cauchy if and only if \(d(x_n,x_{n+1}) \to 0\) as \(n \to \infty\).
+    \end{proposition}
+    \begin{proof}
+        The necessity is true for all metric spaces.
+        Suppose that \(d(x_n,x) \to 0\) as \(n \to \infty\).
+        For any \(\varepsilon > 0\), there exists \(N \in \bbN\) such that \(d(x_n,x_{n+1}) < \varepsilon\) for all \(n \geq N\).
+        For any \(m,n \geq N\) with \(m < n\), by the strong triangle inequality, we have
+        \[ d(x_n,x_m) \leq \max\{d(x_n,x_{n-1}), d(x_{n-1},x_m)\} \leq \max\{d(x_n,x_{n-1}), d(x_{n-1},x_{n-2}), \ldots, d(x_{m+1},x_m)\} < \varepsilon. \]
+        This shows that \(\{x_n\}\) is a cauchy sequence.
+    \end{proof}
+
+
+\subsection{Algebra: ring of integers and residue field}
+
+    Let \(\kk\) be a non-archimedean field.
+    Then easily see that \(\{x \in \kk\colon \|x\|\leq 1\}\) is a subring of \(\kk\).
+    Moreover, it is a local ring whose maximal ideal is \(\{x \in \kk\colon \|x\| < 1\}\).
+
+    \begin{definition}\label{def:non-archimedean_field_ring_of_integers_maximal_ideal_and_residue_field}
+        Let \(\kk\) be a non-archimedean field.
+        The \emph{ring of integers} of \(\kk\) is defined as
+        \[ \kk^\circ := \{x \in \kk\colon \|x\|\leq 1\}. \]
+        Its maximal ideal is
+        \[ \kk^{\circ\circ} := \{x \in \kk\colon \|x\| < 1\}. \]
+        The \emph{residue field} of \(\kk\) is defined as
+        \[ \calk_\kk := \widetilde{\kk} := \kk^\circ / \kk^{\circ\circ}. \]
+    \end{definition}
+
+    % In this subsection, let \(\kk\) be a non-archimedean field.
+    Set \(I_{r,<} := B(0,r)\) and \(I_{r,\leq} := E(0,r)\) for each \(r \in [0,1]\).
+
+    \begin{proposition}\label{prop:ideal_of_integers_ring_of_NA_field}
+        The sets \(I_{r,<}\) and \(I_{r,\leq}\) are ideals of the ring of integers \(\kk^\circ\).
+        Conversely, any ideal of \(\kk^\circ\) is of the form \(I_{r,<}\) or \(I_{r,\leq}\) for some \(r \in (0,1)\).
+        % \Yang{To be checked.}
+    \end{proposition}
+    \begin{proof}
+        Let \(I\) be an ideal of \(\kk^\circ\).
+        Set \(r = \sup\{ |a| : a \in I \} \) (resp. \(r= \max\{ |a| : a \in I \} \) when the maximum exists).
+        Then, by definition, we have \(I \subset I_{r,<}\) (resp. \(I \subset I_{r,\leq}\)).
+        For every \(x \in \kk^\circ\) with \(|x| < r\) (resp. \(|x| \leq r\)), there exists \(a \in I\) such that \(|x| \leq |a|\).
+        Thus, \(|x/a| \leq 1\) and so \(x/a \in \kk^\circ\).
+        Since \(I\) is an ideal, we have \(x = (x/a) a \in I\).
+        Therefore, \(I_{r,<} \subset I\) (resp. \(I_{r,\leq} \subset I\)).
+    \end{proof}
+
+    \begin{proposition}\label{prop:recover_complete_non-archimedean_fields_from_projective_limits}
+        Let \(I_r\) be either \(I_{r,<}\) or \(I_{r,\leq}\) for each \(r \in (0,1)\).
+        Suppose \(\{r_n \in (0,1)\}_{n \in \bbN }\) is a decreasing sequence converging to \(0\).
+        Then the completion \(\widehat{\kk}\) of \(\kk\) is isomorphic to the projective limit
+        \[ \widehat{\kk}^\circ \cong \varprojlim_{n \in \bbN} \kk^\circ / I_{r_n}. \]
+        % \Yang{To be checked.}
+    \end{proposition}
+    \begin{proof}
+        For every \(x \in \widehat{\kk}^\circ\), there exists a cauchy sequence \(\{x_m\}_{m \in \bbN}\) in \(\kk^\circ\) converging to \(x\).
+        Since \(\{r_n\}_{n \in \bbN}\) converges to \(0\), for each \(n \in \bbN\), there exists \(M_n \in \bbN\) such that for all \(m, m' \geq M_n\), we have \(|x_m - x_{m'}| < r_n\).
+        Thus, the sequence \(\{x_m + I_{r_n}\}_{m \in \bbN}\) is eventually constant in \(\kk^\circ / I_{r_n}\).
+        Define a map
+        \[
+            \Phi : \widehat{\kk}^\circ \to \varprojlim_{n \in \bbN} \kk^\circ / I_{r_n}, \quad x \mapsto \left(\lim_{m\to \infty} x_m + I_{r_n}\right)_{n \in \bbN}.
+        \]
+        It is straightforward to verify that \(\Phi\) is a well-defined ring homomorphism.
+
+        Conversely, for every \((a_n + I_{r_n})_{n \in \bbN} \in \varprojlim_{n \in \bbN} \kk^\circ / I_{r_n}\), we can choose a representative \(a_n \in \kk^\circ\) for each \(n\).
+        We claim that the sequence \(\{a_n\}_{n \in \bbN}\) is a cauchy sequence in \(\kk^\circ\).
+        Indeed, for every \(\varepsilon > 0\), there exists \(N \in \bbN\) such that \(r_N < \varepsilon\).
+        For all \(m, n \geq N\), since \(a_n + I_{r_n}\) maps to \(a_m + I_{r_m}\) under the natural projection, we have \(|a_n - a_m| < r_N < \varepsilon\).
+        Thus, \(\{a_n\}_{n \in \bbN}\) converges to some \(x \in \widehat{\kk}^\circ\).
+        Easily see that the limit \(x\) is independent of the choice of representatives \(\{a_n\}_{n \in \bbN}\).
+        This gives a map
+        \[
+            \Psi : \varprojlim_{n \in \bbN} \kk^\circ / I_{r_n} \to \widehat{\kk}^\circ, \quad (a_n + I_{r_n})_{n \in \bbN} \mapsto \lim_{n\to \infty} a_n.
+        \]
+        Direct verification shows that \(\Psi = \Phi^{-1}\).
+    \end{proof}
+
+    \begin{corollary}\label{prop:residue_field_of_completion_is_equal_to_the_original_fields}
+        Let \(\kk\) be a non-archimedean field and \(\widehat{\kk}\) its completion.
+        Then the residue field \(\calk_{\widehat{\kk}} \cong \calk_\kk\) under the natural embedding \(\kk^\circ \hookrightarrow \widehat{\kk}^\circ\).
+    \end{corollary}
+
+    \begin{corollary}\label{prop:valuation_group_of_completion_is_equal_to_the_original_fields}
+        Let \(\kk\) be a non-archimedean field and \(\widehat{\kk}\) its completion.
+        Then the valuation group \(|\widehat{\kk}^\times|\) of \(\widehat{\kk}\) is equal to the valuation group \(|\kk^\times|\) of \(\kk\).
+    \end{corollary}
+    \begin{proof}
+        Note that 
+        \begin{align*}
+            r \in |\widehat{\kk}^\times| &\iff I_{r,<} \subsetneqq I_{r,\leq} \text{ in } \widehat{\kk}^\circ \\
+            &\iff \widehat{\kk}^\circ / I_{r,<} \to \widehat{\kk}^\circ / I_{r,\leq} \text{ is not an isomorphism} \\
+            &\iff \kk^\circ / I_{r,<} \to \kk^\circ / I_{r,\leq} \text{ is not an isomorphism} \\
+            &\iff I_{r,<} \subsetneqq I_{r,\leq} \text{ in } \kk^\circ \\
+            &\iff r \in |\kk^\times|.
+        \end{align*}
+    \end{proof}
+
+    \begin{proposition}\label{prop:locally_compact_NA_field_iff_it_is_pro-finite}
+        Let \(\kk\) be a non-archimedean field with non-trivial valuation.
+        Then \(\kk^\circ\) is totally bounded iff \(\kk^\circ / I_{r,<}\) and \(\kk^\circ / I_{r,\leq}\) are finite for each \(r \in [0,1]\).
+        Moreover, if \(\kk\) is complete, then it is locally compact iff \(\kk^\circ/I_r\) is finite for each \(r \in (0,1)\).
+        % \Yang{To be checked.}
+    \end{proposition}
+    \begin{slogan}
+        ``Locally compact \(\iff\) pro-finite.''
+    \end{slogan}
+    \begin{proof}
+        We just prove the case for \(I_r = I_{r,<}\). 
+        The case for \(I_r = I_{r,\leq}\) is similar.
+
+        Suppose that \(\kk^\circ / I_r\) is finite for each \(r \in [0,1]\).
+        Then for every \(\varepsilon > 0\), there exists \(r \in (0,1)\) such that \(r < \varepsilon\) and \(\kk^\circ / I_r\) is finite.
+        Let \(\{a_1 + I_r, \ldots, a_n + I_r\}\) be the complete set of representatives of \(\kk^\circ / I_r\).
+        Then the balls \(B(a_i,r)\) for \(i=1,\ldots,n\) cover \(\kk^\circ\).
+
+        Conversely, suppose that \(\kk^\circ/I_r\) is infinite for some \(r \in [0,1]\).
+        Then there exists an infinite set \(\{a_n\}\) with \(|a_n| \in [r,1]\) such that their images in \(\kk^\circ / I_r\) are distinct.
+        In particular, for every \(m \neq n\), we have \(|a_n - a_m| \geq r\).
+        Any subsequence of \(\{a_n\}\) is not cauchy.
+        Thus, \(\kk^\circ\) is not totally bounded.
+    \end{proof}
+
+    \begin{proposition}\label{prop:integers_ring_of_NA_field_is_noetherian_iff_discrete_valuation}
+        The ring \(\kk^\circ\) is noetherian iff \(\kk\) is a discrete valuation field.
+        % \Yang{To be revised.}
+    \end{proposition}
+    \begin{proof}
+        Note that \(|\kk^\times| \subset \bbR_{>0}\) is a multiplicative subgroup.
+        If \(\kk\) is not a discrete valuation field, then \(|\kk^\times|\) is dense in \(\bbR_{>0}\).
+        In particular, there exists a strictly ascending sequence \(r_n \in |\kk^\times| \cap (0,1)\).
+        Then the ideals \(I_{r_n,\leq}\) form a strictly ascending chain of ideals in \(\kk^\circ\).
+
+        The converse is standard since now \(\kk^\circ\) is a discrete valuation ring.
+    \end{proof}
+
+    \begin{proposition}\label{prop:locally_compact_NA_fields_iff_finite_residue_field_and_discrete_valuation}
+        Let \(\kk\) be a complete non-archimedean field. 
+        Then \(\kk\) is locally compact iff \(\kk\) is a discrete valuation field and its residue field \(\calk_\kk\) is finite.
+        % \Yang{To be checked.}
+    \end{proposition}
+    \begin{proof}
+        The necessity follows from \cref{prop:locally_compact_NA_field_iff_it_is_pro-finite}.
+        For the sufficiency, suppose that \(\kk\) is a discrete valuation field whose residue field \(\calk_\kk\) is finite.
+        Let \(\pi \in \kk^\circ\) be a uniformizer.
+        We only need to show that \(\kk^\circ/ \pi^n \kk^\circ\) is finite for each \(n \in \bbN\).
+        Note that there is an isomorphism
+        \[ \pi^{n-1} \kk^\circ / \pi^n \kk^\circ \cong \calk_\kk, \quad x + \pi^n \kk^\circ \mapsto \overline{x/\pi^{n-1}}. \]
+        Thus, by induction on \(n\), we conclude that \(\kk^\circ / \pi^n \kk^\circ\) is finite.
+        % \Yang{To be added.}
+    \end{proof}
+
+
+
+\subsection{Hensel's Lemma}
+
+\begin{theorem}[Hensel's lemma]\label{prop:Hensel_lemma}
+        Let \(\kk\) be a complete non-archimedean field and \(F(T) \in \kk^\circ[T]\) a monic polynomial.
+        Suppose that the reduction \(f(T) \in \calk_\kk[T]\) of \(F(T)\) factors as
+        \[ f(T) = g(T) h(T), \]
+        where \(g(T), h(T) \in \calk_\kk[T]\) are monic polynomials that are coprime in \(\calk_\kk[T]\).
+        Then there exist monic polynomials \(G(T), H(T) \in \kk^\circ[T]\) such that
+        \[ F(T) = G(T) H(T), \]
+        and the reductions of \(G(T), H(T)\) in \(\calk_\kk[T]\) are \(g(T), h(T)\) respectively.
+        % \Yang{To be checked.}
+    \end{theorem}
+    \begin{proof}
+        Since \(\gcd(g,h) = 1\) in \(\calk_\kk[T]\), there exist polynomials \(u(T), v(T) \in \calk_\kk[T]\) such that \(ug + vh = 1\) and \(\deg u < \deg h, \deg v < \deg g\).
+        Choose lifts \(G_0(T), H_0(T), U(T), V(T) \in \kk^\circ[T]\) of \(g(T), h(T), u(T), v(T)\) respectively preserving their degrees such that \(G_0\) and \(H_0\) are monic.
+        Then there exist \(r<1\) such that 
+        \[ U(T) G_0(T) + V(T) H_0(T) \equiv 1 \mod I_{r},\quad F(T) - G_0(T) H_0(T) \equiv 0 \mod I_{r}, \]
+        where \(I_{r} = \{ a \in \kk^\circ : |a| < r \}\).
+
+        We will construct a sequence of monic polynomials \(\{G_n(T)\}_{n \in \bbN}\) and \(\{H_n(T)\}_{n \in \bbN}\) in \(\kk^\circ[T]\) such that for each \(n \in \bbN\),
+        \[ G_n(T) \equiv G_{n-1}(T) \mod I_{r^n}, \quad H_n(T) \equiv H_{n-1}(T) \mod I_{r^n}, \]
+        and
+        \[ F(T) - G_n(T) H_n(T) \equiv 0 \mod I_{r^{n+1}}. \]
+        If we have such sequences, then their coefficients converge in the complete ring \(\kk^\circ\).
+        Let \(G(T)\) and \(H(T)\) be the limits of \(\{G_n(T)\}\) and \(\{H_n(T)\}\) respectively.
+        Then we have \(F(T) = G(T) H(T)\) and the reductions of \(G(T), H(T)\) in \(\calk_\kk[T]\) are \(g(T), h(T)\) respectively.
+
+        The case \(n=0\) is done by the above construction.
+        Now suppose that we have constructed \(G_n(T)\) and \(H_n(T)\) for some \(n \geq 0\).
+        Since \(G_n - G_0 \equiv 0 \mod I_{r}\) and \(H_n - H_0 \equiv 0 \mod I_{r}\), we have
+        \[ U G_n + V H_n = U G_0 + V H_0 + U (G_n - G_0) + V (H_n - H_0) \equiv 1 \mod I_{r}. \]
+        Set \(\Delta_n(T) = F(T) - G_n(T) H_n(T) \in I_{r^{n+1}}[T]\) and \(\epsilon_n = U \Delta_n, \delta_n = V \Delta_n \in I_{r^{n+1}}[T]\).
+        Then we have 
+        \begin{align*}
+            (G_n + \epsilon_n)(H_n + \delta_n) - F_n &= G_n H_n + G_n \delta_n + H_n \epsilon_n + \epsilon_n \delta_n - F_n \\
+            &= (U G_n + V H_n - 1) \Delta_n + \epsilon_n \delta_n \in I_{r^{n+2}}[T].
+        \end{align*}
+        Thus, we can set
+        \[ G_{n+1}(T) = G_n(T) + \epsilon_n(T), \quad H_{n+1}(T) = H_n(T) + \delta_n(T). \]
+        This finishes the induction.
+        % \Yang{To be added.}
+    \end{proof}
+
+    \begin{corollary}\label{prop:Hensel_lemma_to_solve_polynomial}
+        Let \(\kk\) be a complete non-archimedean field and \(F(T) \in \kk^\circ[T]\) a monic polynomial.
+        Suppose that the reduction \(f(T) \in \calk_\kk[T]\) of \(F(T)\) has a simple root \(a \in \calk_\kk\).
+        Then there exists a root \(\alpha \in \kk^\circ\) of \(F(T)\) whose reduction is \(a\).
+        % \Yang{To be revised.}
+    \end{corollary}
+    \begin{proof}
+        Since \(a\) is a simple root of \(f(T)\), we have the factorization \(f(T) = (T - a) h(T)\) for some monic polynomial \(h(T) \in \calk_\kk[T]\) with \(h(a) \neq 0\).
+        Then the result follows from \cref{prop:Hensel_lemma}.
+        % \Yang{To be added.}
+    \end{proof}
+
+
+\subsection{Newton polygons}
+
+    \Yang{To be filled.}

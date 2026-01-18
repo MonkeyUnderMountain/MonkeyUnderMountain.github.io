@@ -1,0 +1,384 @@
+\section{Normed rings and modules}
+
+\subsection{Semi-normed algebraic structures}
+
+    \begin{definition}\label{def:semi-normed_abelian_group_rings_modules_and_algebras}
+        Let \(G\) be an abelian group.
+        A \emph{semi-norm} on \(G\) is a function \(\|\cdot\|: G \to \bbR_{\geq 0}\) such that
+        \begin{itemize}
+            \item \(\|0\| = 0\);
+            \item \(\forall x,y \in G, \|x + y\| \leq \|x\| + \|y\|\).
+        \end{itemize}
+        Suppose that \(R\) is a ring (commutative with unity) and \(\|\cdot\|\) is a semi-norm on the underlying abelian group of \(R\).
+        We further require that
+        \begin{itemize}
+            \item \(\|1\| = 1\);
+            \item \(\forall x,y \in R, \|xy\| \leq \|x\|\|y\|\).
+        \end{itemize}
+        Suppose that \((M,\|\cdot\|_M)\) is an \(R\)-module and \(\|\cdot\|_M\) is a semi-norm on the underlying abelian group of \(M\).
+        We further require that 
+        \begin{itemize}
+            \item \(\forall a \in R, x \in M, \|ax\|_M \leq \|a\| \|x\|_M\).
+        \end{itemize}
+        Suppose that \((A, \|\cdot\|_A)\) is an \(R\)-algebra and \(\|\cdot\|_A\) is a semi-norm on the underlying \(R\)-module of \(A\).
+        We further require that this semi-norm is a semi-norm on the underlying ring of \(A\).
+
+        If we further have \(\forall x, \|x\| = 0 \implies x = 0\), then we say \(\|\cdot\|\) is a \emph{norm} on the corresponding algebraic structure.
+
+        If we replace the triangle inequality \(\|x + y\| \leq \|x\| + \|y\|\) by the stronger inequality \(\|x + y\| \leq \max(\|x\|, \|y\|)\), then we say \(\|\cdot\|\) is a \emph{non-archimedean} semi-norm.
+    \end{definition}
+
+    % \begin{definition}\label{def:norm_on_algebraic_structure}
+    %     Let \(A\) be an abelian group (or ring, \(R\)-module, \(R\)-algebra) equipped with a semi-norm \(\|\cdot\|\).
+    %     If \(\forall x \in A, \|x\| = 0 \iff x = 0\), we say \(\|\cdot\|\) is a \emph{norm}.
+    % \end{definition}
+
+    % \Yang{Note that this definition of semi-normed module is a little different of \cite{Ber90}}
+
+    \begin{definition}\label{def:bounded_semi-norm}
+        Let \(\|\cdot\|_1\) and \(\|\cdot\|_2\) be two semi-norms on an abelian group (or ring, \(R\)-module, \(R\)-algebra) \(A\).
+        We say \(\|\cdot\|_1\) is \emph{bounded} by \(\|\cdot\|_2\) if there exists a constant \(C > 0\) such that \(\forall x \in A, \|x\|_1 \leq C\|x\|_2\).
+        If \(\|\cdot\|_1\) and \(\|\cdot\|_2\) are bounded by each other, we say they are \emph{equivalent}.
+    \end{definition}
+
+    \begin{remark}\label{rmk:semi-norms_bounded_by_each_other_induces_the_same_topologies}
+        Equivalent semi-norms induce the same topology on \(A\).
+        However, the converse is not true in general.
+        Compare with \cref{prop:equivalent_of_absolute_values_and_topology_and_unit_disk}.
+
+        \Yang{what about on a module?}
+    \end{remark}
+
+    \begin{definition}\label{def:residue_semi-norm}
+        Let \(M\) be a semi-normed abelian group (or \(R\)-module) and \(N \subseteq M\) be a subgroup (or \(R\)-submodule).
+        The \emph{residue semi-norm} on the quotient group \(M/N\) is defined as
+        \[
+            \|x + N\|_{M/N} = \inf_{y \in N} \|x + y\|_M.
+        \]
+        % For case of rings or \(R\)-algebras, we multiply a constant to make sure that \(\|1 + N\|_{M/N} = 1\) if necessary.
+    \end{definition}
+
+    Unless otherwise specified, we always equip the quotient \(M/N\) with the residue semi-norm.
+
+    \begin{remark}\label{rmk:residue_semi-norm_is_a_norm_iff_N_is_closed}
+        The residue semi-norm is a norm if and only if \(N\) is closed in \(M\).
+    \end{remark}
+
+    \begin{definition}\label{def:bounded_and_admissible_homomorphism}
+        Let \(M\) and \(N\) be two semi-normed abelian groups (or rings, \(R\)-modules, \(R\)-algebras).
+        A homomorphism \(f: M \to N\) is called \emph{bounded} if there exists a constant \(C > 0\) such that \(\forall x \in M, \|f(x)\|_N \leq C\|x\|_M\).
+        
+        A bounded homomorphism \(f: M \to N\) is called \emph{admissible} if the induced isomorphism \(M/\ker f \to \Image f\) is an isometry, i.e., \(\forall x \in M, \|f(x)\|_N = \|x\|_{M/\ker f}\).
+    \end{definition}
+
+    \begin{definition}\label{def:multiplicative_and_power_multiplicative_semi-norm}
+        A semi-norm \(\|\cdot\|\) on a ring \(R\) is called \emph{multiplicative} if \(\forall x,y \in R, \|xy\| = \|x\|\|y\|\).
+        It is called \emph{power-multiplicative} if \(\forall x \in R, \|x^n\| = \|x\|^n\) for all integers \(n \geq 1\).
+        A multiplicative norm sometimes is called a \emph{(multiplicative) valuation} or an \emph{absolute value}.
+    \end{definition}
+
+    \begin{example}\label{eg:trivial_normed_rings}
+        Let \(R\) be arbitrary ring.
+        The \emph{trivial norm} on \(R\) is defined as \(\|x\| = 0\) if \(x = 0\) and \(\|x\| = 1\) if \(x \neq 0\).
+        The ring \(R\) equipped with the trivial norm is a valuation ring.
+    \end{example}
+
+    \begin{example}\label{eg:valuation_rings_as_normed_rings}
+        A valuation field \((\kk, |\cdot|)\) can be viewed as a valuation ring.
+    \end{example}
+
+    \begin{example}\label{eg:Z_with_usual_absolute_value_as_normed_rings}
+        Let \(|\cdot| = |\cdot|_{\infty}\) be the usual absolute value on \(\bbZ\).
+        Then \((\bbZ, |\cdot|)\) is a valuation ring.
+    \end{example}
+
+    \begin{example}\label{eg:ring_of_continuous_function_as_normed_rings}
+        Let \(X\) be a compact Hausdorff topological space.
+        The ring \(C(X, \bbR)\) of continuous real-valued functions on \(X\) equipped with the norm \(\|f\| = \sup_{x \in X} |f(x)|\) is a normed ring.
+        Its norm is power-multiplicative but not multiplicative in general.
+        It is worth mentioning that the Gelfand-Kolmogorov Theorem saying that we can recover \(X\) from the normed ring \(C(X, \bbR)\).
+    \end{example}
+
+    \begin{definition}\label{def:complete_semi-normed_abelian_group}
+        A (semi-)norm on an abelian group \(M\) induces a (pseudo-)metric \(d(x,y) = \|x - y\|\) on \(M\).
+        A (semi-)normed abelian group \(M\) is called \emph{complete} if it is complete as a (pseudo-)metric space.
+    \end{definition}
+
+    \begin{definition}\label{def:banach_ring}
+        A \emph{banach ring} is a complete normed ring.
+    \end{definition}
+
+    \begin{proposition}\label{prop:residue_norm_is_a_norm_for_banach_rings}
+        Let \(R\) be a banach ring and \(I \subseteq R\) be a closed ideal.
+        Then the residue norm on the quotient ring \(R/I\) is a norm for rings.
+    \end{proposition}
+    \begin{proof}
+        \Yang{To be added.}
+    \end{proof}
+
+    \begin{proposition}\label{prop:invertible_elements_form_an_open_subset_of_banach_rings}
+        Let \(R\) be a banach ring.
+        Then the group of invertible elements \(R^\times\) is an open subset of \(R\).
+    \end{proposition}
+    \begin{proof}
+        \Yang{To be added.}
+    \end{proof}
+
+    \begin{corollary}\label{prop:maximal_ideal_of_banach_ring_is_closed}
+        Let \(R\) be a banach ring.
+        Then every maximal ideal of \(R\) is closed.
+    \end{corollary}
+    \begin{proof}
+        \Yang{To be added.}
+    \end{proof}
+
+    \begin{definition}\label{def:completion_of_normed_algebraic_structures}
+        Let \((A, \|\cdot\|_A)\) be a normed algebraic structure, e.g., a normed abelian group, a normed ring, or a normed module.
+        The \emph{completion} of \(A\), denoted by \(\widehat{A}\), is the completion of \(A\) as a metric space.
+        Since \(A\) is dense in its completion and the algebraic operations are uniformly continuous,
+        the algebraic operations on \(A\) can be uniquely extended to the completion.
+    \end{definition}
+    
+    Let \(R\) be a normed ring and \(M,N\) be semi-normed \(R\)-modules.
+    There is a natural semi-norm on the tensor product \(M \otimes_R N\) defined as
+    \[
+        \|z\|_{M \otimes_R N} = \inf \left\{ \sum_{i} \|x_i\|_M \|y_i\|_N : z = \sum_i x_i \otimes y_i, x_i \in M, y_i \in N \right\}.
+    \]
+
+    \begin{definition}\label{def:complete_tensor_product}
+        Let \(R\) be a banach ring and \(M,N\) complete semi-normed \(R\)-modules.
+        The \emph{complete tensor product} \(M \widehat{\otimes}_R N\) is defined as the completion of the semi-normed \(R\)-module \(M \otimes_R N\).
+    \end{definition}
+
+    \begin{construction}\label{eg:ring_of_absolutely_convergent_power_series_as_banach_rings}
+        Let \(R\) be a banach ring and \(r > 0\) be a real number.
+        We define the \emph{ring of absolutely convergent power series} over \(\kk\) with radius \(r\) as
+        \[ R\left<T/r\right> \coloneqq \left\{\sum_{n=0}^{\infty} a_n T^n \in R[[T]] : \sum_{n=0}^{\infty} \|a_n\| r^n < \infty \right\}. \]
+        Equipped with the norm \(\|\sum_{n=0}^{\infty} a_n T^n\| = \sum_{n=0}^{\infty} \|a_n\| r^n\), the ring \(R\left<T/r\right>\) is a banach ring.
+
+        When \(R = \kk\) is a 
+        \Yang{To be checked.}
+    \end{construction}
+
+    \begin{example}\label{eg:}
+        \Yang{Example of complete tensor product.}
+    \end{example}
+
+
+\subsection{Spectral radius}
+
+    \begin{definition}\label{def:spectral_radius_on_banach_rings}
+        Let \(R\) be a banach ring.
+        For each \(f \in R\), the \emph{spectral radius} of \(f\) is defined as
+        \[
+            \rho(f) = \lim_{n \to \infty} \|f^n\|^{1/n}.
+        \]
+    \end{definition}
+
+    Since \(\|\cdot\|\) is submultiplicative, the limit defining \(\rho(f)\) exists and equals to \(\inf_{n \geq 1} \|f^n\|^{1/n}\) by Fekete's Subadditive Lemma.
+
+    \begin{proposition}\label{prop:spectral_radius_defines_a_power-multiplicative_semi-norm}
+        Let \((R,\|\cdot\|)\) be a banach ring.
+        The spectral radius \(\rho(\cdot)\) defines a power-multiplicative semi-norm on \(R\) that is bounded by \(\|\cdot\|\).
+    \end{proposition}
+    \begin{proof}
+        \Yang{To be continued.}
+    \end{proof}
+    
+    \begin{definition}\label{def:uniform_banach_ring}
+        A banach ring \(R\) is called \emph{uniform} if its norm is power-multiplicative.
+    \end{definition}
+
+    \begin{definition}\label{def:uniformization_of_banach_rings}
+        Let \(R\) be a banach ring.
+        The \emph{uniformization} of \(R\), denoted by \(R \to R^u\), is the banach ring with the universal property among all bounded homomorphisms from \(R\) to uniform banach rings.
+        \Yang{To be continued.}
+    \end{definition}
+
+    \begin{definition}\label{def:quasi_nilpotent_element}
+        Let \(R\) be a banach ring.
+        An element \(f \in R\) is called \emph{quasi-nilpotent} if \(\rho(f) = 0\).
+        All quasi-nilpotent elements of \(R\) form an ideal, denoted by \(\Qnil(R)\).
+    \end{definition}
+
+    \begin{proposition}\label{prop:the_uniformization_of_banach_rings_given_by_spectral_radius}
+        Let \(R\) be a banach ring.
+        The completion of \(R/\Qnil(R)\) with respect to the spectral radius \(\rho(\cdot)\) is the uniformization of \(R\).
+    \end{proposition}
+    \begin{proof}
+        \Yang{To be continued.}
+    \end{proof}
+
+    \begin{example}\label{eg:uniformization_of_ring_of_absolutely_convergent_series}
+        Let \(R\) be a banach ring and \(r > 0\) be a real number.
+        Consider the ring of absolutely convergent power series \(R\left<T/r\right>\) defined in \cref{eg:ring_of_absolutely_convergent_power_series_as_banach_rings}.
+        For each \(f = \sum_{n=0}^{\infty} a_n T^n \in R\left<T/r\right>\), we have
+        \[            \rho(f) = \max_{n \geq 0} \|a_n\| r^n. \]
+        Thus the uniformization of \(R\left<T/r\right>\) is given by the ring
+        \[ R\left\{T/r\right\} = \left\{\sum_{n=0}^{\infty} a_n T^n \in R[[T]] : \lim_{n \to \infty} \|a_n\| r^n = 0 \right\}, \]
+        equipped with the norm \(\|\sum_{n=0}^{\infty} a_n T^n\| = \max_{n \geq 0} \|a_n\| r^n\).
+        \Yang{To be revised.}
+    \end{example}
+
+
+    \Yang{To be continued...}
+    
+
+\subsection{Non-archimedean case}
+
+     \begin{notation}\label{notation:mult-label_for_Tate_algebra}
+        Let \(T = (T_1, \ldots, T_n)\) be a tuple of \(n\) indeterminates, \(r = (r_1, \ldots, r_n)\) be a tuple of \(n\) positive real numbers, and \(\alpha = (\alpha_1, \ldots, \alpha_n) \in \bbN^n\) be a multi-index.
+        We use the following notations:
+        \begin{itemize}
+            \item \(T^\alpha := T_1^{\alpha_1} T_2^{\alpha_2} \cdots T_n^{\alpha_n}\) and \(r^\alpha := r_1^{\alpha_1} r_2^{\alpha_2} \cdots r_n^{\alpha_n}\);
+            \item \(\underline{T/r} := (T_1/r_1, T_2/r_2, \ldots, T_n/r_n)\);
+            \item \(|\alpha| := \alpha_1 + \alpha_2 + \cdots + \alpha_n\);
+            \item \(\alpha \leq_{\text{total}} \beta\) if and only if for all \(i = 1, \ldots, n\), we have \(\alpha_i \leq \beta_i\);
+            % \item \(E(x,\underline{r}) = \{y \in \kk^n \mid \|y_i - x_i\| \leq r_i, i = 1, \ldots, n\}\) and \(B(x,\underline{r}) = \{y \in \kk^n \mid \|y_i - x_i\| < r_i, i = 1, \ldots, n\}\) for \(x = (x_1, \ldots, x_n) \in \kk^n\);
+            \item Let \(\{x_{\alpha}\}_{\alpha \in \bbN^n}\) be a set of elements in a metric space \(X\) indexed by multi-indices \(\alpha \in \bbN^n\).
+                We say that \(\lim_{|\alpha| \to +\infty} x_\alpha = x \in X\) if for every \(\varepsilon > 0\), there exists \(N \in \bbN\) such that for all \(\alpha \in \bbN^n\) with \(|\alpha| > N\), we have \(d(x_\alpha, x) < \varepsilon\).
+        \end{itemize}
+    \end{notation}
+
+    \begin{definition}\label{def:Tate_algebra_over_banach_ring}
+        Let \(R\) be a non-archimedean banach ring.
+        Let \(T = (T_1, \ldots, T_n)\) be a tuple of \(n\) indeterminates and \(r = (r_1, \ldots, r_n)\) be a tuple of \(n\) positive real numbers.
+        The \emph{Tate algebra} (or \emph{ring of restricted power series}) is defined as 
+        \[
+            R\langle \underline{r^{-1}T} \rangle := R \{ \underline{r^{-1}T} \} := \left\{ \sum_{\alpha \in \bbN^n} a_\alpha T^\alpha \mid a_\alpha \in R, \lim_{|\alpha| \to +\infty} \|a_\alpha\| r^\alpha = 0 \right\}.
+        \]
+    \end{definition}
+
+    \begin{proposition}\label{prop:Tate_algebra_is_a_banach_algebra_over_R}
+        Let \(R\) be a non-archimedean banach ring.
+        Then the Tate algebra \(R\{ \underline{T/r} \} \) is a non-archimedean multiplicative banach \(R\)-algebra with respect to the \emph{gauss norm}
+        \[
+            \left\| \sum_{\alpha \in \bbN^n} a_\alpha T^\alpha \right\| := \sup_{\alpha \in \bbN^n} \|a_\alpha\|r^\alpha = \max_{\alpha \in \bbN^n} \|a_\alpha\|r^\alpha.
+        \]
+    \end{proposition}    
+    % \Yang{For the definition of banach ring, see}
+    \begin{proof}
+        The proof splits into several parts.
+        Every parts is straightforward and standard.
+
+        \begin{step}\label{step_in_prop:Tate_algebra_is_a_banach_algebra_over_R:R-algebra}
+            We first show that \(R\{ \underline{T/r} \} \) is a \(R\)-algebra.
+        \end{step}
+
+        Easily to see that it is closed under addition and scalar multiplication.
+        Suppose that \(f = \sum_{\alpha \in \bbN^n} a_\alpha T^\alpha\) and \(g = \sum_{\alpha \in \bbN^n} b_\alpha T^\alpha\) are two nonzero elements in \(R\{ \underline{T/r} \} \).
+        Given \(\varepsilon > 0\), there exists \(N \in \bbN\) such that for all \(|\alpha| > N\), we have \(\|a_\alpha\| r^\alpha < \varepsilon/\|g\|\) and \(\|b_\alpha\| r^\alpha < \varepsilon/\|f\|\).
+        For any \(|\gamma| > 2N\), we have
+        \[
+            \left\| \sum_{\alpha + \beta = \gamma} a_\alpha b_\beta \right\| r^\gamma \leq \max_{\alpha + \beta = \gamma} \|a_\alpha\| r^\alpha \cdot \|b_\beta\| r^\beta < \max\left\{ \frac{\varepsilon}{\|g\|} \|b_{\beta}\|r^\beta, \frac{\varepsilon}{\|f\|} \|a_{\alpha}\|r^\alpha \right\} \leq \varepsilon.
+        \]
+        Hence \(f \cdot g \in R\{ \underline{T/r} \} \) and it shows that \(R\{ \underline{T/r} \} \) is a \(R\)-algebra.
+
+        \begin{step}\label{step_in_prop:Tate_algebra_is_a_banach_algebra_over_R:normed_R-algebra}
+            Show that the gauss norm is a non-archimedean norm on \(R\{ \underline{T/r} \} \).
+        \end{step}
+
+        The linearity and positive-definiteness of the gauss norm are direct from the definition.
+        We have
+        \[
+            \|f + g\| = \sup_{\alpha \in \bbN^n} \|a_\alpha + b_\alpha\| r^\alpha \leq \sup_{\alpha \in \bbN^n} \max\{\|a_\alpha\| + \|b_\alpha\|\} r^\alpha \leq \max\{\|f\|, \|g\|\}
+        \]
+        and 
+        \begin{align*}
+            \| f \cdot g \| &= \left\| \sum_{\gamma \in \bbN^n} \left( \sum_{\alpha + \beta = \gamma} a_\alpha b_\beta \right) T^\gamma \right\| = \sup_{\gamma \in \bbN^n} \left\| \sum_{\alpha + \beta = \gamma} a_\alpha b_\beta \right\| r^\gamma \\
+            &\leq \sup_{\gamma \in \bbN^n} \max_{\alpha + \beta = \gamma} \|a_\alpha\| \|b_\beta\| r^\alpha r^\beta = \|a_{\alpha_0}\| r^{\alpha_0} \cdot \|b_{\beta_0}\| r^{\beta_0} \leq \|f\| \cdot \|g\|.
+        \end{align*}
+        These show that Tate algebra with the gauss norm is a non-archimedean normed \(\kk\)-algebra.
+
+        \begin{step}\label{step_in_prop:Tate_algebra_is_a_banach_algebra_over_k:multiplicativity}
+            Show that the gauss norm is multiplicative.
+        \end{step}
+
+        Suppose that \(\|f\| = \|a_{\alpha_1}\| r^{\alpha_1}\) and \(\|a_{\alpha}\|r^\alpha < \|f\|\) for all \(\alpha <_{\text{total}} \alpha_1\).
+        Similar to \(\|b_{\beta_1}\| r^{\beta_1}\).
+        Then we have
+        \[
+            \|f\| \cdot \|g\| = \|a_{\alpha_1}\| r^{\alpha_1} \cdot \|b_{\beta_1}\| r^{\beta_1} = \max_{\alpha + \beta = \alpha_1 + \beta_1} \|a_\alpha\| \|b_\beta\| r^\alpha r^\beta = \left\| \sum_{\alpha + \beta = \alpha_1 + \beta_1} a_\alpha b_\beta \right\| r^{\alpha_1 + \beta_1} \leq \| f \cdot g \|,
+        \]
+        where the third equality holds since \((\alpha_1, \beta_1)\) is the unique pair such that \(\|a_{\alpha_1}\| r^{\alpha_1} \cdot \|b_{\beta_1}\| r^{\beta_1}\) is maximized and by \cref{prop:all_triangles_in_ultra-metric_space_are_isosceles}.
+        Thus the gauss norm is multiplicative.
+
+        \begin{step}\label{step_in_prop:Tate_algebra_is_a_banach_algebra_over_R:completeness}
+            Finally show that \(R\{ \underline{T/r} \} \) is complete with respect to the gauss norm.
+        \end{step}
+
+        Let \(\{f_m = \sum a_{\alpha,m}T^\alpha\}\) be a cauchy sequence in \(R\{ \underline{T/r} \} \).
+        We have
+        \[ \|a_{\alpha,m} - a_{\alpha,l}\| r^\alpha \leq \|f_m - f_l\|. \]
+        Thus for each \(\alpha \in \bbN^n\), the sequence \(\{a_{\alpha,m}\}\) is a cauchy sequence in \(R\).
+        Since \(R\) is complete, set \(a_\alpha := \lim_{m \to +\infty} a_{\alpha,m}\) and \(f = \sum_{\alpha \in \bbN^n} a_\alpha T^\alpha\).
+        Given \(\varepsilon > 0\), there exists \(M \in \bbN\) such that for all \(m,l > M\), we have \(\|f_m - f_l\| < \varepsilon\).
+        Fixing \(m > M\), there exists \(N \in \bbN\) such that for all \(|\alpha| > N\), we have \(\|a_{\alpha,m}\| r^\alpha < \varepsilon\).
+        Hence for all \(|\alpha| > N\) and \(l > M\), we have
+        \[ \|a_{\alpha,l}\| r^\alpha \leq \|a_{\alpha,l} - a_{\alpha,m}\| r^\alpha + \|a_{\alpha,m}\| r^\alpha < 2\varepsilon. \]
+        Taking \(l \to +\infty\), we have \(\|a_\alpha\| r^\alpha \leq 2\varepsilon\) for all \(|\alpha| > N\).
+        It follows that \(f \in \kk\{ \underline{T/r} \} \).
+
+        For every \(\varepsilon > 0\), there exists \(N \in \bbN\) such that for all \(m,l > N\), we have \(\|f_m - f_l\| < \varepsilon\).
+        Thus for all \(\alpha \in \bbN^n\) and \(m,l > N\), we have
+        \[ \|a_{\alpha,m} - a_{\alpha,l}\| r^\alpha \leq \|f_m - f_l\| < \varepsilon. \]
+        Taking \(l \to +\infty\), we have \(\|a_{\alpha,m} - a_\alpha\| r^\alpha \leq \varepsilon\) for all \(m > N\).
+        It follows that
+        \[ \|f - f_m\| = \sup_{\alpha \in \bbN^n} \|a_\alpha - a_{\alpha,m}\| r^\alpha \leq \varepsilon \]
+        for all \(m > N\).
+        % \Yang{To be checked, the original version is for a field.}
+    \end{proof}
+
+    % \subsection{Reduction}
+ 
+    \begin{definition}\label{def:reduction_ring_of_nonarchimedean_banach_ring}
+        Let \(R\) be a non-archimedean banach ring.
+        We define 
+        \[
+            R^\circ = \{ f \in R : \rho(f) \leq 1 \}, \quad R^{\circ \circ} = \{ f \in R : \rho(f) < 1 \}.
+        \]
+        The \emph{reduction} of \(R\) is defined as the quotient ring
+        \[ \widetilde{R} = R^\circ / R^{\circ \circ}. \]
+    \end{definition}
+
+    For a non-archimedean field \(\kk\), its reduction ring \(\widetilde{\kk} = \calk_\kk\) is just the residue field of its valuation ring.
+
+    \begin{example}\label{eg:reduction_ring_of_trivial_normed_rings}
+        Let \(R\) be a ring equipped with the trivial norm.
+        Then we have \(R^\circ = R\) and \(R^{\circ \circ} = \nil(R)\).
+    \end{example}
+
+    \begin{example}\label{eg:reduction_ring_of_standard_tate_algebra_over_a_banach_ring}
+        Let \(R\) be a non-archimedean banach ring and \(A = R\{T\}\) be the Tate algebra in one variable over \(R\).
+        %  field and \(A = \kk\{ \underline{T} \}\) be a Tate algebra over \(\kk\).
+        Then we have
+        \[ A^\circ = \left\{ \sum_{n\geq 0} a_n T^n : |a_n| \leq 1 \text{ for all } n \in \bbN \right\}  = R^\circ \{ T \}, \]
+        and
+        \[ A^{\circ \circ} = \left\{ \sum_{n\geq 0} a_n T^n : |a_n| < 1 \text{ for all } n \in \bbN \right\}  = R^{\circ \circ} \{ T \}. \]
+        Since the norm of items in a restricted power series will tend to \(0\), we have
+        \[ \widetilde{A} = \widetilde{R} [\underline{T}]. \] 
+    \end{example}
+
+
+    \begin{example}\label{eg:reduction_ring_of_general_tate_algebra_over_a_banach_ring}
+        Let \(R\) is a multiplicative non-archimedean banach ring.
+        Set 
+        \[\sqrt{|R|^{-1}} = \{ r \in \bbR_{>0} : r^{-n} \in |R| \text{ for some } n \in \bbN_{>0} \}.\]
+        Fix \(r \in \bbR_{>0}^n\), consider the Tate algebra \(A = R\{T/r\}\).
+        
+        Suppose that \(r \in \sqrt{|R|^{-1}}\).
+        Let \(n\) be the minimal positive integer such that \(r^n \in |R|^{-1}\) and 
+        \[ \widetilde{M}_k:=\{a \in R: |a| = r^{-nk}\}/\{a \in R: |a| < r^{-nk}\}. \]
+        For \(a_m T^m\) with \(n \not\mid m\), we have\( \|a_m T^m\| = |a_m| r^m \leq 1 \implies |a_m|r^m < 1\).
+        Hence 
+        \[ \widetilde{R\{T/r\}} = \widetilde{R} \oplus \widetilde{M}_1 T^n \oplus \widetilde{M}_2 T^{2n} \oplus \widetilde{M}_3 T^{3n} \oplus \cdots. \]
+        In case \(R = \kk\) is a non-archimedean field, we have \(\widetilde{M}_k \cong \widetilde{\kk}\) by choosing an element \(c \in \kk\) with \(|c| = r^{-n}\).
+        Hence 
+        \[ \widetilde{\kk\{T/r\}} \cong \calk_\kk[T^n]. \]
+
+        Suppose that \(r \notin \sqrt{|R|^{-1}}\).
+        Then for every \(\|a_n T^n\| = a_n r^n \leq 1\), we have \(|a_n| < 1\).
+        It follows that
+        \[ \widetilde{R\{T/r\}} = \widetilde{R}. \]
+        % \Yang{To be continued.}
+    \end{example}

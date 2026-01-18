@@ -1,0 +1,120 @@
+\section{Elementary functions}
+
+\subsection{Exponential and logarithmic functions}
+
+    Fix a prime number \(p\) in the following and consider \(\kk\) being a complete non-archimedean field with \(|p| = p^{-1}\).
+    Let \(r_p := p^{-1/(p-1)}\).
+
+    \begin{construction}\label{constr:exponential_and_logarithmic_functions}
+        The \emph{exponential function} \(\exp\) is defined by the power series
+        \[ \exp(x) := \sum_{n=0}^{+\infty} \frac{x^n}{n!}. \]
+        The \emph{logarithmic function} \(\log\) is defined by the power series
+        \[ \log(1+x) := \sum_{n=1}^{+\infty} (-1)^{n+1} \frac{x^n}{n}. \]
+        % \Yang{To be checked.}
+    \end{construction}
+
+
+    % \Yang{Exponential, logarithmic, and the interpolation functions.}
+
+    \begin{proposition}\label{prop:fundamental_properties_of_p-adic_exp_and_log}
+        We have the following properties:
+        \begin{enumerate}
+            \item the exponential function \(\exp\) converges on the open disk \(B(0, r_p)\);
+            \item the logarithmic function \(\log\) converges on the open disk \(B(1, 1)\);
+            \item \(|\exp(x)-1| = |x|\) and \(|\log(1+x)| = |x|\) for all \(x \in B(0,r_p)\) or \(x \in B(1,r_p)\) respectively;
+            \item endow \(B(0, r_p)\) with the group structure induced by addition in \(\kk\) and \(B(1, r_p)\) with the group structure induced by multiplication in \(\kk\), then \(\exp: B(0, r_p) \to B(1, r_p)\) is an isometric group isomorphism with inverse \(\log: B(1, r_p) \to B(0, r_p)\).
+        \end{enumerate}
+        % \Yang{To be checked.}
+    \end{proposition}
+    \begin{proof}
+        For the convergent radius of exponential function, 
+        by \cref{lem:p-valuation_of_factorial}, 
+        noting that 
+        \[\liminf_{n \to +\infty} \frac{s_n}{n} = 0,\]
+        we have
+        \[ \limsup_{n \to +\infty} |n!|_p^{-1/n} = \limsup_{n \to +\infty} p^{v_p(n!)/n} = p^{\limsup_{n \to +\infty} (1-(s_n/n))/(p-1)} = p^{1/(p-1)}. \]
+        That is, the convergent radius of the exponential function is \(r_p = p^{-1/(p-1)}\).
+        Considering \(n = p^m\), we have
+        \[ |p^m!|_p r_p^n = p^{(p^m - 1)/(p-1)} \cdot p^{-p^m/(p-1)} = p^{-1/(p-1)} \neq 0.\]
+        Hence the convergent domain of the exponential function is \(B(0, r_p)\).
+
+        For the logarithmic function, we have
+        \[ \limsup_{n \to +\infty} |n|_p^{-1/n} = \limsup_{n \to +\infty} p^{v_p(n)/n} = p^0 = 1. \]
+        And \(|1/(np+1)|_p = 1\) for all \(n \in \bbN\).
+        Thus, the convergent domain of the logarithmic function is \(B(1, 1)\).
+
+        For \(x \in B(0,r_p)\), we have
+        \[ \left|\frac{x^{n-1}}{n!}\right|_p < r_p^{n-1} \cdot p^{v_p(n!)} = p^{v_p(n!)-(n-1)/(p-1)} \leq 1.\]
+        Hence \(|x^n/n!|_p < |x|_p\) for all \(n \geq 2\) and thus
+        \[ |\exp(x) - 1|_p = \left| \sum_{n=1}^{+\infty} \frac{x^n}{n!} \right|_p = |x|_p. \]
+        For \(x+1 \in B(1,r_p)\), setting \(|x|_p = p^{-t}\) with \(t \geq 1/(p-1)\), we have
+        \[ \left|\frac{x^{n-1}}{n}\right|_p = p^{v_p(n)-t(n-1)} \leq p^{v_p(n!) - t(n-1)} \leq p^{(1/(p-1)-t)(n-1)} \leq 1, \quad \forall n \geq 2. \]
+        Similarly, we have \(|x^{n}/n|_p < |x|_p\) and hence \(|\log(1+x)|_p = |x|_p\).
+        
+        The identities
+        \begin{align*}
+            \exp(X+Y) &= \exp(X) \cdot \exp(Y), \\
+            \log((1+X)(1+Y)) &= \log(1+X) + \log(1+Y),\\
+            \exp(\log(1+X)) &= 1 + X, \\
+            \log(\exp(X)) &= X
+        \end{align*}
+        are purely formal and holds for indeterminates \(X\) and \(Y\).
+        Easy to check that \(\exp(X+Y), \log(1+X)+\log(1+Y) \in \kk\{X/r_p,Y/r_p\}\).
+        Thus, the assertion (d) follows from (c) and \cref{prop:Tate_algebra_as_functions_ring}.
+        % \Yang{To be added.}
+    \end{proof}
+
+    Recall the following useful lemma regarding the \(p\)-adic valuation of factorials.
+
+    \begin{lemma}\label{lem:p-valuation_of_factorial}
+        Let \(p\) be a prime number and \(n \in \bbN\), write \(n = \sum_{k=0}^m a_k p^k\) in the \(p\)-adic expansion and set \(s_n := \sum_{k=0}^m a_k\).
+        Then
+        \[ v_p(n!) = \frac{n - s_n}{p-1}. \]
+    \end{lemma}
+    \begin{proof}
+        \Yang{To be added.}
+    \end{proof}
+
+    \begin{corollary}\label{cor:structure_of_multiplication_group_of_k*}
+        Let \(\kk\) be a complete non-archimedean field with \(|p| = p^{-1}\).
+        The multiplication group 
+        \[ \kk^\times \cong |\kk^\times| \times \calk_\kk^\times \times \kk^{\circ\circ} \]
+        where \(\calk_\kk\) is the residue field of \(\kk\).
+        \Yang{To be revised.}
+    \end{corollary}
+    \begin{proof}
+        \Yang{To be added.}
+    \end{proof}
+
+    \begin{proposition}\label{prop:log_on_the_ball_B_11}
+        Suppose that \(\kk = \kkk\) is algebraically closed.
+        The logarithmic function \(\log\) defines a surjective group homomorphism \(1 + \kkk^{\circ\circ} \to \kkk\) with kernel the group \(\mu_{p^\infty}\) of all \(p\)-power roots of unity.
+        \Yang{To be checked.}
+    \end{proposition}
+    \begin{proof}
+        
+    \end{proof}
+
+    \Yang{continuation of exponential and logarithmic}
+
+\subsection{Mahler series}
+
+    \begin{notation}\label{notation:binomial_polynomial}
+        We use \(\binom{x}{n}\) to denote the \emph{binomial polynomial} defined by
+        \[ \binom{x}{n} := \frac{x(x-1)(x-2) \cdots (x-n+1)}{n!}. \]
+    \end{notation}
+
+    \begin{definition}\label{def:Mahler_series}
+        Fix a sequence \(\{a_n\}_{n \in \bbN}\) in \(\kk\).
+        The \emph{Mahler series} associated to \(\{a_n\}\) is defined to be the formal series
+        \[ f(x) := \sum_{n=0}^{+\infty} a_n \binom{x}{n}. \]
+        \Yang{To be checked.}
+    \end{definition}
+
+    \begin{proposition}\label{prop:convergence_of_Mahler_sequence}
+        
+    \end{proposition}
+
+    \begin{theorem}\label{thm:analyticity_of_Mahler_series}
+        The series converges.
+    \end{theorem}
