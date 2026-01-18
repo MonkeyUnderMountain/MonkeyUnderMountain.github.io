@@ -91,3 +91,41 @@ Value formats supported
 Notes
 - Editing `translation/translations.json` is sufficient; the page will reflect changes on the next reload.
 - Keep any HTML in values minimal and trusted (the loader uses `innerHTML` when it detects tags).
+
+Translation checker
+-------------------
+To help keep translations consistent the repository includes a lightweight
+checker at `scripts/check_translations.py`.
+
+What it does
+- Loads `translation/translations.json` and computes the union of keys across
+	languages.
+- Scans HTML and JS files for DOM ids likely to receive translated text.
+- Reports missing keys per language and keys present in JSON but not used in
+	HTML/JS (possible stale entries).
+
+How to run locally
+------------------
+Run from the repository root:
+
+```bash
+python scripts/check_translations.py
+```
+
+Exit codes and meaning
+- `0`: OK — no problems found
+- `1`: Error — e.g. `translations.json` missing or unreadable
+- `2`: Missing keys found (one or more languages are missing keys)
+- `3`: Unused keys found (keys in JSON not referenced in HTML/JS)
+
+CI integration
+--------------
+You can run the same command in a CI job (example: GitHub Actions). When the
+script returns non-zero the job fails and you'll see the detailed output in
+the workflow logs. This makes it easy to catch translation mistakes in PRs.
+
+Limitations
+-----------
+The scanner uses simple regex heuristics (id attributes and common DOM access
+patterns). It is intentionally dependency-free and fast, but it may miss
+ids constructed dynamically at runtime.
