@@ -69,28 +69,30 @@
 
   "Misc_Blogs_Title": { "zh-CN": "博客", "en-US": "Blogs" },
   "Misc_Blogs_GitCommands_Link": {
-    "zh-CN": { "text": "Git 常用命令", "href": "Misc/Blogs/command_git.html", "html": false },
-    "en-US": { "text": "Common Git Commands", "href": "Misc/Blogs/command_git.html", "html": false }
+    "zh-CN": { "text": "Git 命令", "href": "Misc/Blogs/Git_commands/Git_commands.pdf", "html": false },
+    "en-US": { "text": "Git Commands", "href": "Misc/Blogs/Git_commands/Git_commands.pdf", "html": false }
   },
-  "Misc_Links_Handbook_Link": {
-    "zh-CN": { "text": "Handbook of Conference on Recent Progress in Algebraic Geometry", "href": "Misc/Links/Handbook.pdf", "html": false },
-    "en-US": { "text": "Handbook of Conference on Recent Progress in Algebraic Geometry", "href": "Misc/Links/Handbook.pdf", "html": false }
-  },
+
   "Misc_TexTemplate_Title": { "zh-CN": "LaTeX 模板", "en-US": "LaTeX Template" },
+  "Misc_TexTemplate_noteformyself": {
+    "zh-CN": "一个用于个人笔记的 LaTeX 模板。<a href=\"Misc/TexTemplates/TexTemplates/noteformyself/template_section.pdf\" target=\"_blank\">pdf</a> | <a href=\"https://github.com/MonkeyUnderMountain/TexTemplates.git\" target=\"_blank\">github</a> | <a href=\"Misc/TexTemplates/download_noteformyself.html\" target=\"_blank\" rel=\"noopener noreferrer\">zip</a>",
+    "en-US": "A LaTeX template for personal notes. <a href=\"Misc/TexTemplates/TexTemplates/noteformyself/template_section.pdf\" target=\"_blank\">pdf</a> | <a href=\"https://github.com/MonkeyUnderMountain/TexTemplates.git\" target=\"_blank\">github</a> | <a href=\"Misc/TexTemplates/download_noteformyself.html\" target=\"_blank\" rel=\"noopener noreferrer\">zip</a>"
+  },
+
   "Misc_Links_Title": { "zh-CN": "一些网站", "en-US": "Some Links" },
-  "Misc_Lean4_Title": { "zh-CN": "Lean 4", "en-US": "Lean 4" },
+
   "Misc_FictionsInMiddleSchool_Title": { "zh-CN": "中学时写的小说", "en-US": "Fictions I Wrote in Middle School" },
   "Misc_FictionsInMiddleSchool_Donkey_Link": {
-    "zh-CN": { "text": "孤驴", "href": "Misc/Fictions/Donkey.html", "html": false },
-    "en-US": { "text": "Donkey", "href": "Misc/Fictions/Donkey.html", "html": false }
+    "zh-CN": { "text": "孤驴", "href": "Misc/Fictions/Donkey/Donkey.pdf", "html": false },
+    "en-US": { "text": "Donkey", "href": "Misc/Fictions/Donkey/Donkey.pdf", "html": false }
   },
   "Misc_FictionsInMiddleSchool_Knight_Link": {
-    "zh-CN": { "text": "龙骑士", "href": "Misc/Fictions/Dragon_Knight.html", "html": false },
-    "en-US": { "text": "Dragon Knight", "href": "Misc/Fictions/Dragon_Knight.html", "html": false }
+    "zh-CN": { "text": "龙骑士", "href": "Misc/Fictions/Dragon_Knight/Dragon_Knight.pdf", "html": false },
+    "en-US": { "text": "DragonKnight", "href": "Misc/Fictions/Dragon_Knight/Dragon_Knight.pdf", "html": false }
   },
   "Misc_FictionsInMiddleSchool_Snowfield_Link": {
-    "zh-CN": { "text": "朔方原", "href": "Misc/Fictions/Snowfield.html", "html": false },
-    "en-US": { "text": "Snowfield", "href": "Misc/Fictions/Snowfield.html", "html": false }
+    "zh-CN": { "text": "朔方原", "href": "Misc/Fictions/Snowfield/Snowfield.pdf", "html": false },
+    "en-US": { "text": "Snowfield", "href": "Misc/Fictions/Snowfield/Snowfield.pdf", "html": false }
   },
   "MiscContents": { "zh-CN": "敬请期待!", "en-US": "Stay tuned!" }
 }

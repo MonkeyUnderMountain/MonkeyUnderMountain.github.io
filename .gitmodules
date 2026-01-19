@@ -7,3 +7,6 @@
 [submodule "Notes/Arithmetic_geometry"]
 	path = Notes/Arithmetic_geometry
 	url = https://github.com/MonkeyUnderMountain/Arithmetic_geometry.git
+[submodule "Misc/TexTemplates/TexTemplates"]
+	path = Misc/TexTemplates/TexTemplates
+	url = https://github.com/MonkeyUnderMountain/TexTemplates.git

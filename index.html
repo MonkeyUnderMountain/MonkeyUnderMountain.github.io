@@ -66,16 +66,13 @@
 
         <!-- Notes -->
         <section id="notes" class="mb-16">
-            <div class="pixel-card p-6">
+            <div class="pixel-card p-6" id="notes_box">
                 <h2 class="text-2xl font-bold mb-4">
                     <i class="fas fa-book"></i>
                     <span id="notesTitleText"></span>
                 </h2>
-                <!-- <ol class="list-disc pl-5 space-y-2">
-                    <li id="notes_for_ag"></li>
-                </ol> -->
                 <div class="space-y-4">
-                    <div class="pixel-card p-4">
+                    <div class="pixel-card p-4" id="Misc_Notes">
                         <h3 class="text-xl font-semibold mb-2" id="misc_notes_Title">
                             <span id="misc_notes_TitleText"></span>
                         </h3>
@@ -90,7 +87,7 @@
                             </p></li>
                         </ol>
                     </div>
-                        <div class="pixel-card p-4">
+                    <div class="pixel-card p-4" id="notes_in_progress">
                             <h3 class="text-xl font-semibold mb-2" id="notes_in_progress_Title"></h3>
                             <div id="notes_generated">Loading notes index…</div>
                         </div>
@@ -100,7 +97,7 @@
 
         <!-- Research -->
         <section id="research" class="mb-16">
-            <div class="pixel-card p-6">
+            <div class="pixel-card p-6" id="research_box">
                 <h2 class="text-2xl font-bold mb-4">
                     <i class="fas fa-pen"></i>
                     <span id="researchTitleText"></span>
@@ -135,34 +132,38 @@
 
         <!-- Misc -->
         <section id="Misc">
-            <div class="pixel-card p-6">
+            <div class="pixel-card p-6" id="misc_box">
                 <h2 class="text-2xl font-bold mb-4">
                     <i class="fas fa-folder-open"></i>
                     <span id="MiscTitleText"></span>
                 </h2>
-                <div class = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="pixel-card p-4">
+                <div class = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id ="misc_cards_grid">
+                    <div class="pixel-card p-4" id="Misc_Blogs_box">
                         <h3 class="text-xl font-semibold mb-2" id="Misc_Blogs_Title"></h3>
                         <div class="space-y-2 mt-2">
-                            <a href="Misc/Blogs/command_git.html" id="Misc_Blogs_GitCommands_Link"></a> 
+                            <a href="Misc/Blogs/Git_commands/Git_commands.pdf" target="_blank" id="Misc_Blogs_GitCommands_Link"></a> 
                         </div>
                     </div>
-                    <div class="pixel-card p-4">
+                    <div class="pixel-card p-4" id="Misc_TexTemplate_box">
                         <h3 class="text-xl font-semibold mb-2" id="Misc_TexTemplate_Title"></h3>
+                        <ol class="list-disc pl-5" id="Misc_TexTemplate_list">
+                            <li id="Misc_TexTemplate_noteformyself">
+                                A LaTeX template for personal notes. 
+                                <a href="Misc/TexTemplates/TexTemplates/noteformyself/template_section.pdf" target="_blank">pdf</a>
+                                <a href="https://github.com/MonkeyUnderMountain/TexTemplates.git" target="_blank">github</a>
+                                <a href="Misc/TexTemplates/download_noteformyself.html" target="_blank" rel="noopener noreferrer">zip</a>
+                            </li>
+                        </ol>
                     </div>
-                    <div class="pixel-card p-4">
+                    <div class="pixel-card p-4" id="Misc_Links_box">
                         <h3 class="text-xl font-semibold mb-2" id="Misc_Links_Title"></h3>
-                        <a href="Misc/Links/Handbook.pdf" target="_blank" id="Misc_Links_Handbook_Link">Handbook of Conference on Recent Progress in Algebraic Geometry</a>
                     </div>
-                    <div class="pixel-card p-4">
-                        <h3 class="text-xl font-semibold mb-2" id="Misc_Lean4_Title"></h3>
-                    </div>
-                    <div class="pixel-card p-4">
+                    <div class="pixel-card p-4" id="Misc_FictionsInMiddleSchool_box">
                         <h3 class="text-xl font-semibold mb-2" id="Misc_FictionsInMiddleSchool_Title"></h3>
                         <div class="space-y-2 mt-2">
-                            <a href="Misc/Fictions/Donkey.html" id="Misc_FictionsInMiddleSchool_Donkey_Link"></a> 
-                            <a href="Misc/Fictions/Dragon_Knight.html" id="Misc_FictionsInMiddleSchool_Knight_Link"></a>
-                            <a href="Misc/Fictions/Snowfield.html" id="Misc_FictionsInMiddleSchool_Snowfield_Link"></a>
+                            <a href="Misc/Fictions/Donkey/Donkey.pdf" target="_blank" id="Misc_FictionsInMiddleSchool_Donkey_Link"></a> 
+                            <a href="Misc/Fictions/Dragon_Knight/Dragon_Knight.pdf" target="_blank" id="Misc_FictionsInMiddleSchool_Knight_Link"></a>
+                            <a href="Misc/Fictions/Snowfield/Snowfield.pdf" target="_blank" id="Misc_FictionsInMiddleSchool_Snowfield_Link"></a>
                         </div>
                 </div>
                 <p id="MiscContents">Stay tuned!</p>

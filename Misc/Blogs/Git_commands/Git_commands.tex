@@ -1,0 +1,244 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{fontspec}
+\usepackage{parskip}
+\usepackage{enumitem}
+\usepackage{listings}
+\lstset{basicstyle=\ttfamily\small,breaklines=true}
+
+\title{Git: Quick Command Handbook}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section*{Repository}
+
+    \noindent Basic commands to initialize or connect to a remote repository.
+
+    \noindent create new repo in current directory:
+    \begin{lstlisting}
+    git init
+    \end{lstlisting}
+
+    \noindent copy remote repository to local machine:
+    \begin{lstlisting}
+    git clone <url>
+    \end{lstlisting}
+
+    \noindent show remote names and URLs (e.g. origin):
+    \begin{lstlisting}
+    git remote -v
+    \end{lstlisting}
+
+    \noindent add remote named origin (conventional):
+    \begin{lstlisting}
+    git remote add origin <url>
+    \end{lstlisting}
+
+
+\section*{Staging \& Commits}
+
+    \noindent Stage changes to include them in the next commit, then create a commit with a message.
+    \noindent show working tree and staged changes:
+    \begin{lstlisting}
+    git status
+    \end{lstlisting}
+
+    \noindent stage file (use . or -A to add many):
+    \begin{lstlisting}
+    git add <file>
+    \end{lstlisting}
+
+    \noindent create a commit from staged changes:
+    \begin{lstlisting}
+    git commit -m "msg"
+    \end{lstlisting}
+
+    \noindent unstage file (moves from index back to working tree):
+    \begin{lstlisting}
+    git restore --staged <file>
+    \end{lstlisting}
+
+
+\section*{Branching \& Merging}
+
+    \noindent Branches isolate work; switch between them and combine changes via merge.
+    \noindent list local branches:
+    \begin{lstlisting}
+    git branch
+    \end{lstlisting}
+
+    \noindent create a branch (does not checkout):
+    \begin{lstlisting}
+    git branch <name>
+    \end{lstlisting}
+
+    \noindent switch to branch (older form):
+    \begin{lstlisting}
+    git checkout <name>
+    \end{lstlisting}
+
+    \noindent create and switch to a branch (modern form):
+    \begin{lstlisting}
+    git switch -c <name>
+    \end{lstlisting}
+
+    \noindent merge <branch> into the current branch:
+    \begin{lstlisting}
+    git merge <branch>
+    \end{lstlisting}
+
+    \noindent delete local branch (refuses if unmerged):
+    \begin{lstlisting}
+    git branch -d <branch>
+    \end{lstlisting}
+
+
+\section*{Remote Workflows}
+
+    \noindent Fetch remote commits, integrate them locally, and push your branches.
+    \noindent update remote-tracking branches from origin:
+    \begin{lstlisting}
+    git fetch origin
+    \end{lstlisting}
+
+    \noindent fetch and merge (may create a merge commit):
+    \begin{lstlisting}
+    git pull
+    \end{lstlisting}
+
+    \noindent fetch and rebase local commits onto remote tip (linear history):
+    \begin{lstlisting}
+    git pull --rebase
+    \end{lstlisting}
+
+    \noindent push local branch to origin:
+    \begin{lstlisting}
+    git push origin <branch>
+    \end{lstlisting}
+
+    \noindent set upstream so future git push knows where to go:
+    \begin{lstlisting}
+    git push -u origin <branch>
+    \end{lstlisting}
+
+    \noindent same as -u:
+    \begin{lstlisting}
+    git push --set-upstream origin <branch>
+    \end{lstlisting}
+
+    \noindent safer force push; only if remote hasn't moved unexpectedly:
+    \begin{lstlisting}
+    git push --force-with-lease
+    \end{lstlisting}
+
+
+\section*{Submodule}
+
+    \noindent Manage nested repositories within a parent repository.
+    \noindent add submodule at path:
+    \begin{lstlisting}
+    git submodule add <url> <path>
+    \end{lstlisting}
+
+    \noindent initialize submodules (after cloning):
+    \begin{lstlisting}
+    git submodule init
+    \end{lstlisting}
+
+    \noindent fetch and checkout submodule commits:
+    \begin{lstlisting}
+    git submodule update
+    \end{lstlisting}
+
+    \noindent clone repo with submodules:
+    \begin{lstlisting}
+    git clone --recurse-submodules <url>
+    \end{lstlisting}
+
+    \noindent Inspecting submodule status:
+    \begin{lstlisting}
+    git submodule status
+    \end{lstlisting}
+    
+
+
+\section*{Inspecting History}
+
+    \noindent Examine commit history, changes, and who changed what.
+    \noindent compact visual history:
+    \begin{lstlisting}
+    git log --oneline --graph --decorate
+    \end{lstlisting}
+
+    \noindent show patches for a file across commits:
+    \begin{lstlisting}
+    git log -p <file>
+    \end{lstlisting}
+
+    \noindent show commit details and diff:
+    \begin{lstlisting}
+    git show <commit>
+    \end{lstlisting}
+
+    \noindent line-by-line authorship for a file:
+    \begin{lstlisting}
+    git blame <file>
+    \end{lstlisting}
+
+    \noindent unstaged changes (working tree vs index):
+    \begin{lstlisting}
+    git diff
+    \end{lstlisting}
+
+    \noindent staged changes (index vs HEAD):
+    \begin{lstlisting}
+    git diff --staged
+    \end{lstlisting}
+
+
+\section*{Undoing Changes}
+
+    \noindent Commands for discarding or moving changes; use with care.
+    \noindent discard working changes in <file> (from index/HEAD):
+    \begin{lstlisting}
+    git restore <file>
+    \end{lstlisting}
+
+    \noindent restore file content from a specific commit:
+    \begin{lstlisting}
+    git restore --source <commit> <file>
+    \end{lstlisting}
+
+    \noindent move HEAD to commit, keep index and working tree (undo commits):
+    \begin{lstlisting}
+    git reset --soft <commit>
+    \end{lstlisting}
+
+    \noindent default: move HEAD and reset index, keep working tree:
+    \begin{lstlisting}
+    git reset --mixed <commit>
+    \end{lstlisting}
+
+    \noindent reset HEAD, index, and working tree to commit (dangerous):
+    \begin{lstlisting}
+    git reset --hard <commit>
+    \end{lstlisting}
+
+    \noindent create a new commit that undoes the specified commit (safe for published history):
+    \begin{lstlisting}
+    git revert <commit>
+    \end{lstlisting}
+
+\section*{Safety Tips}
+\begin{itemize}
+    \item Prefer git pull --rebase for cleaner history when collaborating.
+    \item Use --force-with-lease instead of --force to avoid overwriting others' work.
+    \item Use annotated tags for releases (git tag -a).
+    \item Run destructive commands (git reset --hard, git push --force) only when sure and ideally on non-shared branches.
+\end{itemize}
+
+\end{document}
