@@ -94,6 +94,12 @@
         ]
       },
       {
+        "name": "Height_functions",
+        "relpath": "Arithmetic_geometry/chapters/Height_functions",
+        "pdfs": [],
+        "sections": []
+      },
+      {
         "name": "Non-archimedean_analysis",
         "relpath": "Arithmetic_geometry/chapters/Non-archimedean_analysis",
         "pdfs": [
@@ -226,8 +232,29 @@
             ]
           }
         ]
+      },
+      {
+        "name": "Varieties",
+        "relpath": "Arithmetic_geometry/chapters/Varieties",
+        "pdfs": [],
+        "sections": []
       }
     ]
+  },
+  {
+    "name": "Misc_notes",
+    "relpath": "Misc_notes",
+    "pdfs": [
+      {
+        "name": "Birational_group_of_varieties_of_general_type.pdf",
+        "relpath": "Misc_notes/Birational_group_of_varieties_of_general_type.pdf"
+      },
+      {
+        "name": "Hodge_index_theorem_by_linear_algebra.pdf",
+        "relpath": "Misc_notes/Hodge_index_theorem_by_linear_algebra.pdf"
+      }
+    ],
+    "chapters": []
   },
   {
     "name": "Note_on_Algebraic_Geometry",
@@ -239,6 +266,429 @@
       }
     ],
     "chapters": [
+      {
+        "name": "Abelian_varieties",
+        "relpath": "Note_on_Algebraic_Geometry/chapters/Abelian_varieties",
+        "pdfs": [
+          {
+            "name": "main.pdf",
+            "relpath": "Note_on_Algebraic_Geometry/chapters/Abelian_varieties/main.pdf"
+          }
+        ],
+        "sections": [
+          {
+            "name": "definition_and_examples",
+            "relpath": "Note_on_Algebraic_Geometry/chapters/Abelian_varieties/definition_and_examples",
+            "pdfs": [
+              {
+                "name": "main.pdf",
+                "relpath": "Note_on_Algebraic_Geometry/chapters/Abelian_varieties/definition_and_examples/main.pdf"
+              }
+            ]
+          },
+          {
+            "name": "Isogenies_and_finite_subgroups",
+            "relpath": "Note_on_Algebraic_Geometry/chapters/Abelian_varieties/Isogenies_and_finite_subgroups",
+            "pdfs": [
+              {
+                "name": "Isogenies_and_finite_subgroups.pdf",
+                "relpath": "Note_on_Algebraic_Geometry/chapters/Abelian_varieties/Isogenies_and_finite_subgroups/Isogenies_and_finite_subgroups.pdf"
+              }
+            ]
+          },
+          {
+            "name": "main",
+            "relpath": "Note_on_Algebraic_Geometry/chapters/Abelian_varieties/main.pdf",
+            "pdfs": [
+              {
+                "name": "main.pdf",
+                "relpath": "Note_on_Algebraic_Geometry/chapters/Abelian_varieties/main.pdf"
+              }
+            ]
+          },
+          {
+            "name": "Picard_groups_of_abelian_varieties",
+            "relpath": "Note_on_Algebraic_Geometry/chapters/Abelian_varieties/Picard_groups_of_abelian_varieties",
+            "pdfs": [
+              {
+                "name": "main.pdf",
+                "relpath": "Note_on_Algebraic_Geometry/chapters/Abelian_varieties/Picard_groups_of_abelian_varieties/main.pdf"
+              }
+            ]
+          },
+          {
+            "name": "Structure_of_endomorphism_rings",
+            "relpath": "Note_on_Algebraic_Geometry/chapters/Abelian_varieties/Structure_of_endomorphism_rings",
+            "pdfs": []
+          },
+          {
+            "name": "Subvarieties_of_abelian_varieties",
+            "relpath": "Note_on_Algebraic_Geometry/chapters/Abelian_varieties/Subvarieties_of_abelian_varieties",
+            "pdfs": []
+          }
+        ]
+      },
+      {
+        "name": "Algebraic_groups",
+        "relpath": "Note_on_Algebraic_Geometry/chapters/Algebraic_groups",
+        "pdfs": [
+          {
+            "name": "Algebraic_groups.pdf",
+            "relpath": "Note_on_Algebraic_Geometry/chapters/Algebraic_groups/Algebraic_groups.pdf"
+          }
+        ],
+        "sections": [
+          {
+            "name": "Algebraic_groups",
+            "relpath": "Note_on_Algebraic_Geometry/chapters/Algebraic_groups/Algebraic_groups.pdf",
+            "pdfs": [
+              {
+                "name": "Algebraic_groups.pdf",
+                "relpath": "Note_on_Algebraic_Geometry/chapters/Algebraic_groups/Algebraic_groups.pdf"
+              }
+            ]
+          },
+          {
+            "name": "Birational_group_of_varieties_of_general_type",
+            "relpath": "Note_on_Algebraic_Geometry/chapters/Algebraic_groups/Birational_group_of_varieties_of_general_type",
+            "pdfs": [
+              {
+                "name": "Birational_group_of_varieties_of_general_type.pdf",
+                "relpath": "Note_on_Algebraic_Geometry/chapters/Algebraic_groups/Birational_group_of_varieties_of_general_type/Birational_group_of_varieties_of_general_type.pdf"
+              }
+            ]
+          },
+          {
+            "name": "Decomposition_of_algebraic_groups",
+            "relpath": "Note_on_Algebraic_Geometry/chapters/Algebraic_groups/Decomposition_of_algebraic_groups",
+            "pdfs": [
+              {
+                "name": "Decomposition_of_algebraic_groups.pdf",
+                "relpath": "Note_on_Algebraic_Geometry/chapters/Algebraic_groups/Decomposition_of_algebraic_groups/Decomposition_of_algebraic_groups.pdf"
+              }
+            ]
+          },
+          {
+            "name": "First_properties",
+            "relpath": "Note_on_Algebraic_Geometry/chapters/Algebraic_groups/First_properties",
+            "pdfs": [
+              {
+                "name": "First_properties.pdf",
+                "relpath": "Note_on_Algebraic_Geometry/chapters/Algebraic_groups/First_properties/First_properties.pdf"
+              }
+            ]
+          },
+          {
+            "name": "Quotient_by_algebraic_group",
+            "relpath": "Note_on_Algebraic_Geometry/chapters/Algebraic_groups/Quotient_by_algebraic_group",
+            "pdfs": [
+              {
+                "name": "Quotient_by_algebraic_group.pdf",
+                "relpath": "Note_on_Algebraic_Geometry/chapters/Algebraic_groups/Quotient_by_algebraic_group/Quotient_by_algebraic_group.pdf"
+              }
+            ]
+          },
+          {
+            "name": "Structure_of_linear_algebraic_groups",
+            "relpath": "Note_on_Algebraic_Geometry/chapters/Algebraic_groups/Structure_of_linear_algebraic_groups",
+            "pdfs": [
+              {
+                "name": "Structure_of_linear_algebraic_groups.pdf",
+                "relpath": "Note_on_Algebraic_Geometry/chapters/Algebraic_groups/Structure_of_linear_algebraic_groups/Structure_of_linear_algebraic_groups.pdf"
+              }
+            ]
+          },
+          {
+            "name": "Structure_of_linear_algebraic_groups_II",
+            "relpath": "Note_on_Algebraic_Geometry/chapters/Algebraic_groups/Structure_of_linear_algebraic_groups_II",
+            "pdfs": []
+          },
+          {
+            "name": "Weil_regularization_theorem",
+            "relpath": "Note_on_Algebraic_Geometry/chapters/Algebraic_groups/Weil_regularization_theorem",
+            "pdfs": []
+          }
+        ]
+      },
+      {
+        "name": "Birational_geometry",
+        "relpath": "Note_on_Algebraic_Geometry/chapters/Birational_geometry",
+        "pdfs": [
+          {
+            "name": "Birational_geometry.pdf",
+            "relpath": "Note_on_Algebraic_Geometry/chapters/Birational_geometry/Birational_geometry.pdf"
+          }
+        ],
+        "sections": [
+          {
+            "name": "bend_and_break",
+            "relpath": "Note_on_Algebraic_Geometry/chapters/Birational_geometry/bend_and_break",
+            "pdfs": [
+              {
+                "name": "main.pdf",
+                "relpath": "Note_on_Algebraic_Geometry/chapters/Birational_geometry/bend_and_break/main.pdf"
+              }
+            ]
+          },
+          {
+            "name": "Birational_geometry",
+            "relpath": "Note_on_Algebraic_Geometry/chapters/Birational_geometry/Birational_geometry.pdf",
+            "pdfs": [
+              {
+                "name": "Birational_geometry.pdf",
+                "relpath": "Note_on_Algebraic_Geometry/chapters/Birational_geometry/Birational_geometry.pdf"
+              }
+            ]
+          },
+          {
+            "name": "Cone_theorem",
+            "relpath": "Note_on_Algebraic_Geometry/chapters/Birational_geometry/Cone_theorem",
+            "pdfs": [
+              {
+                "name": "main.pdf",
+                "relpath": "Note_on_Algebraic_Geometry/chapters/Birational_geometry/Cone_theorem/main.pdf"
+              }
+            ]
+          },
+          {
+            "name": "F-singularties",
+            "relpath": "Note_on_Algebraic_Geometry/chapters/Birational_geometry/F-singularties",
+            "pdfs": [
+              {
+                "name": "F-singularties.pdf",
+                "relpath": "Note_on_Algebraic_Geometry/chapters/Birational_geometry/F-singularties/F-singularties.pdf"
+              }
+            ]
+          },
+          {
+            "name": "Kodaira_vanishing",
+            "relpath": "Note_on_Algebraic_Geometry/chapters/Birational_geometry/Kodaira_vanishing",
+            "pdfs": [
+              {
+                "name": "main.pdf",
+                "relpath": "Note_on_Algebraic_Geometry/chapters/Birational_geometry/Kodaira_vanishing/main.pdf"
+              }
+            ]
+          },
+          {
+            "name": "Run_the_MMP",
+            "relpath": "Note_on_Algebraic_Geometry/chapters/Birational_geometry/Run_the_MMP",
+            "pdfs": [
+              {
+                "name": "Run_the_MMP.pdf",
+                "relpath": "Note_on_Algebraic_Geometry/chapters/Birational_geometry/Run_the_MMP/Run_the_MMP.pdf"
+              }
+            ]
+          },
+          {
+            "name": "Technical_preparation",
+            "relpath": "Note_on_Algebraic_Geometry/chapters/Birational_geometry/Technical_preparation",
+            "pdfs": [
+              {
+                "name": "Technical_preparation.pdf",
+                "relpath": "Note_on_Algebraic_Geometry/chapters/Birational_geometry/Technical_preparation/Technical_preparation.pdf"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Curves",
+        "relpath": "Note_on_Algebraic_Geometry/chapters/Curves",
+        "pdfs": [
+          {
+            "name": "Curves.pdf",
+            "relpath": "Note_on_Algebraic_Geometry/chapters/Curves/Curves.pdf"
+          }
+        ],
+        "sections": [
+          {
+            "name": "Curves",
+            "relpath": "Note_on_Algebraic_Geometry/chapters/Curves/Curves.pdf",
+            "pdfs": [
+              {
+                "name": "Curves.pdf",
+                "relpath": "Note_on_Algebraic_Geometry/chapters/Curves/Curves.pdf"
+              }
+            ]
+          },
+          {
+            "name": "Elliptic_curve",
+            "relpath": "Note_on_Algebraic_Geometry/chapters/Curves/Elliptic_curve",
+            "pdfs": [
+              {
+                "name": "Elliptic_curve.pdf",
+                "relpath": "Note_on_Algebraic_Geometry/chapters/Curves/Elliptic_curve/Elliptic_curve.pdf"
+              }
+            ]
+          },
+          {
+            "name": "Higher_genus_curve",
+            "relpath": "Note_on_Algebraic_Geometry/chapters/Curves/Higher_genus_curve",
+            "pdfs": []
+          },
+          {
+            "name": "The_first_properties",
+            "relpath": "Note_on_Algebraic_Geometry/chapters/Curves/The_first_properties",
+            "pdfs": [
+              {
+                "name": "The_first_properties.pdf",
+                "relpath": "Note_on_Algebraic_Geometry/chapters/Curves/The_first_properties/The_first_properties.pdf"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Etale_cohomology",
+        "relpath": "Note_on_Algebraic_Geometry/chapters/Etale_cohomology",
+        "pdfs": [],
+        "sections": [
+          {
+            "name": "Grothendieck_topology",
+            "relpath": "Note_on_Algebraic_Geometry/chapters/Etale_cohomology/Grothendieck_topology",
+            "pdfs": []
+          }
+        ]
+      },
+      {
+        "name": "Intersection_theory",
+        "relpath": "Note_on_Algebraic_Geometry/chapters/Intersection_theory",
+        "pdfs": [],
+        "sections": []
+      },
+      {
+        "name": "Moduli_of_vector_bundle_on_curves",
+        "relpath": "Note_on_Algebraic_Geometry/chapters/Moduli_of_vector_bundle_on_curves",
+        "pdfs": [],
+        "sections": [
+          {
+            "name": "Introduction_to_moduli_problems",
+            "relpath": "Note_on_Algebraic_Geometry/chapters/Moduli_of_vector_bundle_on_curves/Introduction_to_moduli_problems",
+            "pdfs": [
+              {
+                "name": "Introduction_to_moduli_problems.pdf",
+                "relpath": "Note_on_Algebraic_Geometry/chapters/Moduli_of_vector_bundle_on_curves/Introduction_to_moduli_problems/Introduction_to_moduli_problems.pdf"
+              }
+            ]
+          },
+          {
+            "name": "Quot_functor",
+            "relpath": "Note_on_Algebraic_Geometry/chapters/Moduli_of_vector_bundle_on_curves/Quot_functor",
+            "pdfs": [
+              {
+                "name": "Quot_functor.pdf",
+                "relpath": "Note_on_Algebraic_Geometry/chapters/Moduli_of_vector_bundle_on_curves/Quot_functor/Quot_functor.pdf"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Moduli_spaces",
+        "relpath": "Note_on_Algebraic_Geometry/chapters/Moduli_spaces",
+        "pdfs": [
+          {
+            "name": "Moduli_spaces.pdf",
+            "relpath": "Note_on_Algebraic_Geometry/chapters/Moduli_spaces/Moduli_spaces.pdf"
+          }
+        ],
+        "sections": [
+          {
+            "name": "Introduction_to_moduli_problems",
+            "relpath": "Note_on_Algebraic_Geometry/chapters/Moduli_spaces/Introduction_to_moduli_problems",
+            "pdfs": [
+              {
+                "name": "Introduction_to_moduli_problems.pdf",
+                "relpath": "Note_on_Algebraic_Geometry/chapters/Moduli_spaces/Introduction_to_moduli_problems/Introduction_to_moduli_problems.pdf"
+              }
+            ]
+          },
+          {
+            "name": "Moduli_spaces",
+            "relpath": "Note_on_Algebraic_Geometry/chapters/Moduli_spaces/Moduli_spaces.pdf",
+            "pdfs": [
+              {
+                "name": "Moduli_spaces.pdf",
+                "relpath": "Note_on_Algebraic_Geometry/chapters/Moduli_spaces/Moduli_spaces.pdf"
+              }
+            ]
+          },
+          {
+            "name": "The_Grassmannian",
+            "relpath": "Note_on_Algebraic_Geometry/chapters/Moduli_spaces/The_Grassmannian",
+            "pdfs": []
+          },
+          {
+            "name": "The_Quot_functor",
+            "relpath": "Note_on_Algebraic_Geometry/chapters/Moduli_spaces/The_Quot_functor",
+            "pdfs": [
+              {
+                "name": "The_Quot_functor.pdf",
+                "relpath": "Note_on_Algebraic_Geometry/chapters/Moduli_spaces/The_Quot_functor/The_Quot_functor.pdf"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "More_scattered_topics",
+        "relpath": "Note_on_Algebraic_Geometry/chapters/More_scattered_topics",
+        "pdfs": [],
+        "sections": [
+          {
+            "name": "Bertini_type_theorems",
+            "relpath": "Note_on_Algebraic_Geometry/chapters/More_scattered_topics/Bertini_type_theorems",
+            "pdfs": []
+          },
+          {
+            "name": "Formal_scheme",
+            "relpath": "Note_on_Algebraic_Geometry/chapters/More_scattered_topics/Formal_scheme",
+            "pdfs": [
+              {
+                "name": "Formal_scheme.pdf",
+                "relpath": "Note_on_Algebraic_Geometry/chapters/More_scattered_topics/Formal_scheme/Formal_scheme.pdf"
+              }
+            ]
+          },
+          {
+            "name": "Iitaka_fibration",
+            "relpath": "Note_on_Algebraic_Geometry/chapters/More_scattered_topics/Iitaka_fibration",
+            "pdfs": [
+              {
+                "name": "Iitaka_fibration.pdf",
+                "relpath": "Note_on_Algebraic_Geometry/chapters/More_scattered_topics/Iitaka_fibration/Iitaka_fibration.pdf"
+              }
+            ]
+          },
+          {
+            "name": "Schemes_as_functors",
+            "relpath": "Note_on_Algebraic_Geometry/chapters/More_scattered_topics/Schemes_as_functors",
+            "pdfs": [
+              {
+                "name": "Schemes_as_functors.pdf",
+                "relpath": "Note_on_Algebraic_Geometry/chapters/More_scattered_topics/Schemes_as_functors/Schemes_as_functors.pdf"
+              }
+            ]
+          },
+          {
+            "name": "Varieties_in_more_general_settings",
+            "relpath": "Note_on_Algebraic_Geometry/chapters/More_scattered_topics/Varieties_in_more_general_settings",
+            "pdfs": [
+              {
+                "name": "Varieties_in_more_general_settings.pdf",
+                "relpath": "Note_on_Algebraic_Geometry/chapters/More_scattered_topics/Varieties_in_more_general_settings/Varieties_in_more_general_settings.pdf"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Positivity",
+        "relpath": "Note_on_Algebraic_Geometry/chapters/Positivity",
+        "pdfs": [],
+        "sections": []
+      },
       {
         "name": "Schemes_and_varieties",
         "relpath": "Note_on_Algebraic_Geometry/chapters/Schemes_and_varieties",
@@ -351,6 +801,58 @@
               {
                 "name": "Schemes_and_varieties.pdf",
                 "relpath": "Note_on_Algebraic_Geometry/chapters/Schemes_and_varieties/Schemes_and_varieties.pdf"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Sites_algebraic_spaces_and_stacks",
+        "relpath": "Note_on_Algebraic_Geometry/chapters/Sites_algebraic_spaces_and_stacks",
+        "pdfs": [
+          {
+            "name": "Sites_algebraic_spaces_and_stacks.pdf",
+            "relpath": "Note_on_Algebraic_Geometry/chapters/Sites_algebraic_spaces_and_stacks/Sites_algebraic_spaces_and_stacks.pdf"
+          }
+        ],
+        "sections": [
+          {
+            "name": "Algebraic_spaces",
+            "relpath": "Note_on_Algebraic_Geometry/chapters/Sites_algebraic_spaces_and_stacks/Algebraic_spaces",
+            "pdfs": []
+          },
+          {
+            "name": "Algebraic_stacks",
+            "relpath": "Note_on_Algebraic_Geometry/chapters/Sites_algebraic_spaces_and_stacks/Algebraic_stacks",
+            "pdfs": [
+              {
+                "name": "Algebraic_stacks.pdf",
+                "relpath": "Note_on_Algebraic_Geometry/chapters/Sites_algebraic_spaces_and_stacks/Algebraic_stacks/Algebraic_stacks.pdf"
+              }
+            ]
+          },
+          {
+            "name": "Sites",
+            "relpath": "Note_on_Algebraic_Geometry/chapters/Sites_algebraic_spaces_and_stacks/Sites",
+            "pdfs": []
+          },
+          {
+            "name": "Sites_algebraic_spaces_and_stacks",
+            "relpath": "Note_on_Algebraic_Geometry/chapters/Sites_algebraic_spaces_and_stacks/Sites_algebraic_spaces_and_stacks.pdf",
+            "pdfs": [
+              {
+                "name": "Sites_algebraic_spaces_and_stacks.pdf",
+                "relpath": "Note_on_Algebraic_Geometry/chapters/Sites_algebraic_spaces_and_stacks/Sites_algebraic_spaces_and_stacks.pdf"
+              }
+            ]
+          },
+          {
+            "name": "Stacks_in_category_theory",
+            "relpath": "Note_on_Algebraic_Geometry/chapters/Sites_algebraic_spaces_and_stacks/Stacks_in_category_theory",
+            "pdfs": [
+              {
+                "name": "Stacks_in_category_theory.pdf",
+                "relpath": "Note_on_Algebraic_Geometry/chapters/Sites_algebraic_spaces_and_stacks/Stacks_in_category_theory/Stacks_in_category_theory.pdf"
               }
             ]
           }

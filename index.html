@@ -188,7 +188,7 @@
             // Display-friendly formatting: replace underscores with spaces
             function disp(text){ return safe(String(text).replaceAll('_',' ')); }
 
-            fetch('Notes/notes_index.json')
+            fetch('Notes/notes_in_progress_index.json')
             .then(resp => { if(!resp.ok) throw new Error('Not found'); return resp.json(); })
             .then(data => {
                 const container = document.getElementById('notes_generated');
