@@ -73,13 +73,14 @@
                     <span id="notesTitleText"></span>
                 </h2>
                 <div class="space-y-4" id ="notes_cards_space">
+
                     <div class="pixel-card p-4" id="notes_in_progress">
                         <h3 class="text-xl font-semibold mb-2" id="notes_in_progress_Title"></h3>
                         <div id="notes_generated">Loading notes index…</div>
                     </div>
+
                     <div class="pixel-card p-4" id="Misc_Notes">
                         <h3 class="text-xl font-semibold mb-2" id="misc_notes_Title">
-                            <span id="misc_notes_TitleText"></span>
                         </h3>
                         <ol class="list-disc pl-5">
                             <li><p>
@@ -92,6 +93,7 @@
                             </p></li>
                         </ol>
                     </div>
+
                 </div>
             </div>
         </section>
@@ -104,6 +106,7 @@
                     <span id="researchTitleText"></span>
                 </h2>
                 <div class="space-y-4" id ="research_cards_space">
+
                     <div class="pixel-card p-4" id="research_preprints_box">
                         <h3 class="text-xl font-semibold mb-2" id="research_preprints_Title"></h3>
                         <ol class="list-disc pl-5" id="research_preprints_list">
@@ -115,49 +118,75 @@
                             </li>
                         </ol>
                     </div>
+
                     <div class="pixel-card p-4" id="research_publications_box">
                         <h3 class="text-xl font-semibold mb-2" id="research_publications_Title"></h3>
                         <p id="research_publications_none"></p>
                         <img src="figs/cryingXiang.jpg" alt="An unimportant missing figures" class="inline-block" style="width: 120px; height: auto;">
                     </div>
+
+                    <div class="pixel-card p-4" id="research_collaborators_box">
+                        <h3 class="text-xl font-semibold mb-2" id="research_collaborators_Title"></h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="research_collaborators_grid">
+                            <div class="pixel-card p-3" id="collaborator_ShengMeng">
+                                <div class="grid grid-cols-2 gap-2 items-center">
+                                    <div class="font-semibold">
+                                        <p id="collaboratorName_ShengMeng">Sheng Meng</p>
+                                    </div>
+                                    <div class="text-right"><a href="https://math.ecnu.edu.cn/~smeng/intro_c.html?language=2&id=257" target="_blank" id="collaboratorHomepage_ShengMeng">Homepage</a></div>
+                                </div>
+                                <div class="text-sm text-gray-400">
+                                    <p id="collaboratorAffiliation_ShengMeng">East China Normal University</p>
+                                </div>
+                            </div>
+
+                            <div class="pixel-card p-3" id="collaborator_Long_Wang">
+                                <div class="grid grid-cols-2 gap-2 items-center">
+                                    <div class="font-semibold">
+                                        <p id="collaboratorName_Long_Wang">Long Wang</p>
+                                    </div>
+                                    <div class="text-right"><a href="https://www.simis.cn/long-wang/" target="_blank" id="collaboratorHomepage_Long_Wang">Homepage</a></div>
+                                </div>
+                                <div class="text-sm text-gray-400">
+                                    <p id="collaboratorAffiliation_Long_Wang">Shanghai Institute for Mathematics and Interdisciplinary Sciences (SIMIS)</p>
+                                </div>
+                            </div>
+
+                            <div class="pixel-card p-3" id="collaborator_Zelin_Ye">
+                                <div class="grid grid-cols-2 gap-2 items-center">
+                                    <div class="font-semibold">
+                                        <p id="collaboratorName_Zelin_Ye">Zelin Ye</p>
+                                    </div>
+                                    <div class="text-right"><a target="_blank" id="collaboratorHomepage_Zelin_Ye"></a></div>
+                                </div>
+                                <div class="text-sm text-gray-400">
+                                    <p id="collaboratorAffiliation_Zelin_Ye">Fudan University</p>
+                                </div>
+                            </div>
+
+                            <div class="pixel-card p-3" id="collaborator_Zhiyao_Zhang">
+                                <div class="grid grid-cols-2 gap-2 items-center">
+                                    <div class="font-semibold">
+                                        <p id="collaboratorName_Zhiyao_Zhang">Zhiyao Zhang</p>
+                                    </div>
+                                    <div class="text-right"><a target="_blank" id="collaboratorHomepage_Zhiyao_Zhang"></a></div>
+                                </div>
+                                <div class="text-sm text-gray-400">
+                                    <p id="collaboratorAffiliation_Zhiyao_Zhang">Shanghai Jiao Tong University</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
                     <div class="pixel-card p-4" id="research_talks_box">
                         <h3 class="text-xl font-semibold mb-2" id="research_talks_Title"></h3>
                         <ol class="list-disc pl-5" id="research_talks_list">
                             <li id="research_talks_2408BICMR">
-                                2025.8.20, BICMR, <a href="https://bicmr.pku.edu.cn/content/show/82-3710.html" target="_blank">"Dynamical Iitaka theory on Fano contractions"</a>.
+                                2025.8.20, Beijing International Center for Mathematical Research (BICMR), <a href="https://bicmr.pku.edu.cn/content/show/82-3710.html" target="_blank">"Dynamical Iitaka theory on Fano contractions"</a>.
                             </li>
                     </div>
-                    <div class="pixel-card p-4" id="research_collaborators_box">
-                        <h3 class="text-xl font-semibold mb-2" id="research_collaborators_Title"></h3>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="research_collaborators_grid">
-                            <div class="pixel-card p-3 flex items-center space-x-3" id="collaborator_Sheng_Meng">
-                                <div>
-                                    <div class="font-semibold">
-                                        Sheng Meng
-                                    </div>
-                                    <div class="text-sm text-gray-400">
-                                        East China Normal University
-                                    </div>
-                                </div>
-                            </div>
 
-                            <div class="pixel-card p-3 flex items-center space-x-3">
-                                <img src="figs/collab2.jpg" alt="Collaborator 2" class="w-12 h-12 rounded-full object-cover">
-                                <div>
-                                    <div class="font-semibold">Collaborator Two</div>
-                                    <div class="text-sm text-gray-400">Affiliation · <a href="#" target="_blank" class="text-purple-300 hover:underline">homepage</a></div>
-                                </div>
-                            </div>
-
-                            <div class="pixel-card p-3 flex items-center space-x-3">
-                                <img src="figs/collab3.jpg" alt="Collaborator 3" class="w-12 h-12 rounded-full object-cover">
-                                <div>
-                                    <div class="font-semibold">Collaborator Three</div>
-                                    <div class="text-sm text-gray-400">Affiliation · <a href="#" target="_blank" class="text-purple-300 hover:underline">homepage</a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>

@@ -8,7 +8,7 @@
     "en-US": "Welcome to my personal homepage!"
   },
   "update_time": {
-    "zh-CN": "最后更新：2026年1月19日",
+    "zh-CN": "更新于2026年1月19日",
     "en-US": "Last updated: January 19, 2026"
   },
   "footerText": {
@@ -28,6 +28,8 @@
   "MiscTitleText": { "zh-CN": "其它", "en-US": "Misc" },
 
 
+
+
   "simpleIntroductionOfMyself": {
     "zh-CN": "我本科毕业于<a href=\"https://math.ecnu.edu.cn/\" target=\"_blank\" >华东师范大学数学科学学院</a>。",
     "en-US": "I get my Bachelor Degree from <a href=\"https://math.ecnu.edu.cn/\" target=\"_blank\" >School of Mathematical Science, East China Normal University</a>."
@@ -37,9 +39,11 @@
   "myEmail": { "zh-CN": "我的邮箱是 <a href=\"mailto:10211510098@stu.ecnu.edu.cn\">10211510098@stu.ecnu.edu.cn</a>。", "en-US": "My email is <a href=\"mailto:10211510098@stu.ecnu.edu.cn\">10211510098@stu.ecnu.edu.cn</a>." },
   
 
+
+
   "notes_in_progress_Title": { "zh-CN": "施工中的笔记", "en-US": "Notes in Progress" },
 
-  "misc_notes_Title": { "zh-CN": "其它笔记", "en-US": "Misc Notes" },
+  "misc_notes_Title": { "zh-CN": "零散的小笔记", "en-US": "Misc Notes" },
   "misc_notes_Hodge_index_theorem_by_linear_algebra_Text": { "zh-CN": "Hodge Index 定理中的线性代数部分", "en-US": "Hodge Index Theorem via Linear Algebra" },
   "misc_notes_Hodge_index_theorem_by_linear_algebra_Link": {
     "zh-CN": { "text": "点击查看笔记", "href": "Notes/Misc_notes/Hodge_index_theorem_by_linear_algebra.pdf", "html": false },
@@ -50,25 +54,50 @@
     "zh-CN": { "text": "点击查看笔记", "href": "Notes/Misc_notes/Birational_group_of_varieties_of_general_type.pdf", "html": false },
     "en-US": { "text": "Click to view the note", "href": "Notes/Misc_notes/Birational_group_of_varieties_of_general_type.pdf", "html": false }
   },
-  "misc_notes_TitleText": { "zh-CN": "其它笔记", "en-US": "Misc Notes" },
+
+
 
 
   "research_preprints_Title": { "zh-CN": "预印本", "en-US": "Preprints" },
   "research_publications_Title": { "zh-CN": "发表", "en-US": "Publications" },
   "research_talks_Title": { "zh-CN": "报告", "en-US": "Talks" },
+
   "research_preprints_KSC_on_projective_bundles_over_abelian_varieties": {
-    "zh-CN": "Meng, Sheng, Long Wang, and Tianle Yang. \"Dynamical Iitaka theory on Fano contractions.\" arXiv preprint <a href=\"https://arxiv.org/abs/2506.16057\" target=\"_blank\">arXiv:2506.16057</a> (2025).",
-    "en-US": "Meng, Sheng, Long Wang, and Tianle Yang. \"Dynamical Iitaka theory on Fano contractions.\" arXiv preprint <a href=\"https://arxiv.org/abs/2506.16057\" target=\"_blank\">arXiv:2506.16057</a> (2025)."
+    "zh-CN": "(with Meng, Sheng and Long Wang) Dynamical Iitaka theory on Fano contractions. arXiv preprint <a href=\"https://arxiv.org/abs/2506.16057\" target=\"_blank\">arXiv:2506.16057</a> (2025).",
+    "en-US": "(with Meng, Sheng and Long Wang) Dynamical Iitaka theory on Fano contractions. arXiv preprint <a href=\"https://arxiv.org/abs/2506.16057\" target=\"_blank\">arXiv:2506.16057</a> (2025)."
   },
+
   "research_preprints_GMMP_char_p_threefolds": {
-    "zh-CN": "Yang, Tianle, Zelin Ye, and Zhiyao Zhang. \"Existence of minimal models for threefold generalized pairs in positive characteristic.\" arXiv preprint <a href=\"https://arxiv.org/abs/2408.12269\" target=\"_blank\">arXiv:2408.12269</a> (2024).",
-    "en-US": "Yang, Tianle, Zelin Ye, and Zhiyao Zhang. \"Existence of minimal models for threefold generalized pairs in positive characteristic.\" arXiv preprint <a href=\"https://arxiv.org/abs/2408.12269\" target=\"_blank\">arXiv:2408.12269</a> (2024)."
+    "zh-CN": "(with Zelin Ye and Zhiyao Zhang) Existence of minimal models for threefold generalized pairs in positive characteristic. arXiv preprint <a href=\"https://arxiv.org/abs/2408.12269\" target=\"_blank\">arXiv:2408.12269</a> (2024).",
+    "en-US": "(with Zelin Ye and Zhiyao Zhang) Existence of minimal models for threefold generalized pairs in positive characteristic. arXiv preprint <a href=\"https://arxiv.org/abs/2408.12269\" target=\"_blank\">arXiv:2408.12269</a> (2024)."
   },
+
+
   "research_talks_2408BICMR": {
     "zh-CN": "2025.8.20, 北京国际数学研究中心，<a href=\"https://bicmr.pku.edu.cn/content/show/82-3710.html\" target=\"_blank\">\"Dynamical Iitaka theory on Fano contractions\"</a>。",
-    "en-US": "2025.8.20, BICMR, <a href=\"https://bicmr.pku.edu.cn/content/show/82-3710.html\" target=\"_blank\">\"Dynamical Iitaka theory on Fano contractions\"</a>."
+    "en-US": "2025.8.20, Beijing International Center for Mathematical Research (BICMR), <a href=\"https://bicmr.pku.edu.cn/content/show/82-3710.html\" target=\"_blank\">\"Dynamical Iitaka theory on Fano contractions\"</a>."
   },
+
   "research_publications_none": { "zh-CN": "现在还什么都没有！", "en-US": "Nothing here yet" },
+  "research_collaborators_Title": { "zh-CN": "合作者", "en-US": "Collaborators" },
+  
+  "collaboratorName_ShengMeng": { "zh-CN": "孟晟", "en-US": "Sheng Meng" },
+  "collaboratorHomepage_ShengMeng": { "zh-CN": "主页", "en-US": "Homepage" },
+  "collaboratorAffiliation_ShengMeng": { "zh-CN": "华东师范大学", "en-US": "East China Normal University" },
+  
+  "collaboratorName_Long_Wang": { "zh-CN": "王龙", "en-US": "Long Wang" },
+  "collaboratorHomepage_Long_Wang": { "zh-CN": "主页", "en-US": "Homepage" },
+  "collaboratorAffiliation_Long_Wang": { "zh-CN": "上海数学与交叉科学研究院", "en-US": "Shanghai Institute for Mathematics and Interdisciplinary Sciences (SIMIS)" },
+  
+  "collaboratorName_Zelin_Ye": { "zh-CN": "叶泽琳", "en-US": "Zelin Ye" },
+  "collaboratorHomepage_Zelin_Ye": { "zh-CN": null, "en-US": null },
+  "collaboratorAffiliation_Zelin_Ye": { "zh-CN": "复旦大学", "en-US": "Fudan University" },
+
+  "collaboratorName_Zhiyao_Zhang": { "zh-CN": "张智尧", "en-US": "Zhiyao Zhang" },
+  "collaboratorHomepage_Zhiyao_Zhang": { "zh-CN": null, "en-US": null },
+  "collaboratorAffiliation_Zhiyao_Zhang": { "zh-CN": "上海交通大学", "en-US": "Shanghai Jiao Tong University" },
+
+
 
 
   "Misc_Blogs_Title": { "zh-CN": "博客", "en-US": "Blogs" },
@@ -79,7 +108,7 @@
 
   "Misc_TexTemplate_Title": { "zh-CN": "LaTeX 模板", "en-US": "LaTeX Template" },
   "Misc_TexTemplate_noteformyself": {
-    "zh-CN": "一个用于个人笔记的 LaTeX 模板。<a href=\"Misc/TexTemplates/TexTemplates/noteformyself/template_section.pdf\" target=\"_blank\">pdf</a> | <a href=\"https://github.com/MonkeyUnderMountain/TexTemplates.git\" target=\"_blank\">github</a> | <a href=\"Misc/TexTemplates/download_noteformyself.html\" target=\"_blank\" rel=\"noopener noreferrer\">zip</a>",
+    "zh-CN": "一个用于个人笔记的 LaTeX 模板 <a href=\"Misc/TexTemplates/TexTemplates/noteformyself/template_section.pdf\" target=\"_blank\">pdf</a> | <a href=\"https://github.com/MonkeyUnderMountain/TexTemplates.git\" target=\"_blank\">github</a> | <a href=\"Misc/TexTemplates/download_noteformyself.html\" target=\"_blank\" rel=\"noopener noreferrer\">zip</a>",
     "en-US": "A LaTeX template for personal notes. <a href=\"Misc/TexTemplates/TexTemplates/noteformyself/template_section.pdf\" target=\"_blank\">pdf</a> | <a href=\"https://github.com/MonkeyUnderMountain/TexTemplates.git\" target=\"_blank\">github</a> | <a href=\"Misc/TexTemplates/download_noteformyself.html\" target=\"_blank\" rel=\"noopener noreferrer\">zip</a>"
   },
 
