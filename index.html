@@ -33,6 +33,7 @@
         <div >
             <h1 class="text-4xl md:text-5xl font-bold mb-2 text-purple-300" id="title"></h1>
             <p class="text-xl text-gray-300" id="greeting"></p>
+            <p class="text-md text-gray-400 mb-4" id="update_time"></p>
         </div>
         
         <!-- 导航栏 -->
@@ -71,7 +72,11 @@
                     <i class="fas fa-book"></i>
                     <span id="notesTitleText"></span>
                 </h2>
-                <div class="space-y-4">
+                <div class="space-y-4" id ="notes_cards_space">
+                    <div class="pixel-card p-4" id="notes_in_progress">
+                        <h3 class="text-xl font-semibold mb-2" id="notes_in_progress_Title"></h3>
+                        <div id="notes_generated">Loading notes index…</div>
+                    </div>
                     <div class="pixel-card p-4" id="Misc_Notes">
                         <h3 class="text-xl font-semibold mb-2" id="misc_notes_Title">
                             <span id="misc_notes_TitleText"></span>
@@ -87,11 +92,7 @@
                             </p></li>
                         </ol>
                     </div>
-                    <div class="pixel-card p-4" id="notes_in_progress">
-                            <h3 class="text-xl font-semibold mb-2" id="notes_in_progress_Title"></h3>
-                            <div id="notes_generated">Loading notes index…</div>
-                        </div>
-                    </div>
+                </div>
             </div>
         </section>
 
@@ -102,8 +103,8 @@
                     <i class="fas fa-pen"></i>
                     <span id="researchTitleText"></span>
                 </h2>
-                <div class="space-y-4">
-                    <div class="pixel-card p-4">
+                <div class="space-y-4" id ="research_cards_space">
+                    <div class="pixel-card p-4" id="research_preprints_box">
                         <h3 class="text-xl font-semibold mb-2" id="research_preprints_Title"></h3>
                         <ol class="list-disc pl-5" id="research_preprints_list">
                             <li id="research_preprints_KSC_on_projective_bundles_over_abelian_varieties">
@@ -114,17 +115,48 @@
                             </li>
                         </ol>
                     </div>
-                    <div class="pixel-card p-4">
+                    <div class="pixel-card p-4" id="research_publications_box">
                         <h3 class="text-xl font-semibold mb-2" id="research_publications_Title"></h3>
                         <p id="research_publications_none"></p>
                         <img src="figs/cryingXiang.jpg" alt="An unimportant missing figures" class="inline-block" style="width: 120px; height: auto;">
                     </div>
-                    <div class="pixel-card p-4">
+                    <div class="pixel-card p-4" id="research_talks_box">
                         <h3 class="text-xl font-semibold mb-2" id="research_talks_Title"></h3>
                         <ol class="list-disc pl-5" id="research_talks_list">
                             <li id="research_talks_2408BICMR">
                                 2025.8.20, BICMR, <a href="https://bicmr.pku.edu.cn/content/show/82-3710.html" target="_blank">"Dynamical Iitaka theory on Fano contractions"</a>.
                             </li>
+                    </div>
+                    <div class="pixel-card p-4" id="research_collaborators_box">
+                        <h3 class="text-xl font-semibold mb-2" id="research_collaborators_Title"></h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="research_collaborators_grid">
+                            <div class="pixel-card p-3 flex items-center space-x-3" id="collaborator_Sheng_Meng">
+                                <div>
+                                    <div class="font-semibold">
+                                        Sheng Meng
+                                    </div>
+                                    <div class="text-sm text-gray-400">
+                                        East China Normal University
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="pixel-card p-3 flex items-center space-x-3">
+                                <img src="figs/collab2.jpg" alt="Collaborator 2" class="w-12 h-12 rounded-full object-cover">
+                                <div>
+                                    <div class="font-semibold">Collaborator Two</div>
+                                    <div class="text-sm text-gray-400">Affiliation · <a href="#" target="_blank" class="text-purple-300 hover:underline">homepage</a></div>
+                                </div>
+                            </div>
+
+                            <div class="pixel-card p-3 flex items-center space-x-3">
+                                <img src="figs/collab3.jpg" alt="Collaborator 3" class="w-12 h-12 rounded-full object-cover">
+                                <div>
+                                    <div class="font-semibold">Collaborator Three</div>
+                                    <div class="text-sm text-gray-400">Affiliation · <a href="#" target="_blank" class="text-purple-300 hover:underline">homepage</a></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

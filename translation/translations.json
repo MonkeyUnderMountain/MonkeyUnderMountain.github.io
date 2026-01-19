@@ -7,6 +7,10 @@
     "zh-CN": "欢迎来到我的个人主页！",
     "en-US": "Welcome to my personal homepage!"
   },
+  "update_time": {
+    "zh-CN": "最后更新：2026年1月19日",
+    "en-US": "Last updated: January 19, 2026"
+  },
   "footerText": {
     "zh-CN": "“我们必须知道，我们必将知道。” -- 大卫·希尔伯特",
     "en-US": "“We must know, we shall know.” -- David Hilbert"
@@ -28,7 +32,7 @@
     "zh-CN": "我本科毕业于<a href=\"https://math.ecnu.edu.cn/\" target=\"_blank\" >华东师范大学数学科学学院</a>。",
     "en-US": "I get my Bachelor Degree from <a href=\"https://math.ecnu.edu.cn/\" target=\"_blank\" >School of Mathematical Science, East China Normal University</a>."
   },
-  "academicInterest": { "zh-CN": "我的研究方向为代数几何，特别是代数动力系统。", "en-US": "My academic interest is on algebraic geometry, especially algebraic dynamics." },
+  "academicInterest": { "zh-CN": "我的研究兴趣为代数几何，特别是代数动力系统。", "en-US": "My academic interest is on algebraic geometry, especially algebraic dynamics." },
   "mySupervisor": { "zh-CN": "我的导师是<a href=\"https://math.ecnu.edu.cn/facultydetail.html?uid=smeng\" target=\"_blank\" >孟晟</a>。", "en-US": "My supervisor is <a href=\"https://math.ecnu.edu.cn/facultydetail.html?uid=smeng\" target=\"_blank\" >Seng Meng</a>." },
   "myEmail": { "zh-CN": "我的邮箱是 <a href=\"mailto:10211510098@stu.ecnu.edu.cn\">10211510098@stu.ecnu.edu.cn</a>。", "en-US": "My email is <a href=\"mailto:10211510098@stu.ecnu.edu.cn\">10211510098@stu.ecnu.edu.cn</a>." },
   
