@@ -1,92 +1,96 @@
 {
-  "zh-CN": {
-    "title": "杨天乐",
-    "greeting": "欢迎来到我的个人主页！",
-    "footerText": "“我们必须知道，我们必将知道。” -- 大卫·希尔伯特",
-
-    "navigationHomepage": "主页",
-    "navigationNotes": "笔记",
-    "navigationResearch": "科研",
-    "navigationMisc": "其它",
-
-    "aboutTitleText": "关于我",
-    "notesTitleText": "笔记",
-    "researchTitleText": "科研",
-    "MiscTitleText": "其它",
-    "research_preprints_Title": "预印本",
-    "research_publications_Title": "发表",
-    "research_talks_Title": "报告",
-
-    "simpleIntroductionOfMyself": "我本科毕业于<a href=\"https://math.ecnu.edu.cn/\" target=\"_blank\" >华东师范大学数学科学学院</a>。",
-    "academicInterest": "我的研究方向为代数几何，特别是代数动力系统。",
-    "mySupervisor": "我的导师是<a href=\"https://math.ecnu.edu.cn/facultydetail.html?uid=smeng\" target=\"_blank\" >孟晟研究员</a>。",
-    "myEmail": "我的邮箱是 <a href=\"mailto:10211510098@stu.ecnu.edu.cn\">10211510098@stu.ecnu.edu.cn</a>。",
-
-    "notes_for_ag": "一份我正在写的代数几何笔记 <a href=\"notes/notebook_ag.pdf\" target=\"_blank\">pdf</a> <a href=\"https://github.com/MonkeyUnderMountain/Note_on_Algebraic_Geometry\" target=\"_blank\">源码</a>",
-    "notes_for_ag_TitleText": "代数几何笔记",
-    "notes_for_ag_Text": "代数几何笔记（草稿）",
-    "notes_for_ag_Link": { "text": "点击查看笔记", "href": "Notes/notebook_ag.pdf", "html": false },
-    "misc_notes_Title": "其它笔记",
-    "misc_notes_Hodge_index_theorem_by_linear_algebra_Text": "Hodge Index 定理中的线性代数部分",
-    "misc_notes_Hodge_index_theorem_by_linear_algebra_Link": { "text": "点击查看笔记", "href": "Notes/Misc_notes/Hodge_index_theorem_by_linear_algebra.pdf", "html": false },
-    "misc_notes_birational_group_of_varieties_of_general_type_Text": "一般类型的簇的双有理群",
-    "misc_notes_birational_group_of_varieties_of_general_type_Link": { "text": "点击查看笔记", "href": "Notes/Misc_notes/Birational_group_of_varieties_of_general_type.pdf", "html": false },
-
-    "misc_notes_TitleText": "其它笔记",
-    "research_publications_none": "现在还什么都没有！",
-
-    "Misc_Blogs_Title": "博客",
-    "Misc_Blogs_GitCommands_Link": { "text": "Git 常用命令", "href": "Misc/Blogs/command_git.html", "html": false },
-    "Misc_Links_Handbook_Link": { "text": "Handbook of Conference on Recent Progress in Algebraic Geometry", "href": "Misc/Links/Handbook.pdf", "html": false },
-    "Misc_TexTemplate_Title": "LaTeX 模板",
-    "Misc_Links_Title": "一些网站",
-    "Misc_Lean4_Title": "Lean 4",
-    "Misc_FictionsInMiddleSchool_Title": "中学时写的小说"
+  "title": {
+    "zh-CN": "杨天乐",
+    "en-US": "Tianle Yang"
   },
-  "en-US": {
-    "title": "Tianle Yang",
-    "greeting": "Welcome to my personal homepage!",
-    "footerText": "“We must know, we shall know.” -- David Hilbert",
+  "greeting": {
+    "zh-CN": "欢迎来到我的个人主页！",
+    "en-US": "Welcome to my personal homepage!"
+  },
+  "footerText": {
+    "zh-CN": "“我们必须知道，我们必将知道。” -- 大卫·希尔伯特",
+    "en-US": "“We must know, we shall know.” -- David Hilbert"
+  },
 
-    "navigationHomepage": "Homepage",
-    "navigationNotes": "Notes",
-    "navigationResearch": "Research",
-    "navigationMisc": "Misc",
 
-    "aboutTitleText": "About Me",
-    "notesTitleText": "Notes",
-    "researchTitleText": "Research",
-    "MiscTitleText": "Misc",
-    "research_preprints_Title": "Preprints",
-    "research_publications_Title": "Publications",
-    "research_talks_Title": "Talks",
+  "navigationHomepage": { "zh-CN": "我", "en-US": "Me" },
+  "navigationNotes": { "zh-CN": "笔记", "en-US": "Notes" },
+  "navigationResearch": { "zh-CN": "科研", "en-US": "Research" },
+  "navigationMisc": { "zh-CN": "其它", "en-US": "Misc" },
 
-    "simpleIntroductionOfMyself": "I get my Bachelor Degree from <a href=\"https://math.ecnu.edu.cn/\" target=\"_blank\" >School of Mathematical Science, East China Normal University</a>.",
-    "academicInterest": "My academic interest is on algebraic geometry, especially algebraic dynamics.",
-    "mySupervisor": "My supervisor is <a href=\"https://math.ecnu.edu.cn/facultydetail.html?uid=smeng\" target=\"_blank\" >Researcher Seng Meng</a>.",
-    "myEmail": "My email is <a href=\"mailto:10211510098@stu.ecnu.edu.cn\">10211510098@stu.ecnu.edu.cn</a>.",
+  "aboutTitleText": { "zh-CN": "关于我", "en-US": "About Me" },
+  "notesTitleText": { "zh-CN": "笔记", "en-US": "Notes" },
+  "researchTitleText": { "zh-CN": "科研", "en-US": "Research" },
+  "MiscTitleText": { "zh-CN": "其它", "en-US": "Misc" },
 
-    "notes_for_ag": "A note on algebraic geometry that I am currently writing <a href=\"notes/notebook_ag.pdf\" target=\"_blank\">pdf</a> <a href=\"https://github.com/MonkeyUnderMountain/Note_on_Algebraic_Geometry\" target=\"_blank\">source</a>",
-    "notes_for_ag_TitleText": "Note on Algebraic Geometry",
-    "notes_for_ag_Text": "Note on Algebraic Geometry (draft)",
-    "notes_for_ag_Link": { "text": "Click to view the note", "href": "Notes/notebook_ag.pdf", "html": false },
-    "misc_notes_TitleText": "Misc Notes",
-    "misc_notes_Hodge_index_theorem_by_linear_algebra_Text": "Hodge Index Theorem via Linear Algebra",
-    "misc_notes_Hodge_index_theorem_by_linear_algebra_Link": { "text": "Click to view the note", "href": "Notes/Misc_notes/Hodge_index_theorem_by_linear_algebra.pdf", "html": false },
-    "misc_notes_birational_group_of_varieties_of_general_type_Text": "Birational Group of Varieties of General Type",
-    "misc_notes_birational_group_of_varieties_of_general_type_Link": { "text": "Click to view the note", "href": "Notes/Misc_notes/Birational_group_of_varieties_of_general_type.pdf", "html": false },
 
-    "misc_notes_Title": "Misc Notes",
-    
+  "simpleIntroductionOfMyself": {
+    "zh-CN": "我本科毕业于<a href=\"https://math.ecnu.edu.cn/\" target=\"_blank\" >华东师范大学数学科学学院</a>。",
+    "en-US": "I get my Bachelor Degree from <a href=\"https://math.ecnu.edu.cn/\" target=\"_blank\" >School of Mathematical Science, East China Normal University</a>."
+  },
+  "academicInterest": { "zh-CN": "我的研究方向为代数几何，特别是代数动力系统。", "en-US": "My academic interest is on algebraic geometry, especially algebraic dynamics." },
+  "mySupervisor": { "zh-CN": "我的导师是<a href=\"https://math.ecnu.edu.cn/facultydetail.html?uid=smeng\" target=\"_blank\" >孟晟</a>。", "en-US": "My supervisor is <a href=\"https://math.ecnu.edu.cn/facultydetail.html?uid=smeng\" target=\"_blank\" >Seng Meng</a>." },
+  "myEmail": { "zh-CN": "我的邮箱是 <a href=\"mailto:10211510098@stu.ecnu.edu.cn\">10211510098@stu.ecnu.edu.cn</a>。", "en-US": "My email is <a href=\"mailto:10211510098@stu.ecnu.edu.cn\">10211510098@stu.ecnu.edu.cn</a>." },
+  
 
-    "research_publications_none": "Nothing here yet",
+  "notes_in_progress_Title": { "zh-CN": "施工中的笔记", "en-US": "Notes in Progress" },
 
-    "Misc_Blogs_Title": "Blogs",
-    "Misc_Blogs_GitCommands_Link": { "text": "Common Git Commands", "href": "Misc/Blogs/command_git.html", "html": false },
-    "Misc_Links_Handbook_Link": { "text": "Handbook of Conference on Recent Progress in Algebraic Geometry", "href": "Misc/Links/Handbook.pdf", "html": false },
-    "Misc_TexTemplate_Title": "LaTeX Template",
-    "Misc_Links_Title": "Some Links",
-    "Misc_Lean4_Title": "Lean 4",
-    "Misc_FictionsInMiddleSchool_Title": "Fictions I Wrote in Middle School"
-  }
+  "misc_notes_Title": { "zh-CN": "其它笔记", "en-US": "Misc Notes" },
+  "misc_notes_Hodge_index_theorem_by_linear_algebra_Text": { "zh-CN": "Hodge Index 定理中的线性代数部分", "en-US": "Hodge Index Theorem via Linear Algebra" },
+  "misc_notes_Hodge_index_theorem_by_linear_algebra_Link": {
+    "zh-CN": { "text": "点击查看笔记", "href": "Notes/Misc_notes/Hodge_index_theorem_by_linear_algebra.pdf", "html": false },
+    "en-US": { "text": "Click to view the note", "href": "Notes/Misc_notes/Hodge_index_theorem_by_linear_algebra.pdf", "html": false }
+  },
+  "misc_notes_birational_group_of_varieties_of_general_type_Text": { "zh-CN": "一般类型的簇的双有理群", "en-US": "Birational Group of Varieties of General Type" },
+  "misc_notes_birational_group_of_varieties_of_general_type_Link": {
+    "zh-CN": { "text": "点击查看笔记", "href": "Notes/Misc_notes/Birational_group_of_varieties_of_general_type.pdf", "html": false },
+    "en-US": { "text": "Click to view the note", "href": "Notes/Misc_notes/Birational_group_of_varieties_of_general_type.pdf", "html": false }
+  },
+  "misc_notes_TitleText": { "zh-CN": "其它笔记", "en-US": "Misc Notes" },
+
+
+  "research_preprints_Title": { "zh-CN": "预印本", "en-US": "Preprints" },
+  "research_publications_Title": { "zh-CN": "发表", "en-US": "Publications" },
+  "research_talks_Title": { "zh-CN": "报告", "en-US": "Talks" },
+  "research_preprints_KSC_on_projective_bundles_over_abelian_varieties": {
+    "zh-CN": "Meng, Sheng, Long Wang, and Tianle Yang. \"Dynamical Iitaka theory on Fano contractions.\" arXiv preprint <a href=\"https://arxiv.org/abs/2506.16057\" target=\"_blank\">arXiv:2506.16057</a> (2025).",
+    "en-US": "Meng, Sheng, Long Wang, and Tianle Yang. \"Dynamical Iitaka theory on Fano contractions.\" arXiv preprint <a href=\"https://arxiv.org/abs/2506.16057\" target=\"_blank\">arXiv:2506.16057</a> (2025)."
+  },
+  "research_preprints_GMMP_char_p_threefolds": {
+    "zh-CN": "Yang, Tianle, Zelin Ye, and Zhiyao Zhang. \"Existence of minimal models for threefold generalized pairs in positive characteristic.\" arXiv preprint <a href=\"https://arxiv.org/abs/2408.12269\" target=\"_blank\">arXiv:2408.12269</a> (2024).",
+    "en-US": "Yang, Tianle, Zelin Ye, and Zhiyao Zhang. \"Existence of minimal models for threefold generalized pairs in positive characteristic.\" arXiv preprint <a href=\"https://arxiv.org/abs/2408.12269\" target=\"_blank\">arXiv:2408.12269</a> (2024)."
+  },
+  "research_talks_2408BICMR": {
+    "zh-CN": "2025.8.20, 北京国际数学研究中心，<a href=\"https://bicmr.pku.edu.cn/content/show/82-3710.html\" target=\"_blank\">\"Dynamical Iitaka theory on Fano contractions\"</a>。",
+    "en-US": "2025.8.20, BICMR, <a href=\"https://bicmr.pku.edu.cn/content/show/82-3710.html\" target=\"_blank\">\"Dynamical Iitaka theory on Fano contractions\"</a>."
+  },
+  "research_publications_none": { "zh-CN": "现在还什么都没有！", "en-US": "Nothing here yet" },
+
+
+  "Misc_Blogs_Title": { "zh-CN": "博客", "en-US": "Blogs" },
+  "Misc_Blogs_GitCommands_Link": {
+    "zh-CN": { "text": "Git 常用命令", "href": "Misc/Blogs/command_git.html", "html": false },
+    "en-US": { "text": "Common Git Commands", "href": "Misc/Blogs/command_git.html", "html": false }
+  },
+  "Misc_Links_Handbook_Link": {
+    "zh-CN": { "text": "Handbook of Conference on Recent Progress in Algebraic Geometry", "href": "Misc/Links/Handbook.pdf", "html": false },
+    "en-US": { "text": "Handbook of Conference on Recent Progress in Algebraic Geometry", "href": "Misc/Links/Handbook.pdf", "html": false }
+  },
+  "Misc_TexTemplate_Title": { "zh-CN": "LaTeX 模板", "en-US": "LaTeX Template" },
+  "Misc_Links_Title": { "zh-CN": "一些网站", "en-US": "Some Links" },
+  "Misc_Lean4_Title": { "zh-CN": "Lean 4", "en-US": "Lean 4" },
+  "Misc_FictionsInMiddleSchool_Title": { "zh-CN": "中学时写的小说", "en-US": "Fictions I Wrote in Middle School" },
+  "Misc_FictionsInMiddleSchool_Donkey_Link": {
+    "zh-CN": { "text": "孤驴", "href": "Misc/Fictions/Donkey.html", "html": false },
+    "en-US": { "text": "Donkey", "href": "Misc/Fictions/Donkey.html", "html": false }
+  },
+  "Misc_FictionsInMiddleSchool_Knight_Link": {
+    "zh-CN": { "text": "龙骑士", "href": "Misc/Fictions/Dragon_Knight.html", "html": false },
+    "en-US": { "text": "Dragon Knight", "href": "Misc/Fictions/Dragon_Knight.html", "html": false }
+  },
+  "Misc_FictionsInMiddleSchool_Snowfield_Link": {
+    "zh-CN": { "text": "朔方原", "href": "Misc/Fictions/Snowfield.html", "html": false },
+    "en-US": { "text": "Snowfield", "href": "Misc/Fictions/Snowfield.html", "html": false }
+  },
+  "MiscContents": { "zh-CN": "敬请期待!", "en-US": "Stay tuned!" }
 }

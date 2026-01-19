@@ -25,44 +25,65 @@
   // Expose translations for debugging/other scripts if needed
   window.translations = translations;
 
-  // Update DOM elements from translations[currentLanguage]
+  // Update DOM elements from translations and support two JSON shapes:
+  // - Old (per-language): { "zh-CN": { key: value, ... }, "en-US": { ... } }
+  // - New (per-key): { "key": { "zh-CN": value, "en-US": value }, ... }
   function updateContent() {
-    const t = translations[window.currentLanguage] || {};
+    const isOldFormat = !!(translations && (translations['zh-CN'] || translations['en-US']));
 
-    // Generic mapper: for every key in the translation object try to find
-    // an element with the same id. This allows adding new translatable
-    // elements by only adding an `id` in HTML and the matching key in
-    // `translation/translations.json`.
-    Object.keys(t).forEach(key => {
-      const value = t[key];
-      const el = document.getElementById(key);
-      if (!el) return; // no matching element, skip silently
+    if (isOldFormat) {
+      const t = translations[window.currentLanguage] || {};
+      Object.keys(t).forEach(key => applyTranslationToElement(key, t[key]));
+      return;
+    }
 
-      // If the JSON value is an object we support setting multiple
-      // attributes. Example:
-      // { "myLink": { "text": "Click", "href": "...", "html": false } }
-      if (value && typeof value === 'object' && !Array.isArray(value)) {
-        // set text/html
-        if (value.hasOwnProperty('text')) {
-          if (value.html) el.innerHTML = value.text || '';
-          else el.textContent = value.text || '';
+    // New format: iterate top-level keys and pick the language-specific
+    // value (fall back to en-US then first available value).
+    Object.keys(translations).forEach(key => {
+      const perLang = translations[key];
+      if (perLang == null) return;
+
+      let value = undefined;
+      if (perLang && typeof perLang === 'object' && !Array.isArray(perLang)) {
+        if (perLang.hasOwnProperty(window.currentLanguage)) value = perLang[window.currentLanguage];
+        else if (perLang.hasOwnProperty('en-US')) value = perLang['en-US'];
+        else {
+          // pick any available language value
+          const langs = Object.keys(perLang);
+          if (langs.length) value = perLang[langs[0]];
         }
-        // set href if present and element supports it
-        if (value.href && 'href' in el) el.href = value.href;
-        // set title attribute if provided
-        if (value.title) el.title = value.title;
-        return;
+      } else {
+        // primitive stored directly (unlikely in new format but keep safe)
+        value = perLang;
       }
 
-      // Primitive value (string/number): determine whether to write
-      // as HTML or plain text. If the string contains a '<' character
-      // treat it as HTML (simple heuristic), otherwise set textContent.
-      if (typeof value === 'string' && /<[^>]+>/.test(value)) {
-        el.innerHTML = value;
-      } else {
-        el.textContent = value == null ? '' : String(value);
-      }
+      applyTranslationToElement(key, value);
     });
+  }
+
+  // Apply a resolved translation value to a DOM element with id `key`.
+  function applyTranslationToElement(key, value) {
+    const el = document.getElementById(key);
+    if (!el) return;
+
+    // If the resolved value is an object with a `text` property, treat it
+    // as the attr map used previously (text/href/html/title).
+    if (value && typeof value === 'object' && !Array.isArray(value)) {
+      if (value.hasOwnProperty('text')) {
+        if (value.html) el.innerHTML = value.text || '';
+        else el.textContent = value.text || '';
+      }
+      if (value.href && 'href' in el) el.href = value.href;
+      if (value.title) el.title = value.title;
+      return;
+    }
+
+    // Primitive value: decide whether to set as HTML or text.
+    if (typeof value === 'string' && /<[^>]+>/.test(value)) {
+      el.innerHTML = value;
+    } else {
+      el.textContent = value == null ? '' : String(value);
+    }
   }
 
   // Language switch helpers

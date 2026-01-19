@@ -94,6 +94,17 @@ Notes
 - Editing `translation/translations.json` is sufficient; the page will reflect changes on the next reload.
 - Keep any HTML in values minimal and trusted (the loader uses `innerHTML` when it detects tags).
 
+- Href fallback and progressive enhancement:
+	- Keep a sensible static `href` in anchor elements in `index.html` as a fallback so the link works when JavaScript is disabled or fails to run.
+	- The loader (`translation/translation.js`) will override the element's `href` when the translation value is an object that contains an `href` property. Example JSON entry:
+
+```
+"Misc_FictionsInMiddleSchool_Snowfield_Link": { "text": "Snowfield", "href": "Misc/Fictions/Snowfield.html", "html": false }
+```
+
+	- If you remove the static `href` from the HTML, make sure every language in `translation/translations.json` provides an appropriate `href` for that key; otherwise the anchor will have no destination and may not be clickable.
+	- Best practice: keep the static `href` as a progressive-enhancement fallback and let translations override it when present.
+
 Translation checker
 -------------------
 To help keep translations consistent the repository includes a lightweight

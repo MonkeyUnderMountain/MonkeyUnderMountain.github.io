@@ -125,11 +125,33 @@ def main():
         return 1
 
     translations = load_translations(tpath)
-    langs = sorted(translations.keys())
+    # Detect file shape:
+    # - Old format (per-language): top-level keys are language codes (e.g. 'zh-CN','en-US')
+    #   mapping to { key: value, ... }
+    # - New format (per-key): top-level keys are translation keys mapping to
+    #   { lang: value, ... }
+    lang_pattern = re.compile(r'^[a-z]{2}(-[A-Z]{2})?$')
+    is_old_format = all(isinstance(v, dict) and lang_pattern.match(k) for k, v in translations.items())
 
-    # Build set of keys per language and the union of all keys
-    keys_per_lang = {lang: set(translations[lang].keys()) for lang in langs}
-    all_keys = set().union(*keys_per_lang.values())
+    if is_old_format:
+        langs = sorted(translations.keys())
+        keys_per_lang = {lang: set(translations[lang].keys()) for lang in langs}
+        all_keys = set().union(*keys_per_lang.values()) if keys_per_lang else set()
+    else:
+        # new format: top-level keys are translation keys
+        all_keys = set(translations.keys())
+        keys_per_lang = {}
+        langs_set = set()
+        for key, per in translations.items():
+            if isinstance(per, dict):
+                for lang in per.keys():
+                    langs_set.add(lang)
+                    keys_per_lang.setdefault(lang, set()).add(key)
+            else:
+                # primitive value: treat as present in en-US by default
+                langs_set.add('en-US')
+                keys_per_lang.setdefault('en-US', set()).add(key)
+        langs = sorted(langs_set)
 
     # For each language list keys that are missing compared to the union
     missing = {lang: sorted(list(all_keys - keys_per_lang[lang])) for lang in langs}
