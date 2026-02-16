@@ -10,3 +10,6 @@
 [submodule "Misc/TexTemplates/TexTemplates"]
 	path = Misc/TexTemplates/TexTemplates
 	url = https://github.com/MonkeyUnderMountain/TexTemplates.git
+[submodule "AboutMe/CV"]
+	path = AboutMe/CV
+	url = https://github.com/MonkeyUnderMountain/CurriculumVitae.git
