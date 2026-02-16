@@ -10,47 +10,72 @@
     ],
     "chapters": [
       {
-        "name": "Affinoid_algebras",
-        "relpath": "Arithmetic_geometry/chapters/Affinoid_algebras",
+        "name": "Arakelov_geometry",
+        "relpath": "Arithmetic_geometry/chapters/Arakelov_geometry",
         "pdfs": [
           {
-            "name": "Affinoid_algebras.pdf",
-            "relpath": "Arithmetic_geometry/chapters/Affinoid_algebras/Affinoid_algebras.pdf"
+            "name": "Arakelov_geometry.pdf",
+            "relpath": "Arithmetic_geometry/chapters/Arakelov_geometry/Arakelov_geometry.pdf"
           }
         ],
         "sections": [
           {
-            "name": "Affinoid_algebras",
-            "relpath": "Arithmetic_geometry/chapters/Affinoid_algebras/Affinoid_algebras",
+            "name": "Arakelov_geometry",
+            "relpath": "Arithmetic_geometry/chapters/Arakelov_geometry/Arakelov_geometry.pdf",
             "pdfs": [
               {
-                "name": "Affinoid_algebras.pdf",
-                "relpath": "Arithmetic_geometry/chapters/Affinoid_algebras/Affinoid_algebras/Affinoid_algebras.pdf"
+                "name": "Arakelov_geometry.pdf",
+                "relpath": "Arithmetic_geometry/chapters/Arakelov_geometry/Arakelov_geometry.pdf"
               }
             ]
           },
           {
-            "name": "Affinoid_algebras",
-            "relpath": "Arithmetic_geometry/chapters/Affinoid_algebras/Affinoid_algebras.pdf",
-            "pdfs": [
-              {
-                "name": "Affinoid_algebras.pdf",
-                "relpath": "Arithmetic_geometry/chapters/Affinoid_algebras/Affinoid_algebras.pdf"
-              }
-            ]
-          },
-          {
-            "name": "Finite_modules",
-            "relpath": "Arithmetic_geometry/chapters/Affinoid_algebras/Finite_modules",
+            "name": "Arithmetic_fundamental_inequality",
+            "relpath": "Arithmetic_geometry/chapters/Arakelov_geometry/Arithmetic_fundamental_inequality",
             "pdfs": []
           },
           {
-            "name": "Normed_rings_and_modules",
-            "relpath": "Arithmetic_geometry/chapters/Affinoid_algebras/Normed_rings_and_modules",
+            "name": "Arithmetic_Hilbert_Samuel",
+            "relpath": "Arithmetic_geometry/chapters/Arakelov_geometry/Arithmetic_Hilbert_Samuel",
+            "pdfs": []
+          },
+          {
+            "name": "Classical_height_machine",
+            "relpath": "Arithmetic_geometry/chapters/Arakelov_geometry/Classical_height_machine",
+            "pdfs": []
+          },
+          {
+            "name": "Hermitian_line_bundle_on_rings_of_integers",
+            "relpath": "Arithmetic_geometry/chapters/Arakelov_geometry/Hermitian_line_bundle_on_rings_of_integers",
             "pdfs": [
               {
-                "name": "Normed_rings_and_modules.pdf",
-                "relpath": "Arithmetic_geometry/chapters/Affinoid_algebras/Normed_rings_and_modules/Normed_rings_and_modules.pdf"
+                "name": "Hermitian_line_bundle_on_rings_of_integers.pdf",
+                "relpath": "Arithmetic_geometry/chapters/Arakelov_geometry/Hermitian_line_bundle_on_rings_of_integers/Hermitian_line_bundle_on_rings_of_integers.pdf"
+              }
+            ]
+          },
+          {
+            "name": "Hermitian_line_bundles",
+            "relpath": "Arithmetic_geometry/chapters/Arakelov_geometry/Hermitian_line_bundles",
+            "pdfs": [
+              {
+                "name": "Hermitian_line_bundles.pdf",
+                "relpath": "Arithmetic_geometry/chapters/Arakelov_geometry/Hermitian_line_bundles/Hermitian_line_bundles.pdf"
+              }
+            ]
+          },
+          {
+            "name": "Hermitian_line_bundles_on_projective_arithmetic_varieties",
+            "relpath": "Arithmetic_geometry/chapters/Arakelov_geometry/Hermitian_line_bundles_on_projective_arithmetic_varieties",
+            "pdfs": []
+          },
+          {
+            "name": "On_rings_of_integers",
+            "relpath": "Arithmetic_geometry/chapters/Arakelov_geometry/On_rings_of_integers",
+            "pdfs": [
+              {
+                "name": "On_rings_of_integers.pdf",
+                "relpath": "Arithmetic_geometry/chapters/Arakelov_geometry/On_rings_of_integers/On_rings_of_integers.pdf"
               }
             ]
           }
@@ -67,9 +92,24 @@
         ],
         "sections": [
           {
-            "name": "Affinoid_domains",
-            "relpath": "Arithmetic_geometry/chapters/Berkovich_space/Affinoid_domains",
-            "pdfs": []
+            "name": "Affinoid_spaces",
+            "relpath": "Arithmetic_geometry/chapters/Berkovich_space/Affinoid_spaces",
+            "pdfs": [
+              {
+                "name": "Affinoid_spaces.pdf",
+                "relpath": "Arithmetic_geometry/chapters/Berkovich_space/Affinoid_spaces/Affinoid_spaces.pdf"
+              }
+            ]
+          },
+          {
+            "name": "Analytic_spaces",
+            "relpath": "Arithmetic_geometry/chapters/Berkovich_space/Analytic_spaces",
+            "pdfs": [
+              {
+                "name": "Analytic_spaces.pdf",
+                "relpath": "Arithmetic_geometry/chapters/Berkovich_space/Analytic_spaces/Analytic_spaces.pdf"
+              }
+            ]
           },
           {
             "name": "Berkovich_space",
@@ -78,6 +118,16 @@
               {
                 "name": "Berkovich_space.pdf",
                 "relpath": "Arithmetic_geometry/chapters/Berkovich_space/Berkovich_space.pdf"
+              }
+            ]
+          },
+          {
+            "name": "GAGA",
+            "relpath": "Arithmetic_geometry/chapters/Berkovich_space/GAGA",
+            "pdfs": [
+              {
+                "name": "GAGA.pdf",
+                "relpath": "Arithmetic_geometry/chapters/Berkovich_space/GAGA/GAGA.pdf"
               }
             ]
           },
@@ -92,12 +142,6 @@
             ]
           }
         ]
-      },
-      {
-        "name": "Height_functions",
-        "relpath": "Arithmetic_geometry/chapters/Height_functions",
-        "pdfs": [],
-        "sections": []
       },
       {
         "name": "Non-archimedean_analysis",
@@ -156,6 +200,58 @@
               {
                 "name": "Non-archimedean_analysis.pdf",
                 "relpath": "Arithmetic_geometry/chapters/Non-archimedean_analysis/Non-archimedean_analysis.pdf"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Normed_algebras",
+        "relpath": "Arithmetic_geometry/chapters/Normed_algebras",
+        "pdfs": [
+          {
+            "name": "Normed_algebras.pdf",
+            "relpath": "Arithmetic_geometry/chapters/Normed_algebras/Normed_algebras.pdf"
+          }
+        ],
+        "sections": [
+          {
+            "name": "Affinoid_algebras",
+            "relpath": "Arithmetic_geometry/chapters/Normed_algebras/Affinoid_algebras",
+            "pdfs": [
+              {
+                "name": "Affinoid_algebras.pdf",
+                "relpath": "Arithmetic_geometry/chapters/Normed_algebras/Affinoid_algebras/Affinoid_algebras.pdf"
+              }
+            ]
+          },
+          {
+            "name": "Convergent_and_restricted_power_series",
+            "relpath": "Arithmetic_geometry/chapters/Normed_algebras/Convergent_and_restricted_power_series",
+            "pdfs": [
+              {
+                "name": "Convergent_and_restricted_power_series.pdf",
+                "relpath": "Arithmetic_geometry/chapters/Normed_algebras/Convergent_and_restricted_power_series/Convergent_and_restricted_power_series.pdf"
+              }
+            ]
+          },
+          {
+            "name": "Normed_algebras",
+            "relpath": "Arithmetic_geometry/chapters/Normed_algebras/Normed_algebras.pdf",
+            "pdfs": [
+              {
+                "name": "Normed_algebras.pdf",
+                "relpath": "Arithmetic_geometry/chapters/Normed_algebras/Normed_algebras.pdf"
+              }
+            ]
+          },
+          {
+            "name": "Normed_rings_and_modules",
+            "relpath": "Arithmetic_geometry/chapters/Normed_algebras/Normed_rings_and_modules",
+            "pdfs": [
+              {
+                "name": "Normed_rings_and_modules.pdf",
+                "relpath": "Arithmetic_geometry/chapters/Normed_algebras/Normed_rings_and_modules/Normed_rings_and_modules.pdf"
               }
             ]
           }
@@ -540,6 +636,33 @@
         ]
       },
       {
+        "name": "Deformation_theory",
+        "relpath": "Note_on_Algebraic_Geometry/chapters/Deformation_theory",
+        "pdfs": [],
+        "sections": [
+          {
+            "name": "Formal_deformations",
+            "relpath": "Note_on_Algebraic_Geometry/chapters/Deformation_theory/Formal_deformations",
+            "pdfs": []
+          },
+          {
+            "name": "Higher_order_deformations",
+            "relpath": "Note_on_Algebraic_Geometry/chapters/Deformation_theory/Higher_order_deformations",
+            "pdfs": []
+          },
+          {
+            "name": "The_first_order_deformations",
+            "relpath": "Note_on_Algebraic_Geometry/chapters/Deformation_theory/The_first_order_deformations",
+            "pdfs": [
+              {
+                "name": "The_first_order_deformations.pdf",
+                "relpath": "Note_on_Algebraic_Geometry/chapters/Deformation_theory/The_first_order_deformations/The_first_order_deformations.pdf"
+              }
+            ]
+          }
+        ]
+      },
+      {
         "name": "Etale_cohomology",
         "relpath": "Note_on_Algebraic_Geometry/chapters/Etale_cohomology",
         "pdfs": [],
@@ -552,37 +675,37 @@
         ]
       },
       {
-        "name": "Intersection_theory",
-        "relpath": "Note_on_Algebraic_Geometry/chapters/Intersection_theory",
-        "pdfs": [],
-        "sections": []
-      },
-      {
-        "name": "Moduli_of_vector_bundle_on_curves",
-        "relpath": "Note_on_Algebraic_Geometry/chapters/Moduli_of_vector_bundle_on_curves",
+        "name": "Geometric_invariant_theory",
+        "relpath": "Note_on_Algebraic_Geometry/chapters/Geometric_invariant_theory",
         "pdfs": [],
         "sections": [
           {
-            "name": "Introduction_to_moduli_problems",
-            "relpath": "Note_on_Algebraic_Geometry/chapters/Moduli_of_vector_bundle_on_curves/Introduction_to_moduli_problems",
+            "name": "Action_by_reductive_groups",
+            "relpath": "Note_on_Algebraic_Geometry/chapters/Geometric_invariant_theory/Action_by_reductive_groups",
             "pdfs": [
               {
-                "name": "Introduction_to_moduli_problems.pdf",
-                "relpath": "Note_on_Algebraic_Geometry/chapters/Moduli_of_vector_bundle_on_curves/Introduction_to_moduli_problems/Introduction_to_moduli_problems.pdf"
+                "name": "Action_by_reductive_groups.pdf",
+                "relpath": "Note_on_Algebraic_Geometry/chapters/Geometric_invariant_theory/Action_by_reductive_groups/Action_by_reductive_groups.pdf"
               }
             ]
           },
           {
-            "name": "Quot_functor",
-            "relpath": "Note_on_Algebraic_Geometry/chapters/Moduli_of_vector_bundle_on_curves/Quot_functor",
+            "name": "Definitions_and_examples",
+            "relpath": "Note_on_Algebraic_Geometry/chapters/Geometric_invariant_theory/Definitions_and_examples",
             "pdfs": [
               {
-                "name": "Quot_functor.pdf",
-                "relpath": "Note_on_Algebraic_Geometry/chapters/Moduli_of_vector_bundle_on_curves/Quot_functor/Quot_functor.pdf"
+                "name": "Definitions_and_examples.pdf",
+                "relpath": "Note_on_Algebraic_Geometry/chapters/Geometric_invariant_theory/Definitions_and_examples/Definitions_and_examples.pdf"
               }
             ]
           }
         ]
+      },
+      {
+        "name": "Intersection_theory",
+        "relpath": "Note_on_Algebraic_Geometry/chapters/Intersection_theory",
+        "pdfs": [],
+        "sections": []
       },
       {
         "name": "Moduli_spaces",
@@ -605,6 +728,21 @@
             ]
           },
           {
+            "name": "Moduli_of_curves",
+            "relpath": "Note_on_Algebraic_Geometry/chapters/Moduli_spaces/Moduli_of_curves",
+            "pdfs": []
+          },
+          {
+            "name": "Moduli_of_vector_bundle_on_curves_old",
+            "relpath": "Note_on_Algebraic_Geometry/chapters/Moduli_spaces/Moduli_of_vector_bundle_on_curves_old",
+            "pdfs": []
+          },
+          {
+            "name": "Moduli_of_vector_bundles",
+            "relpath": "Note_on_Algebraic_Geometry/chapters/Moduli_spaces/Moduli_of_vector_bundles",
+            "pdfs": []
+          },
+          {
             "name": "Moduli_spaces",
             "relpath": "Note_on_Algebraic_Geometry/chapters/Moduli_spaces/Moduli_spaces.pdf",
             "pdfs": [
@@ -615,8 +753,8 @@
             ]
           },
           {
-            "name": "The_Grassmannian",
-            "relpath": "Note_on_Algebraic_Geometry/chapters/Moduli_spaces/The_Grassmannian",
+            "name": "The_picard_functor",
+            "relpath": "Note_on_Algebraic_Geometry/chapters/Moduli_spaces/The_picard_functor",
             "pdfs": []
           },
           {
@@ -732,7 +870,12 @@
           {
             "name": "finite_morphisms_and_fibrations",
             "relpath": "Note_on_Algebraic_Geometry/chapters/Schemes_and_varieties/finite_morphisms_and_fibrations",
-            "pdfs": []
+            "pdfs": [
+              {
+                "name": "finite_morphisms_and_fibrations.pdf",
+                "relpath": "Note_on_Algebraic_Geometry/chapters/Schemes_and_varieties/finite_morphisms_and_fibrations/finite_morphisms_and_fibrations.pdf"
+              }
+            ]
           },
           {
             "name": "flat_smooth_and_etale_morphisms",
@@ -741,6 +884,26 @@
               {
                 "name": "flat_smooth_and_etale_morphisms.pdf",
                 "relpath": "Note_on_Algebraic_Geometry/chapters/Schemes_and_varieties/flat_smooth_and_etale_morphisms/flat_smooth_and_etale_morphisms.pdf"
+              }
+            ]
+          },
+          {
+            "name": "Formal_schemes",
+            "relpath": "Note_on_Algebraic_Geometry/chapters/Schemes_and_varieties/Formal_schemes",
+            "pdfs": [
+              {
+                "name": "Formal_schemes.pdf",
+                "relpath": "Note_on_Algebraic_Geometry/chapters/Schemes_and_varieties/Formal_schemes/Formal_schemes.pdf"
+              }
+            ]
+          },
+          {
+            "name": "Generic_principle",
+            "relpath": "Note_on_Algebraic_Geometry/chapters/Schemes_and_varieties/Generic_principle",
+            "pdfs": [
+              {
+                "name": "Generic_principle.pdf",
+                "relpath": "Note_on_Algebraic_Geometry/chapters/Schemes_and_varieties/Generic_principle/Generic_principle.pdf"
               }
             ]
           },
@@ -819,7 +982,12 @@
           {
             "name": "Algebraic_spaces",
             "relpath": "Note_on_Algebraic_Geometry/chapters/Sites_algebraic_spaces_and_stacks/Algebraic_spaces",
-            "pdfs": []
+            "pdfs": [
+              {
+                "name": "Algebraic_spaces.pdf",
+                "relpath": "Note_on_Algebraic_Geometry/chapters/Sites_algebraic_spaces_and_stacks/Algebraic_spaces/Algebraic_spaces.pdf"
+              }
+            ]
           },
           {
             "name": "Algebraic_stacks",
@@ -828,6 +996,16 @@
               {
                 "name": "Algebraic_stacks.pdf",
                 "relpath": "Note_on_Algebraic_Geometry/chapters/Sites_algebraic_spaces_and_stacks/Algebraic_stacks/Algebraic_stacks.pdf"
+              }
+            ]
+          },
+          {
+            "name": "Preliminaries_in_category_theory",
+            "relpath": "Note_on_Algebraic_Geometry/chapters/Sites_algebraic_spaces_and_stacks/Preliminaries_in_category_theory",
+            "pdfs": [
+              {
+                "name": "Preliminaries_in_category_theory.pdf",
+                "relpath": "Note_on_Algebraic_Geometry/chapters/Sites_algebraic_spaces_and_stacks/Preliminaries_in_category_theory/Preliminaries_in_category_theory.pdf"
               }
             ]
           },

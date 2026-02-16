@@ -85,11 +85,6 @@
             ]
           },
           {
-            "name": "finite_morphisms_and_fibrations",
-            "relpath": "Note_on_Algebraic_Geometry/chapters/Schemes_and_varieties/finite_morphisms_and_fibrations",
-            "pdfs": []
-          },
-          {
             "name": "differentials_and_duality",
             "relpath": "Note_on_Algebraic_Geometry/chapters/Schemes_and_varieties/differentials_and_duality",
             "pdfs": [
@@ -108,86 +103,24 @@
                 "relpath": "Note_on_Algebraic_Geometry/chapters/Schemes_and_varieties/flat_smooth_and_etale_morphisms/flat_smooth_and_etale_morphisms.pdf"
               }
             ]
-          }
-        ]
-      },
-      {
-        "name": "Surfaces",
-        "relpath": "Note_on_Algebraic_Geometry/chapters/Surfaces",
-        "pdfs": [
+          },
           {
-            "name": "Surfaces.pdf",
-            "relpath": "Note_on_Algebraic_Geometry/chapters/Surfaces/Surfaces.pdf"
-          }
-        ],
-        "sections": [
-          {
-            "name": "The_first_properties",
-            "relpath": "Note_on_Algebraic_Geometry/chapters/Surfaces/The_first_properties",
+            "name": "Generic_principle",
+            "relpath": "Note_on_Algebraic_Geometry/chapters/Schemes_and_varieties/Generic_principle",
             "pdfs": [
               {
-                "name": "The_first_properties.pdf",
-                "relpath": "Note_on_Algebraic_Geometry/chapters/Surfaces/The_first_properties/The_first_properties.pdf"
+                "name": "Generic_principle.pdf",
+                "relpath": "Note_on_Algebraic_Geometry/chapters/Schemes_and_varieties/Generic_principle/Generic_principle.pdf"
               }
             ]
-          },
+          },          
           {
-            "name": "Birational_geometry_of_surfaces",
-            "relpath": "Note_on_Algebraic_Geometry/chapters/Surfaces/Birational_geometry_of_surfaces",
+            "name": "Formal_schemes",
+            "relpath": "Note_on_Algebraic_Geometry/chapters/Schemes_and_varieties/Formal_schemes",
             "pdfs": [
               {
-                "name": "Birational_geometry_of_surfaces.pdf",
-                "relpath": "Note_on_Algebraic_Geometry/chapters/Surfaces/Birational_geometry_of_surfaces/Birational_geometry_of_surfaces.pdf"
-              }
-            ]
-          },
-          {
-            "name": "Coarse_classification_of_surfaces",
-            "relpath": "Note_on_Algebraic_Geometry/chapters/Surfaces/Coarse_classification_of_surfaces",
-            "pdfs": [
-              {
-                "name": "Coarse_classification_of_surfaces.pdf",
-                "relpath": "Note_on_Algebraic_Geometry/chapters/Surfaces/Coarse_classification_of_surfaces/Coarse_classification_of_surfaces.pdf"
-              }
-            ]
-          },
-          {
-            "name": "ruled_surface",
-            "relpath": "Note_on_Algebraic_Geometry/chapters/Surfaces/ruled_surface",
-            "pdfs": [
-              {
-                "name": "ruled_surface.pdf",
-                "relpath": "Note_on_Algebraic_Geometry/chapters/Surfaces/ruled_surface/ruled_surface.pdf"
-              }
-            ]
-          },
-          {
-            "name": "Del-Pezzo_surfaces",
-            "relpath": "Note_on_Algebraic_Geometry/chapters/Surfaces/Del-Pezzo_surfaces",
-            "pdfs": []
-          },
-          {
-            "name": "Elliptic_surfaces",
-            "relpath": "Note_on_Algebraic_Geometry/chapters/Surfaces/Elliptic_surfaces",
-            "pdfs": [
-              {
-                "name": "Elliptic_surfaces.pdf",
-                "relpath": "Note_on_Algebraic_Geometry/chapters/Surfaces/Elliptic_surfaces/Elliptic_surfaces.pdf"
-              }
-            ]
-          },
-          {
-            "name": "K3_surfaces",
-            "relpath": "Note_on_Algebraic_Geometry/chapters/Surfaces/K3_surfaces",
-            "pdfs": []
-          },
-          {
-            "name": "some_singular_surfaces",
-            "relpath": "Note_on_Algebraic_Geometry/chapters/Surfaces/some_singular_surfaces",
-            "pdfs": [
-              {
-                "name": "some_singular_surfaces.pdf",
-                "relpath": "Note_on_Algebraic_Geometry/chapters/Surfaces/some_singular_surfaces/some_singular_surfaces.pdf"
+                "name": "Formal_schemes.pdf",
+                "relpath": "Note_on_Algebraic_Geometry/chapters/Schemes_and_varieties/Formal_schemes/Formal_schemes.pdf"
               }
             ]
           }
@@ -241,16 +174,6 @@
             ]
           },
           {
-            "name": "Artin-Whaples_approximations",
-            "relpath": "Arithmetic_geometry/chapters/Valuation_on_fields/Artin-Whaples_approximations",
-            "pdfs": [
-              {
-                "name": "Artin-Whaples_approximations.pdf",
-                "relpath": "Arithmetic_geometry/chapters/Valuation_on_fields/Artin-Whaples_approximations/Artin-Whaples_approximations.pdf"
-              }
-            ]
-          },
-          {
             "name": "Example_p-adic_fields",
             "relpath": "Arithmetic_geometry/chapters/Valuation_on_fields/Example_p-adic_fields",
             "pdfs": [
@@ -261,93 +184,46 @@
             ]
           }
         ]
-      },      
-      {
-        "name": "Non-archimedean_analysis",
-        "relpath": "Arithmetic_geometry/chapters/Non-archimedean_analysis",
-        "pdfs": [
-          {
-            "name": "Non-archimedean_analysis.pdf",
-            "relpath": "Arithmetic_geometry/chapters/Non-archimedean_analysis/Non-archimedean_analysis.pdf"
-          }
-        ],
-        "sections": [
-          {
-            "name": "Local_theory_I_functions",
-            "relpath": "Arithmetic_geometry/chapters/Non-archimedean_analysis/Local_theory_I_functions",
-            "pdfs": [
-              {
-                "name": "Local_theory_I_functions.pdf",
-                "relpath": "Arithmetic_geometry/chapters/Non-archimedean_analysis/Local_theory_I_functions/Local_theory_I_functions.pdf"
-              }
-            ]
-          },
-          {
-            "name": "Local_theory_II_maps",
-            "relpath": "Arithmetic_geometry/chapters/Non-archimedean_analysis/Local_theory_II_maps",
-            "pdfs": [
-              {
-                "name": "Local_theory_II_maps.pdf",
-                "relpath": "Arithmetic_geometry/chapters/Non-archimedean_analysis/Local_theory_II_maps/Local_theory_II_maps.pdf"
-              }
-            ]
-          },
-          {
-            "name": "Analytic_functions_in_one_variable",
-            "relpath": "Arithmetic_geometry/chapters/Non-archimedean_analysis/Analytic_functions_in_one_variable",
-            "pdfs": [
-              {
-                "name": "Analytic_functions_in_one_variable.pdf",
-                "relpath": "Arithmetic_geometry/chapters/Non-archimedean_analysis/Analytic_functions_in_one_variable/Analytic_functions_in_one_variable.pdf"
-              }
-            ]
-          },
-          {
-            "name": "Elementary_functions",
-            "relpath": "Arithmetic_geometry/chapters/Non-archimedean_analysis/Elementary_functions",
-            "pdfs": [
-              {
-                "name": "Elementary_functions.pdf",
-                "relpath": "Arithmetic_geometry/chapters/Non-archimedean_analysis/Elementary_functions/Elementary_functions.pdf"
-              }
-            ]
-          }
-        ]
       },
       {
-        "name": "Affinoid_algebras",
-        "relpath": "Arithmetic_geometry/chapters/Affinoid_algebras",
+        "name": "Normed_algebras",
+        "relpath": "Arithmetic_geometry/chapters/Normed_algebras",
         "pdfs": [
           {
-            "name": "Affinoid_algebras.pdf",
-            "relpath": "Arithmetic_geometry/chapters/Affinoid_algebras/Affinoid_algebras.pdf"
+            "name": "Normed_algebras.pdf",
+            "relpath": "Arithmetic_geometry/chapters/Normed_algebras/Normed_algebras.pdf"
           }
         ],
         "sections": [
           {
             "name": "Normed_rings_and_modules",
-            "relpath": "Arithmetic_geometry/chapters/Affinoid_algebras/Normed_rings_and_modules",
+            "relpath": "Arithmetic_geometry/chapters/Normed_algebras/Normed_rings_and_modules",
             "pdfs": [
               {
                 "name": "Normed_rings_and_modules.pdf",
-                "relpath": "Arithmetic_geometry/chapters/Affinoid_algebras/Normed_rings_and_modules/Normed_rings_and_modules.pdf"
+                "relpath": "Arithmetic_geometry/chapters/Normed_algebras/Normed_rings_and_modules/Normed_rings_and_modules.pdf"
+              }
+            ]
+          },
+          {
+            "name": "Convergent_and_restricted_power_series",
+            "relpath": "Arithmetic_geometry/chapters/Normed_algebras/Convergent_and_restricted_power_series",
+            "pdfs": [
+              {
+                "name": "Convergent_and_restricted_power_series.pdf",
+                "relpath": "Arithmetic_geometry/chapters/Normed_algebras/Convergent_and_restricted_power_series/Convergent_and_restricted_power_series.pdf"
               }
             ]
           },
           {
             "name": "Affinoid_algebras",
-            "relpath": "Arithmetic_geometry/chapters/Affinoid_algebras/Affinoid_algebras",
+            "relpath": "Arithmetic_geometry/chapters/Normed_algebras/Affinoid_algebras",
             "pdfs": [
               {
                 "name": "Affinoid_algebras.pdf",
-                "relpath": "Arithmetic_geometry/chapters/Affinoid_algebras/Affinoid_algebras/Affinoid_algebras.pdf"
+                "relpath": "Arithmetic_geometry/chapters/Normed_algebras/Affinoid_algebras/Affinoid_algebras.pdf"
               }
             ]
-          },
-          {
-            "name": "Finite_modules",
-            "relpath": "Arithmetic_geometry/chapters/Affinoid_algebras/Finite_modules",
-            "pdfs": []
           }
         ]
       },
@@ -370,19 +246,23 @@
                 "relpath": "Arithmetic_geometry/chapters/Berkovich_space/Spectrum/Spectrum.pdf"
               }
             ]
-          },
-          {
-            "name": "Affinoid_domains",
-            "relpath": "Arithmetic_geometry/chapters/Berkovich_space/Affinoid_domains",
-            "pdfs": []
-          },
-          {
-            "name": "Berkovich_space",
-            "relpath": "Arithmetic_geometry/chapters/Berkovich_space/Berkovich_space.pdf",
+          },{
+            "name": "Affinoid_spaces",
+            "relpath": "Arithmetic_geometry/chapters/Berkovich_space/Affinoid_spaces",
             "pdfs": [
               {
-                "name": "Berkovich_space.pdf",
-                "relpath": "Arithmetic_geometry/chapters/Berkovich_space/Berkovich_space.pdf"
+                "name": "Affinoid_spaces.pdf",
+                "relpath": "Arithmetic_geometry/chapters/Berkovich_space/Affinoid_spaces/Affinoid_spaces.pdf"
+              }
+            ]
+          },
+          {
+            "name": "Analytic_spaces",
+            "relpath": "Arithmetic_geometry/chapters/Berkovich_space/Analytic_spaces",
+            "pdfs": [
+              {
+                "name": "Analytic_spaces.pdf",
+                "relpath": "Arithmetic_geometry/chapters/Berkovich_space/Analytic_spaces/Analytic_spaces.pdf"
               }
             ]
           }
