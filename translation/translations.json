@@ -30,14 +30,22 @@
 
 
 
-  "simpleIntroductionOfMyself": {
-    "zh-CN": "我本科毕业于<a href=\"https://math.ecnu.edu.cn/\" target=\"_blank\" >华东师范大学数学科学学院</a>。",
-    "en-US": "I get my Bachelor Degree from <a href=\"https://math.ecnu.edu.cn/\" target=\"_blank\" >School of Mathematical Science, East China Normal University</a>."
+  "VisitorIn2026Spring": {
+    "zh-CN": "我将于2026年春季前往<a href=\"https://bicmr.pku.edu.cn/\" target=\"_blank\">北京国际数学研究中心</a>访问<a href=\"http://scholar.pku.edu.cn/xiejunyi\" target=\"_blank\">谢俊逸</a>教授，为期一学期。",
+    "en-US": "In Spring 2026, I will visit Professor <a href= \"http://scholar.pku.edu.cn/xiejunyi\" target=\"_blank\">Junyi Xie</a> at the <a href=\"https://bicmr.pku.edu.cn/\" target=\"_blank\">Beijing International Center for Mathematical Research (BICMR)</a> for one semester."
+  },
+  "BachelorDegree": {
+    "zh-CN": "我本科毕业于<a href=\"https://math.ecnu.edu.cn/\" target=\"_blank\" >华东师范大学数学科学学院</a>，导师是<a href=\"https://math.ecnu.edu.cn/facultydetail.html?uid=smeng\" target=\"_blank\" >孟晟</a>研究员。",
+    "en-US": "I get my Bachelor Degree from <a href=\"https://math.ecnu.edu.cn/\" target=\"_blank\" >School of Mathematical Science, East China Normal University</a>, supervised by Researcher <a href=\"https://math.ecnu.edu.cn/facultydetail.html?uid=smeng\" target=\"_blank\" >Seng Meng</a>."
   },
   "academicInterest": { "zh-CN": "我的研究兴趣为代数几何，特别是代数动力系统。", "en-US": "My academic interest is on algebraic geometry, especially algebraic dynamics." },
   "mySupervisor": { "zh-CN": "我的导师是<a href=\"https://math.ecnu.edu.cn/facultydetail.html?uid=smeng\" target=\"_blank\" >孟晟</a>。", "en-US": "My supervisor is <a href=\"https://math.ecnu.edu.cn/facultydetail.html?uid=smeng\" target=\"_blank\" >Seng Meng</a>." },
   "myEmail": { "zh-CN": "我的邮箱是 <a href=\"mailto:10211510098@stu.ecnu.edu.cn\">10211510098@stu.ecnu.edu.cn</a>。", "en-US": "My email is <a href=\"mailto:10211510098@stu.ecnu.edu.cn\">10211510098@stu.ecnu.edu.cn</a>." },
-  
+  "myCV": {
+    "zh-CN": "我的简历可以在 <a href=\"AboutMe/CV/cv-academic.pdf\" target=\"_blank\">这里</a> 查看。",
+    "en-US": "My CV can be viewed <a href=\"AboutMe/CV/cv-academic.pdf\" target=\"_blank\">here</a>."
+  },
+
 
 
 
