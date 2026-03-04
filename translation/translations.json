@@ -8,8 +8,8 @@
     "en-US": "Welcome to my personal homepage!"
   },
   "update_time": {
-    "zh-CN": "更新于2026年2月16日",
-    "en-US": "Last updated: February 16, 2026"
+    "zh-CN": "更新于2026年3月4日",
+    "en-US": "Last updated: March 04, 2026"
   },
   "footerText": {
     "zh-CN": "“我们必须知道，我们必将知道。” -- 大卫·希尔伯特",
@@ -50,6 +50,7 @@
 
 
   "notes_in_progress_Title": { "zh-CN": "施工中的笔记", "en-US": "Notes in Progress" },
+  "notes_in_class_Title": { "zh-CN": "课堂笔记", "en-US": "Class Notes" },
 
   "misc_notes_Title": { "zh-CN": "零散的小笔记", "en-US": "Misc Notes" },
   "misc_notes_Hodge_index_theorem_by_linear_algebra_Text": { "zh-CN": "Hodge Index 定理中的线性代数部分", "en-US": "Hodge Index Theorem via Linear Algebra" },

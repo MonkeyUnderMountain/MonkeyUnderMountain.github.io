@@ -1144,5 +1144,93 @@
         ]
       }
     ]
+  },
+  {
+    "name": "PKU2026Spring",
+    "relpath": "PKU2026Spring",
+    "pdfs": [],
+    "chapters": [
+      {
+        "name": "Algebraic_cycles_by_Suzuki",
+        "relpath": "PKU2026Spring/chapters/Algebraic_cycles_by_Suzuki",
+        "pdfs": [
+          {
+            "name": "Algebraic_cycles_by_Suzuki.pdf",
+            "relpath": "PKU2026Spring/chapters/Algebraic_cycles_by_Suzuki/Algebraic_cycles_by_Suzuki.pdf"
+          }
+        ],
+        "sections": [
+          {
+            "name": "Algebraic_cycles_by_Suzuki",
+            "relpath": "PKU2026Spring/chapters/Algebraic_cycles_by_Suzuki/Algebraic_cycles_by_Suzuki.pdf",
+            "pdfs": [
+              {
+                "name": "Algebraic_cycles_by_Suzuki.pdf",
+                "relpath": "PKU2026Spring/chapters/Algebraic_cycles_by_Suzuki/Algebraic_cycles_by_Suzuki.pdf"
+              }
+            ]
+          },
+          {
+            "name": "March_03",
+            "relpath": "PKU2026Spring/chapters/Algebraic_cycles_by_Suzuki/March_03",
+            "pdfs": [
+              {
+                "name": "March_03.pdf",
+                "relpath": "PKU2026Spring/chapters/Algebraic_cycles_by_Suzuki/March_03/March_03.pdf"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Arithmetic_properties_of_curves",
+        "relpath": "PKU2026Spring/chapters/Arithmetic_properties_of_curves",
+        "pdfs": [],
+        "sections": [
+          {
+            "name": "March_03",
+            "relpath": "PKU2026Spring/chapters/Arithmetic_properties_of_curves/March_03",
+            "pdfs": [
+              {
+                "name": "March_03.pdf",
+                "relpath": "PKU2026Spring/chapters/Arithmetic_properties_of_curves/March_03/March_03.pdf"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Symplectic_geometry",
+        "relpath": "PKU2026Spring/chapters/Symplectic_geometry",
+        "pdfs": [
+          {
+            "name": "Symplectic_geometry.pdf",
+            "relpath": "PKU2026Spring/chapters/Symplectic_geometry/Symplectic_geometry.pdf"
+          }
+        ],
+        "sections": [
+          {
+            "name": "March_03",
+            "relpath": "PKU2026Spring/chapters/Symplectic_geometry/March_03",
+            "pdfs": [
+              {
+                "name": "March_03.pdf",
+                "relpath": "PKU2026Spring/chapters/Symplectic_geometry/March_03/March_03.pdf"
+              }
+            ]
+          },
+          {
+            "name": "Symplectic_geometry",
+            "relpath": "PKU2026Spring/chapters/Symplectic_geometry/Symplectic_geometry.pdf",
+            "pdfs": [
+              {
+                "name": "Symplectic_geometry.pdf",
+                "relpath": "PKU2026Spring/chapters/Symplectic_geometry/Symplectic_geometry.pdf"
+              }
+            ]
+          }
+        ]
+      }
+    ]
   }
 ]

@@ -13,3 +13,6 @@
 [submodule "AboutMe/CV"]
 	path = AboutMe/CV
 	url = https://github.com/MonkeyUnderMountain/CurriculumVitae.git
+[submodule "Notes/PKU2026Spring"]
+	path = Notes/PKU2026Spring
+	url = https://github.com/MonkeyUnderMountain/PKU2026Spring.git
