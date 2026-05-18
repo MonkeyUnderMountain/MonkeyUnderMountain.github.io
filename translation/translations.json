@@ -63,9 +63,11 @@
     "zh-CN": { "text": "点击查看笔记", "href": "Notes/Misc_notes/Birational_group_of_varieties_of_general_type.pdf", "html": false },
     "en-US": { "text": "Click to view the note", "href": "Notes/Misc_notes/Birational_group_of_varieties_of_general_type.pdf", "html": false }
   },
-
-
-
+  "misc_notes_read_Xie24_Text": { "zh-CN": "阅读论文 [Xie, Junyi. 2024. \"Algebraic Dynamics and Recursive Inequalities.\"] 的笔记（待完善）", "en-US": "Notes on reading the paper [Xie, Junyi. 2024. \"Algebraic Dynamics and Recursive Inequalities.\"] (to be completed)" },
+  "misc_notes_read_Xie24_Link": {
+    "zh-CN": { "text": "点击查看笔记", "href": "Notes/Misc_notes/Read_Xie24.pdf", "html": false },
+    "en-US": { "text": "Click to view the note", "href": "Notes/Misc_notes/Read_Xie24.pdf", "html": false }
+  },
 
   "research_preprints_Title": { "zh-CN": "预印本", "en-US": "Preprints" },
   "research_publications_Title": { "zh-CN": "发表", "en-US": "Publications" },
