@@ -1,339 +1,510 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-US">
-<head>
-    <meta charset="UTF-8"><!-- 编码方案为UTF-8 -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- 视口设置为设备宽度，初始缩放比例为1.0 -->
-    <title>Tianle Yang</title><!-- 网页标题 -->
-    <link rel="icon" href="figs/hxj_no_bg.ico" type="image/jpeg"><!-- 网站图标 -->
-    <script src="translation/translation.js" defer></script><!-- 引入翻译模块 -->
-    <script src="https://cdn.tailwindcss.com/3.3.3"></script><!-- 引入Tailwind CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"><!-- 引入Font Awesome图标库 -->
-    <link rel="stylesheet" href="styles.css"><!-- 引入自定义样式文件 -->
-</head>
-<body>
-    <!-- 头部区域 -->
-    <header class="theMainHeader">
-        <!-- 语言切换按钮 -->
-        <div class="flex justify-end p-4 space-x-2">
-            <button class="px-3 py-1 rounded-md 
-                    bg-purple-500 text-white font-bold 
-                    hover:bg-purple-700 transition-colors 
-                    pixel-button"
-                    onclick="switchLanguageToEnglish()">
-                <span class="lang-en">English</span>
-            </button>
-            <button class="px-3 py-1 rounded-md 
-                    bg-purple-500 text-white font-bold 
-                    hover:bg-purple-700 transition-colors 
-                    pixel-button"
-                    onclick="switchLanguageToChinese()">
-                <span class="lang-zh">简体中文</span>
-            </button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Pixel-style personal homepage for Tianle Yang, with notes, research, and side projects."
+    />
+    <title>Tianle Yang</title>
+    <link rel="icon" type="image/png" href="figs/archer_green.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">SKIP TO CONTENT</a>
+
+    <!-- Scanline overlay -->
+    <div class="scanlines" aria-hidden="true"></div>
+
+    <!-- Pixel star background -->
+    <div class="star-field" id="starField" aria-hidden="true"></div>
+
+    <!-- Navigation -->
+    <nav class="pixel-nav" aria-label="Primary navigation">
+      <div class="nav-inner">
+        <a href="#hero" class="nav-logo" aria-label="Back to top">&gt;_</a>
+        <div class="nav-links">
+          <a href="#new" class="nav-link">NEWS</a>
+          <a href="#about" class="nav-link">ABOUT</a>
+          <a href="#note" class="nav-link">NOTE</a>
+          <a href="#research" class="nav-link">RESEARCH</a>
+          <a href="#side-quests" class="nav-link">SIDE QUESTS</a>
         </div>
-        <div >
-            <h1 class="text-4xl md:text-5xl font-bold mb-2 text-purple-300" id="title"></h1>
-            <p class="text-xl text-gray-300" id="greeting"></p>
-            <p class="text-md text-gray-400 mb-4" id="update_time"></p>
+      </div>
+    </nav>
+
+    <main id="main">
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="hero" id="hero">
+      <div class="hero-content">
+        <!-- Pixel Avatar -->
+        <div class="pixel-avatar-frame">
+          <div class="avatar-border">
+            <img class="pixel-avatar" id="pixelAvatar" src="figs/archer_green.png" alt="" aria-hidden="true" />
+          </div>
+          <div class="avatar-label">LV.24</div>
         </div>
-        
-        <!-- 导航栏 -->
-        <nav class="bg-2a2a4a py-4 sticky top-0 z-50">
-            <div class="container mx-auto flex justify-center space-x-8">
-                <a href="#about" class="pixel-nav-item text-xl text-gray-300 hover:text-purple-300 transition-colors" id="navigationHomepage"></a>
-                <a href="#notes" class="pixel-nav-item text-xl text-gray-300 hover:text-purple-300 transition-colors" id="navigationNotes"></a>
-                <a href="#research" class="pixel-nav-item text-xl text-gray-300 hover:text-purple-300 transition-colors" id="navigationResearch"></a>
-                <a href="#Misc" class="pixel-nav-item text-xl text-gray-300 hover:text-purple-300 transition-colors" id="navigationMisc"></a>
+
+        <!-- Name Title -->
+        <h1 class="pixel-title hero-title">
+          <span class="title-letter" data-delay="0">T</span>
+          <span class="title-letter" data-delay="1">I</span>
+          <span class="title-letter" data-delay="2">A</span>
+          <span class="title-letter" data-delay="3">N</span>
+          <span class="title-letter" data-delay="4">L</span>
+          <span class="title-letter" data-delay="5">E</span>
+          <span class="title-space" data-delay="6"></span>
+          <span class="title-letter" data-delay="7">Y</span>
+          <span class="title-letter" data-delay="8">A</span>
+          <span class="title-letter" data-delay="9">N</span>
+          <span class="title-letter" data-delay="10">G</span>
+        </h1>
+
+        <!-- Subtitle / Class -->
+        <div class="hero-class">
+          <span class="class-icon">&#9876;</span>
+          <span class="class-text">AN ADVENTURER IN DREAM / A MATHEMATIC STUDENT IN LIFE</span>
+        </div>
+
+        <!-- Update information -->
+        <div class="update-info">
+          <span class="update-icon">&#9881;</span>
+          <span class="update-text">LAST UPDATE: JUNE 21, 2026</span>
+        </div>
+
+        <!-- Blinking prompt
+        <div class="pixel-prompt">
+          <span class="blink">&#9654;</span>
+          <span class="blink-text">PRESS TO EXPLORE</span>
+        </div> -->
+
+        <!-- Scroll indicator -->
+        <div class="scroll-indicator">
+          <span class="scroll-arrow">&#9660;</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== WHAT IS NEW SECTION ==================== -->
+    <section class="section new-section" id="new">
+      <h2 class="section-title">
+        <span class="title-deco">&#9881;</span> WHAT'S NEW <span class="title-deco">&#9881;</span>
+      </h2>
+
+      <div class="notice-board">
+        <div class="news-item">
+          <span class="news-marker">[!]</span>
+          <span class="news-line"><span class="news-date">2026-June-21</span> I will go to Beijing to attend <a href="https://math.pku.edu.cn/kxyj/xzky/171823.htm" target="_blank" rel="noopener noreferrer">the 5th National Conference on Algebraic Geometry</a> on July 05, 2026.</span>
+        </div>
+        <div class="news-item">
+          <span class="news-marker">[+]</span>
+          <span class="news-line"><span class="news-date">2026-June-21</span> I will be a Master student at East China Normal University from September 2026.</span>
+        </div>
+        <div class="news-item">
+          <span class="news-marker">[*]</span>
+          <span class="news-line"><span class="news-date">2026-June-21</span> Updated the style of this page.</span>
+        </div>
+
+        <!-- 
+        Empty board placeholder. Swap the text with any of these:
+        - No quests unlocked. Check back after the next save point.
+        - The board is quiet. Even the NPCs are thinking.
+        - No new scrolls today. Inventory is full of patience.
+        - Nothing spawned yet. The RNG is contemplative.
+        - All side paths are fogged. Return after one more theorem.
+        -->
+
+        <!-- <div class="notice-empty">
+          <span class="notice-empty-icon">[]</span>
+          <div>
+            <span class="notice-empty-title">NO NEWS</span>
+            <p>All side paths are fogged. Return after one more theorem.</p>
+          </div>
+        </div>
+      </div> -->
+
+    </section>
+
+    <!-- ==================== ABOUT SECTION ==================== -->
+    <section class="section about-section" id="about">
+      <h2 class="section-title">
+        <span class="title-deco">&#9670;</span> ABOUT ME <span class="title-deco">&#9670;</span>
+      </h2>
+
+      <div class="about-container">
+        <div class="about-character about-profile">
+          <img class="npc-sprite math-sprite" id="npcSprite" src="figs/archer_green.png" alt="" aria-hidden="true" />
+          <div class="npc-name-tag">An Otaku</div>
+          <div class="profile-status">
+            <span class="status-label">AFFILIATION</span>
+            <span class="status-value">EAST CHINA NORMAL UNIVERSITY</span>
+          </div>
+          <div class="profile-status">
+            <span class="status-label">AREA</span>
+            <span class="status-value">ALGEBRAIC GEOMETRY / DYNAMICS</span>
+          </div>
+        </div>
+
+        <div class="pixel-dialog about-dialog">
+          <div class="dialog-border">
+            <div class="dialog-header">
+              <span class="dialog-name">PLAYER PROFILE</span>
+              <span class="dialog-blink">&#9632;</span>
             </div>
-        </nav>
-    </header>
-
-
-    
-    <!-- 主页内容 -->
-    <main class="container mx-auto px-4 py-8">
-        <!-- 关于我 -->
-        <section id="about" class="mb-16">
-            <div class="pixel-card p-6">
-                <h2 class="text-2xl font-bold mb-4">
-                    <i class="fas fa-user"></i>
-                    <span id="aboutTitleText"></span>
-                </h2>
-                <p id="VisitorIn2026Spring"></p>
-                <p id="BachelorDegree"></p>
-                <p id="academicInterest"></p>
-                <!-- <p id="mySupervisor"></p> -->
-                <p id="myEmail"></p>
-                <p id="myCV"></p>
+            <div class="dialog-content">
+              <p class="dialog-text" id="dialogText">
+                I am Tianle Yang, a mathematics student interested in algebraic geometry,
+                especially algebraic dynamics. 
+                Besides my academic work, I enjoy watching anime, playing video games, and coding.
+                This page records my notes, research, and
+                some miscellaneous things I want to share. Feel free to explore and contact me if you're interested in my work!
+              </p>
             </div>
-        </section>
+            <div class="about-tags" aria-label="Tags related to my interests">
+              <span class="about-tag">Algebraic geometry</span>
+              <span class="about-tag">Algebraic dynamics</span>
+              <span class="about-tag">Arithmetic and complex geometry</span>
+              <span class="about-tag">Anime</span>
+              <span class="about-tag">Video games</span>
+              <span class="about-tag">Coding</span>
+            </div>
+          </div>
+        </div>
+      </div>
 
-        <!-- Notes -->
-        <section id="notes" class="mb-16">
-            <div class="pixel-card p-6" id="notes_box">
-                <h2 class="text-2xl font-bold mb-4">
-                    <i class="fas fa-book"></i>
-                    <span id="notesTitleText"></span>
-                </h2>
-                <div class="space-y-4" id ="notes_cards_space">
+      <div class="about-log">
 
-                    <div class="pixel-card p-4" id="notes_in_class">
-                        <h3 class="text-xl font-semibold mb-2" id="notes_in_class_Title"></h3>
-                        <div id="notes_in_class_generated">Loading notes index…</div>
-                    </div>
+        <article class="about-info-card about-education-card">
+          <div class="about-card-icon about-icon-degree"></div>
+          <div class="about-card-copy">
+            <span class="about-card-label">EDUCATION</span>
+            <p>
+              I will be a Master student at
+              <a href="https://math.ecnu.edu.cn/" target="_blank" rel="noopener noreferrer">School of Mathematical Science, East China Normal University</a>,
+              supervised by Researcher
+              <a href="https://math.ecnu.edu.cn/facultydetail.html?uid=smeng" target="_blank" rel="noopener noreferrer">Sheng Meng</a> starting from Fall 2026.
+            </p>
+            <p>
+              I visited Professor
+              <a href="http://scholar.pku.edu.cn/xiejunyi" target="_blank" rel="noopener noreferrer">Junyi Xie</a>
+              at the
+              <a href="https://bicmr.pku.edu.cn/" target="_blank" rel="noopener noreferrer">Beijing International Center for Mathematical Research (BICMR)</a>
+              for one semester in Spring 2026.
+            </p>
+            <p>
+              I received my Bachelor Degree from
+              <a href="https://math.ecnu.edu.cn/" target="_blank" rel="noopener noreferrer">School of Mathematical Science, East China Normal University</a> on July 2025,
+              supervised by Researcher
+              <a href="https://math.ecnu.edu.cn/facultydetail.html?uid=smeng" target="_blank" rel="noopener noreferrer">Sheng Meng</a>.
+            </p>
+          </div>
+        </article>
 
-                    <div class="pixel-card p-4" id="notes_in_progress">
-                        <h3 class="text-xl font-semibold mb-2" id="notes_in_progress_Title"></h3>
-                        <div id="notes_in_progress_generated">Loading notes index…</div>
-                    </div>
+        <article class="about-info-card about-contact-card">
+          <div class="about-card-icon about-icon-mail"></div>
+          <div class="about-card-copy">
+            <span class="about-card-label">CONTACT</span>
+            <p>
+              <a href="mailto:10211510098@stu.ecnu.edu.cn">10211510098@stu.ecnu.edu.cn</a>
+            </p>
+          </div>
+        </article>
 
-                    <div class="pixel-card p-4" id="Misc_Notes">
-                        <h3 class="text-xl font-semibold mb-2" id="misc_notes_Title">
-                        </h3>
-                        <ol class="list-disc pl-5">
-                            <li><p>
-                                    <span id="misc_notes_Hodge_index_theorem_by_linear_algebra_Text"></span>
-                                    <a href="Notes/Misc_notes/Hodge_index_theorem_by_linear_algebra.pdf" target="_blank" id="misc_notes_Hodge_index_theorem_by_linear_algebra_Link"></a>
-                            </p></li>
-                            <li><p>
-                                    <span id="misc_notes_birational_group_of_varieties_of_general_type_Text"></span>
-                                    <a href="Notes/Misc_notes/Birational_group_of_varieties_of_general_type.pdf" target="_blank" id="misc_notes_birational_group_of_varieties_of_general_type_Link"></a>
-                            </p></li>
-                            <li><p>
-                                    <span id="misc_notes_read_Xie24_Text"></span>
-                                    <a href="Notes/Misc_notes/Read_Xie24.pdf" target="_blank" id="misc_notes_read_Xie24_Link"></a>
-                            </p></li>
-                        </ol>
-                    </div>
+        <article class="about-info-card about-cv-card">
+          <div class="about-card-icon about-icon-cv"></div>
+          <div class="about-card-copy">
+            <span class="about-card-label">CV</span>
+            <p>
+              <a href="AboutMe/CV/cv-academic.pdf" target="_blank" rel="noopener noreferrer">View my CV</a>
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
 
+    <!-- ==================== NOTE SECTION ==================== -->
+    <section class="section note-section" id="note">
+      <h2 class="section-title">
+        <span class="title-deco">&#9835;</span> NOTE <span class="title-deco">&#9835;</span>
+      </h2>
+
+      <div class="note-panel">
+        <div class="note-panel-header">
+          <span class="note-panel-icon"></span>
+          <div>
+            <h3 class="note-panel-title">Misc Notes</h3>
+          </div>
+        </div>
+
+        <div class="note-grid">
+          <article class="note-card">
+            <div class="note-card-top">
+              <span class="note-file-icon note-icon-linear"></span>
+              <span class="note-status">PDF</span>
+            </div>
+            <h3 class="note-title">Hodge Index Theorem via Linear Algebra</h3>
+            <p class="note-desc">A compact note on the linear algebra part of the Hodge Index Theorem.</p>
+            <a href="Notes/Misc_notes/Hodge_index_theorem_by_linear_algebra.pdf" target="_blank" rel="noopener noreferrer" class="note-link">
+              <span>OPEN NOTE</span>
+              <span class="note-link-arrow">&#9654;</span>
+            </a>
+          </article>
+
+          <article class="note-card">
+            <div class="note-card-top">
+              <span class="note-file-icon note-icon-birational"></span>
+              <span class="note-status">PDF</span>
+            </div>
+            <h3 class="note-title">Birational Group of Varieties of General Type</h3>
+            <p class="note-desc">A miscellaneous note on birational groups for varieties of general type.</p>
+            <a href="Notes/Misc_notes/Birational_group_of_varieties_of_general_type.pdf" target="_blank" rel="noopener noreferrer" class="note-link">
+              <span>OPEN NOTE</span>
+              <span class="note-link-arrow">&#9654;</span>
+            </a>
+          </article>
+
+          <article class="note-card note-card-progress">
+            <div class="note-card-top">
+              <span class="note-file-icon note-icon-dynamics"></span>
+              <span class="note-status status-progress">WIP</span>
+            </div>
+            <h3 class="note-title">Notes on Algebraic Dynamics and Recursive Inequalities</h3>
+            <p class="note-desc">Reading notes on Junyi Xie's 2024 paper, still to be completed.</p>
+            <a href="Notes/Misc_notes/Read_Xie24.pdf" target="_blank" rel="noopener noreferrer" class="note-link">
+              <span>OPEN NOTE</span>
+              <span class="note-link-arrow">&#9654;</span>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== RESEARCH SECTION ==================== -->
+    <section class="section research-section" id="research">
+      <h2 class="section-title">
+        <span class="title-deco">&#9998;</span> RESEARCH <span class="title-deco">&#9998;</span>
+      </h2>
+
+      <div class="research-board">
+        <div class="research-main">
+          <div class="research-panel research-preprints">
+            <div class="research-panel-header">
+              <span class="research-icon research-icon-scroll"></span>
+              <h3>Preprints</h3>
+            </div>
+
+            <div class="paper-list">
+              <article class="paper-card">
+                <div class="paper-meta">
+                  <span class="paper-index">PAPER 01</span>
+                  <span class="paper-year">2025</span>
                 </div>
-            </div>
-        </section>
+                <h3 class="paper-title">Dynamical Iitaka theory on Fano contractions</h3>
+                <p class="paper-authors">With Sheng Meng and Long Wang.</p>
+                <a href="https://arxiv.org/abs/2506.16057" target="_blank" rel="noopener noreferrer" class="paper-link">
+                  <span>ARXIV:2506.16057</span>
+                  <span>&#9654;</span>
+                </a>
+              </article>
 
-        <!-- Research -->
-        <section id="research" class="mb-16">
-            <div class="pixel-card p-6" id="research_box">
-                <h2 class="text-2xl font-bold mb-4">
-                    <i class="fas fa-pen"></i>
-                    <span id="researchTitleText"></span>
-                </h2>
-                <div class="space-y-4" id ="research_cards_space">
-
-                    <div class="pixel-card p-4" id="research_preprints_box">
-                        <h3 class="text-xl font-semibold mb-2" id="research_preprints_Title"></h3>
-                        <ol class="list-disc pl-5" id="research_preprints_list">
-                            <li id="research_preprints_KSC_on_projective_bundles_over_abelian_varieties">
-                                Meng, Sheng, Long Wang, and Tianle Yang. "Dynamical Iitaka theory on Fano contractions." arXiv preprint <a href="https://arxiv.org/abs/2506.16057", target="_blank">arXiv:2506.16057</a> (2025).
-                            </li>
-                            <li id="research_preprints_GMMP_char_p_threefolds">
-                                Yang, Tianle, Zelin Ye, and Zhiyao Zhang. "Existence of minimal models for threefold generalized pairs in positive characteristic." arXiv preprint <a href="https://arxiv.org/abs/2408.12269", target="_blank">arXiv:2408.12269</a> (2024).
-                            </li>
-                        </ol>
-                    </div>
-
-                    <div class="pixel-card p-4" id="research_publications_box">
-                        <h3 class="text-xl font-semibold mb-2" id="research_publications_Title"></h3>
-                        <p id="research_publications_none"></p>
-                        <img src="figs/cryingXiang.jpg" alt="An unimportant missing figures" class="inline-block" style="width: 120px; height: auto;">
-                    </div>
-
-                    <div class="pixel-card p-4" id="research_collaborators_box">
-                        <h3 class="text-xl font-semibold mb-2" id="research_collaborators_Title"></h3>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="research_collaborators_grid">
-                            <div class="pixel-card p-3" id="collaborator_ShengMeng">
-                                <div class="grid grid-cols-2 gap-2 items-center">
-                                    <div class="font-semibold">
-                                        <p id="collaboratorName_ShengMeng">Sheng Meng</p>
-                                    </div>
-                                    <div class="text-right"><a href="https://math.ecnu.edu.cn/~smeng/intro_c.html?language=2&id=257" target="_blank" id="collaboratorHomepage_ShengMeng">Homepage</a></div>
-                                </div>
-                                <div class="text-sm text-gray-400">
-                                    <p id="collaboratorAffiliation_ShengMeng">East China Normal University</p>
-                                </div>
-                            </div>
-
-                            <div class="pixel-card p-3" id="collaborator_Long_Wang">
-                                <div class="grid grid-cols-2 gap-2 items-center">
-                                    <div class="font-semibold">
-                                        <p id="collaboratorName_Long_Wang">Long Wang</p>
-                                    </div>
-                                    <div class="text-right"><a href="https://www.simis.cn/long-wang/" target="_blank" id="collaboratorHomepage_Long_Wang">Homepage</a></div>
-                                </div>
-                                <div class="text-sm text-gray-400">
-                                    <p id="collaboratorAffiliation_Long_Wang">Shanghai Institute for Mathematics and Interdisciplinary Sciences (SIMIS)</p>
-                                </div>
-                            </div>
-
-                            <div class="pixel-card p-3" id="collaborator_Zelin_Ye">
-                                <div class="grid grid-cols-2 gap-2 items-center">
-                                    <div class="font-semibold">
-                                        <p id="collaboratorName_Zelin_Ye">Zelin Ye</p>
-                                    </div>
-                                    <div class="text-right"><a target="_blank" id="collaboratorHomepage_Zelin_Ye"></a></div>
-                                </div>
-                                <div class="text-sm text-gray-400">
-                                    <p id="collaboratorAffiliation_Zelin_Ye">Fudan University</p>
-                                </div>
-                            </div>
-
-                            <div class="pixel-card p-3" id="collaborator_Zhiyao_Zhang">
-                                <div class="grid grid-cols-2 gap-2 items-center">
-                                    <div class="font-semibold">
-                                        <p id="collaboratorName_Zhiyao_Zhang">Zhiyao Zhang</p>
-                                    </div>
-                                    <div class="text-right"><a target="_blank" id="collaboratorHomepage_Zhiyao_Zhang"></a></div>
-                                </div>
-                                <div class="text-sm text-gray-400">
-                                    <p id="collaboratorAffiliation_Zhiyao_Zhang">Shanghai Jiao Tong University</p>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="pixel-card p-4" id="research_talks_box">
-                        <h3 class="text-xl font-semibold mb-2" id="research_talks_Title"></h3>
-                        <ol class="list-disc pl-5" id="research_talks_list">
-                            <li id="research_talks_2408BICMR">
-                                2025.8.20, Beijing International Center for Mathematical Research (BICMR), <a href="https://bicmr.pku.edu.cn/content/show/82-3710.html" target="_blank">"Dynamical Iitaka theory on Fano contractions"</a>.
-                            </li>
-                    </div>
-
+              <article class="paper-card">
+                <div class="paper-meta">
+                  <span class="paper-index">PAPER 02</span>
+                  <span class="paper-year">2024</span>
                 </div>
+                <h3 class="paper-title">Existence of minimal models for threefold generalized pairs in positive characteristic</h3>
+                <p class="paper-authors">With Zelin Ye and Zhiyao Zhang.</p>
+                <a href="https://arxiv.org/abs/2408.12269" target="_blank" rel="noopener noreferrer" class="paper-link">
+                  <span>ARXIV:2408.12269</span>
+                  <span>&#9654;</span>
+                </a>
+              </article>
             </div>
-        </section>
+          </div>
 
-        <!-- Misc -->
-        <section id="Misc">
-            <div class="pixel-card p-6" id="misc_box">
-                <h2 class="text-2xl font-bold mb-4">
-                    <i class="fas fa-folder-open"></i>
-                    <span id="MiscTitleText"></span>
-                </h2>
-                <div class = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id ="misc_cards_grid">
-                    <div class="pixel-card p-4" id="Misc_Blogs_box">
-                        <h3 class="text-xl font-semibold mb-2" id="Misc_Blogs_Title"></h3>
-                        <div class="space-y-2 mt-2">
-                            <a href="Misc/Blogs/Git_commands/Git_commands.pdf" target="_blank" id="Misc_Blogs_GitCommands_Link"></a> 
-                        </div>
-                    </div>
-                    <div class="pixel-card p-4" id="Misc_TexTemplate_box">
-                        <h3 class="text-xl font-semibold mb-2" id="Misc_TexTemplate_Title"></h3>
-                        <ol class="list-disc pl-5" id="Misc_TexTemplate_list">
-                            <li id="Misc_TexTemplate_noteformyself">
-                                A LaTeX template for personal notes. 
-                                <a href="Misc/TexTemplates/TexTemplates/noteformyself/template_section.pdf" target="_blank">pdf</a>
-                                <a href="https://github.com/MonkeyUnderMountain/TexTemplates.git" target="_blank">github</a>
-                                <a href="Misc/TexTemplates/download_noteformyself.html" target="_blank" rel="noopener noreferrer">zip</a>
-                            </li>
-                        </ol>
-                    </div>
-                    <div class="pixel-card p-4" id="Misc_Links_box">
-                        <h3 class="text-xl font-semibold mb-2" id="Misc_Links_Title"></h3>
-                    </div>
-                    <div class="pixel-card p-4" id="Misc_FictionsInMiddleSchool_box">
-                        <h3 class="text-xl font-semibold mb-2" id="Misc_FictionsInMiddleSchool_Title"></h3>
-                        <div class="space-y-2 mt-2">
-                            <a href="Misc/Fictions/Donkey/Donkey.pdf" target="_blank" id="Misc_FictionsInMiddleSchool_Donkey_Link"></a> 
-                            <a href="Misc/Fictions/Dragon_Knight/Dragon_Knight.pdf" target="_blank" id="Misc_FictionsInMiddleSchool_Knight_Link"></a>
-                            <a href="Misc/Fictions/Snowfield/Snowfield.pdf" target="_blank" id="Misc_FictionsInMiddleSchool_Snowfield_Link"></a>
-                        </div>
-                </div>
-                <p id="MiscContents">Stay tuned!</p>
+          <div class="research-panel research-talks">
+            <div class="research-panel-header">
+              <span class="research-icon research-icon-talk"></span>
+              <h3>Talks</h3>
             </div>
-        </section>
+            <div class="talk-list">
+              <article class="talk-card">
+                <div class="talk-meta">
+                  <span class="talk-date">2025.8.20</span>
+                  <span class="talk-venue">BICMR</span>
+                </div>
+                <h4 class="talk-title">Dynamical Iitaka theory on Fano contractions</h4>
+                <p>Beijing International Center for Mathematical Research.</p>
+                <a href="https://bicmr.pku.edu.cn/content/show/82-3710.html" target="_blank" rel="noopener noreferrer" class="action-link talk-link">
+                  <span>LINK</span>
+                  <span class="action-link-arrow">&#9654;</span>
+                </a>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <aside class="research-side">
+          <div class="research-panel publication-panel">
+            <div class="research-panel-header">
+              <span class="research-icon research-icon-book"></span>
+              <h3>Publications</h3>
+            </div>
+            <div class="publication-empty">
+              <img src="figs/cryingXiang.jpg" alt="Nothing here yet" />
+              <span>Nothing here yet</span>
+            </div>
+          </div>
+
+          <div class="research-panel collaborators-panel">
+            <div class="research-panel-header">
+              <span class="research-icon research-icon-party"></span>
+              <h3>Collaborators</h3>
+            </div>
+            <div class="collaborator-grid">
+              <article class="collaborator-card">
+                <div class="collaborator-card-top">
+                  <h4>Sheng Meng</h4>
+                  <a href="https://math.ecnu.edu.cn/~smeng/intro_c.html?language=2&id=257" target="_blank" rel="noopener noreferrer">HOMEPAGE</a>
+                </div>
+                <p>East China Normal University</p>
+              </article>
+
+              <article class="collaborator-card">
+                <div class="collaborator-card-top">
+                  <h4>Long Wang</h4>
+                  <a href="https://www.simis.cn/long-wang/" target="_blank" rel="noopener noreferrer">HOMEPAGE</a>
+                </div>
+                <p>Shanghai Institute for Mathematics and Interdisciplinary Sciences (SIMIS)</p>
+              </article>
+
+              <article class="collaborator-card">
+                <div class="collaborator-card-top">
+                  <h4>Zelin Ye</h4>
+                </div>
+                <p>Fudan University</p>
+              </article>
+
+              <article class="collaborator-card">
+                <div class="collaborator-card-top">
+                  <h4>Zhiyao Zhang</h4>
+                </div>
+                <p>Shanghai Jiao Tong University</p>
+              </article>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ==================== SIDE QUESTS SECTION ==================== -->
+    <section class="section side-quests-section" id="side-quests">
+      <h2 class="section-title">
+        <span class="title-deco">&#9874;</span> SIDE QUESTS <span class="title-deco">&#9874;</span>
+      </h2>
+
+      <div class="side-quests-panel">
+        <div class="side-quests-header">
+          <span class="side-quests-icon"></span>
+          <div>
+            <h3 class="side-quests-title">Side Quest Board</h3>
+          </div>
+        </div>
+
+        <div class="side-quests-grid">
+          <!-- <article class="side-quest-card side-quest-clear">
+            <div class="side-quest-top">
+              <span class="side-quest-icon side-icon-blog"></span>
+              <span class="side-quest-badge">BLOG</span>
+            </div>
+            <h3 class="side-quest-title">Git Commands</h3>
+            <p class="side-quest-desc">A small command note for working with Git.</p>
+            <a href="Misc/Blogs/Git_commands/Git_commands.pdf" target="_blank" rel="noopener noreferrer" class="side-quest-link">
+              <span>OPEN PDF</span>
+              <span>&#9654;</span>
+            </a>
+          </article> -->
+
+          <article class="side-quest-card side-quest-active">
+            <div class="side-quest-top">
+              <span class="side-quest-icon side-icon-tex"></span>
+              <span class="side-quest-badge badge-template">TEMPLATE</span>
+            </div>
+            <h3 class="side-quest-title">LaTeX Template</h3>
+            <p class="side-quest-desc">A LaTeX template for personal notes.</p>
+            <div class="side-quest-actions">
+              <a href="Misc/TexTemplates/TexTemplates/noteformyself/template_section.pdf" target="_blank" rel="noopener noreferrer" class="action-link compact-link">
+                <span>PDF</span>
+                <span class="action-link-arrow">&#9654;</span>
+              </a>
+              <a href="https://github.com/MonkeyUnderMountain/TexTemplates.git" target="_blank" rel="noopener noreferrer" class="action-link compact-link">
+                <span>GITHUB</span>
+                <span class="action-link-arrow">&#9654;</span>
+              </a>
+              <a href="Misc/TexTemplates/download_noteformyself.html" target="_blank" rel="noopener noreferrer" class="action-link compact-link">
+                <span>ZIP</span>
+                <span class="action-link-arrow">&#9654;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- <article class="side-quest-card side-quest-empty">
+            <div class="side-quest-top">
+              <span class="side-quest-icon side-icon-link"></span>
+              <span class="side-quest-badge badge-locked">LINKS</span>
+            </div>
+            <h3 class="side-quest-title">Some Links</h3>
+            <p class="side-quest-desc">Stay tuned!</p>
+          </article> -->
+
+          <article class="side-quest-card side-quest-fiction">
+            <div class="side-quest-top">
+              <span class="side-quest-icon side-icon-fiction"></span>
+              <span class="side-quest-badge badge-fiction">FICTION</span>
+            </div>
+            <h3 class="side-quest-title">Fictions I Wrote in Middle School</h3>
+            <p class="side-quest-desc">Old fiction files preserved as bonus levels.</p>
+            <div class="fiction-list">
+              <a href="Misc/Fictions/Donkey/Donkey.pdf" target="_blank" rel="noopener noreferrer" class="action-link compact-link">
+                <span>Donkey</span>
+                <span class="action-link-arrow">&#9654;</span>
+              </a>
+              <a href="Misc/Fictions/Dragon_Knight/Dragon_Knight.pdf" target="_blank" rel="noopener noreferrer" class="action-link compact-link">
+                <span>DragonKnight</span>
+                <span class="action-link-arrow">&#9654;</span>
+              </a>
+              <a href="Misc/Fictions/Snowfield/Snowfield.pdf" target="_blank" rel="noopener noreferrer" class="action-link compact-link">
+                <span>Snowfield</span>
+                <span class="action-link-arrow">&#9654;</span>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
     </main>
 
-    <!-- 页脚 -->
-    <footer class="pixel-animation  bg-2a2a4a text-gray-300 py-4 ">
-        <div class="space-y-4 container mx-auto text-center">
-            <p id="footerText"></p>
-            <p class="text-sm">© 2025 Tianle Yang</p>
-        </div>
+    <footer class="pixel-footer">
+      <div class="footer-inner">
+        <p class="footer-text">"We must know, we shall know." -- David Hilbert</p>
+        <p class="footer-sub">&copy; 2026 TIANLE YANG &bull; ALL RIGHTS RESERVED</p>
+      </div>
     </footer>
 
+    <!-- Easter egg: walking pixel character at bottom -->
+    <div class="easter-egg-walker" id="walker">
+      <div class="walker-sprite"></div>
+    </div>
 
-    <script>
-        // Fetch generated notes JSON and render collapsible cards using the
-        // same `pixel-card` style used elsewhere on the site.
-        (function(){
-            function safe(text){ return String(text).replaceAll('<','&lt;').replaceAll('>','&gt;'); }
-            // Display-friendly formatting: replace underscores with spaces
-            function disp(text){ return safe(String(text).replaceAll('_',' ')); }
-
-            function renderNotesIndex(containerId, jsonPath){
-                fetch(jsonPath)
-                .then(resp => { if(!resp.ok) throw new Error('Not found'); return resp.json(); })
-                .then(data => {
-                    const container = document.getElementById(containerId);
-                    if(!container) return;
-                    if(!data || data.length===0){ container.innerHTML = '<p>No generated notes found. Run the generator script.</p>'; return; }
-
-                    let html = '';
-                    data.forEach(mod => {
-                        html += `<details class="pixel-card p-4 mb-3"><summary class="font-semibold text-lg cursor-pointer">${disp(mod.name)}</summary><div class="mt-2 space-y-2">`;
-
-                        // PDFs directly under module
-                        if(mod.pdfs && mod.pdfs.length){
-                            mod.pdfs.forEach(p => html += `<div><a href="Notes/${p.relpath}" target="_blank" class="text-purple-300 hover:underline" title="${safe(p.name)}">pdf</a></div>`);
-                        }
-
-                        // Chapters
-                        if(mod.chapters && mod.chapters.length){
-                            mod.chapters.forEach(chap => {
-                                html += `<details class="pixel-card p-4 ml-4 mt-2"><summary class="font-medium">${disp(chap.name)}</summary><div class="mt-2 space-y-1">`;
-
-                                // PDFs directly under chapter
-                                if(chap.pdfs) chap.pdfs.forEach(p => html += `<div><a href="Notes/${p.relpath}" target="_blank" title="${safe(p.name)}">pdf</a></div>`);
-
-                                // Sections inside chapter
-                                if(chap.sections) chap.sections.forEach(sec => {
-                                    html += `<details class="pixel-card p-3 ml-4 mt-1"><summary>${disp(sec.name)}</summary><div class="mt-1">`;
-                                    if(sec.pdfs) sec.pdfs.forEach(sp => html += `<div><a href="Notes/${sp.relpath}" target="_blank" title="${safe(sp.name)}">pdf</a></div>`);
-                                    html += `</div></details>`;
-                                });
-
-                                html += `</div></details>`;
-                            });
-                        }
-
-                        html += `</div></details>`;
-                    });
-
-                    container.innerHTML = html;
-                })
-                .catch(err => {
-                    const container = document.getElementById(containerId);
-                    if(container) container.innerHTML = '<p>Generated notes not available. Run <code>python scripts/generate_notes_index.py</code> to create Notes/notes_index.json</p>';
-                });
-            }
-
-            // Render the current blocks. Add more calls here if you create
-            // additional note-blocks (each needs a JSON index under Notes/).
-            renderNotesIndex('notes_in_progress_generated','Notes/notes_in_progress_index.json');
-            renderNotesIndex('notes_in_class_generated','Notes/notes_in_class_index.json');
-        })();
-
-        // 平滑滚动
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // 像素动画效果
-        const pixelElements = document.querySelectorAll('.pixel-card, .pixel-button');
-        pixelElements.forEach(el => {
-            el.addEventListener('mouseenter', () => {
-                el.classList.add('pixel-animation');
-            });
-            el.addEventListener('mouseleave', () => {
-                el.classList.remove('pixel-animation');
-            });
-        });
-    </script>
-
-</body>
+    <script src="scripts/main.js"></script>
+  </body>
 </html>
