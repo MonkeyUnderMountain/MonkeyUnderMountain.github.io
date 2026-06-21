@@ -224,15 +224,10 @@ button:focus-visible {
 
 .pixel-avatar {
   width: 96px;
-  height: 96px;
+  height: 64px;
   display: block;
   object-fit: contain;
-  animation: avatarIdle 1s steps(2) infinite;
-}
-
-@keyframes avatarIdle {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-2px); }
+  image-rendering: pixelated;
 }
 
 .avatar-label {
@@ -665,16 +660,11 @@ button:focus-visible {
 }
 
 .npc-sprite {
-  width: 64px;
-  height: 64px;
+  width: 72px;
+  height: 48px;
   display: block;
   object-fit: contain;
-  animation: npcBob 2s steps(2) infinite;
-}
-
-@keyframes npcBob {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-3px); }
+  image-rendering: pixelated;
 }
 
 .npc-name-tag {
@@ -1858,63 +1848,23 @@ button:focus-visible {
 /* ============ EASTER EGG WALKER ============ */
 .easter-egg-walker {
   position: fixed;
-  bottom: 20px;
-  left: -40px;
+  bottom: 8px;
+  left: -96px;
   z-index: 998;
   animation: walkerMove 20s linear infinite;
   pointer-events: none;
 }
 
 .walker-sprite {
-  width: 24px;
-  height: 24px;
-  position: relative;
-}
-
-.walker-sprite::after {
-  content: '';
-  position: absolute;
-  width: 3px;
-  height: 3px;
-  top: 0;
-  left: 3px;
-  background: transparent;
-  box-shadow:
-    /* Head */
-    3px 0 0 var(--bright-yellow),
-    6px 0 0 var(--bright-yellow),
-    9px 0 0 var(--bright-yellow),
-    3px 3px 0 #ffcc99,
-    6px 3px 0 #ffcc99,
-    9px 3px 0 #ffcc99,
-    3px 6px 0 #ffcc99,
-    6px 6px 0 #333,
-    9px 6px 0 #ffcc99,
-    /* Body */
-    3px 9px 0 var(--pixel-red),
-    6px 9px 0 var(--pixel-red),
-    9px 9px 0 var(--pixel-red),
-    0 12px 0 #ffcc99,
-    3px 12px 0 var(--pixel-red),
-    6px 12px 0 var(--pixel-red),
-    9px 12px 0 var(--pixel-red),
-    12px 12px 0 #ffcc99,
-    /* Legs - animated via separate keyframe */
-    3px 15px 0 #3355aa,
-    6px 15px 0 #3355aa,
-    3px 18px 0 #553300,
-    9px 18px 0 #553300;
-  animation: walkerStep 0.4s steps(2) infinite;
+  width: 72px;
+  height: 48px;
+  background: url("../figs/Characters/Archer/Green/Walk/Walk.gif") center / contain no-repeat;
+  image-rendering: pixelated;
 }
 
 @keyframes walkerMove {
-  0% { left: -40px; }
-  100% { left: calc(100% + 40px); }
-}
-
-@keyframes walkerStep {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-2px); }
+  0% { left: -96px; }
+  100% { left: calc(100% + 96px); }
 }
 
 /* ============ REVEAL STATES ============ */
@@ -2024,6 +1974,25 @@ button:focus-visible {
 
   .side-quests-grid {
     grid-template-columns: 1fr;
+  }
+
+  .pixel-footer {
+    padding-bottom: calc(var(--space-md) + 48px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .easter-egg-walker {
+    bottom: calc(8px + env(safe-area-inset-bottom, 0px));
+    left: -80px;
+  }
+
+  .walker-sprite {
+    width: 60px;
+    height: 40px;
+  }
+
+  @keyframes walkerMove {
+    0% { left: -80px; }
+    100% { left: calc(100% + 80px); }
   }
 }
 
