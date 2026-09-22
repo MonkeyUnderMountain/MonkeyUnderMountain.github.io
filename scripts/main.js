@@ -19,6 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const prefersReducedMotion = window.matchMedia(REDUCED_MOTION_QUERY).matches;
 
   initStarField(prefersReducedMotion);
+  if (document.body.hasAttribute('data-background-only')) return;
+
   initDialogTypewriter(prefersReducedMotion);
   initNavScroll(prefersReducedMotion);
   initScrollReveal(prefersReducedMotion);

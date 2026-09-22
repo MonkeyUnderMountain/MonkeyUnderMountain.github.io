@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A Fall 2026 seminar on dynamics on projective spaces, organized by Tianle Yang."
+    />
+    <title>Dynamics on Projective Spaces | Fall 2026</title>
+    <link rel="icon" type="image/png" href="../../figs/archer_green.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../styles/main.css" />
+    <style>
+      html {
+        scroll-behavior: auto;
+      }
+
+      .scanlines {
+        opacity: 0.3;
+      }
+
+      .seminar-page {
+        min-height: 100vh;
+        padding-top: 8rem;
+        font-family: var(--font-terminal);
+        font-size: 1.25rem;
+      }
+
+      .seminar-page .note-panel {
+        background:
+          linear-gradient(90deg, rgba(0, 212, 255, 0.015) 2px, transparent 2px) 0 0 / 20px 20px,
+          var(--bg-card);
+      }
+
+      .seminar-page .note-panel-header > div {
+        min-width: 0;
+      }
+
+      .seminar-page .note-panel-kicker {
+        font-size: 0.5rem;
+        line-height: 1.5;
+      }
+
+      .seminar-page .note-panel-title {
+        font-size: 1.05rem;
+        line-height: 1.5;
+        overflow-wrap: anywhere;
+      }
+
+      .seminar-content {
+        padding: clamp(1rem, 3vw, 2rem);
+      }
+
+      .seminar-section {
+        min-width: 0;
+        scroll-margin-top: 6rem;
+      }
+
+      .seminar-section + .seminar-section {
+        margin-top: var(--space-md);
+        padding-top: var(--space-md);
+        border-top: 2px solid var(--border-color);
+      }
+
+      .seminar-section h2 {
+        margin-bottom: var(--space-sm);
+        color: var(--bright-yellow);
+        font-family: var(--font-pixel);
+        font-size: 0.625rem;
+        font-weight: 400;
+        line-height: 1.8;
+      }
+
+      .seminar-section p,
+      .seminar-section li,
+      .seminar-details {
+        color: var(--text-gray);
+        font-size: 1.25rem;
+        line-height: 1.55;
+      }
+
+      .seminar-section li {
+        font-size: 1.2rem;
+      }
+
+      .seminar-section p + p {
+        margin-top: var(--space-sm);
+      }
+
+      .seminar-section ul {
+        margin-top: var(--space-sm);
+        padding-left: 1.25rem;
+      }
+
+      .seminar-section li + li {
+        margin-top: 0.65rem;
+      }
+
+      .seminar-section li::marker {
+        color: var(--neon-green);
+      }
+
+      .seminar-section a {
+        color: var(--electric-blue);
+        text-decoration-thickness: 1px;
+        text-underline-offset: 0.2em;
+        overflow-wrap: anywhere;
+      }
+
+      .seminar-section a:hover {
+        color: var(--neon-green);
+      }
+
+      .seminar-section strong,
+      .seminar-details dt {
+        color: var(--text-white);
+        font-weight: 600;
+      }
+
+      .seminar-details {
+        display: grid;
+        grid-template-columns: max-content minmax(0, 1fr);
+        gap: var(--space-xs) var(--space-sm);
+      }
+
+      .seminar-jump-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-xs) 1.5rem;
+        margin-top: 1.25rem;
+        font-size: 1.25rem;
+        line-height: 1.7;
+      }
+
+      .seminar-section .schedule-scroll-hint {
+        display: none;
+        margin-bottom: var(--space-xs);
+        font-size: 1.1rem;
+      }
+
+      .schedule-wrap {
+        overflow-x: auto;
+      }
+
+      .schedule-wrap:focus-visible {
+        outline: 3px solid var(--bright-yellow);
+        outline-offset: 4px;
+      }
+
+      .schedule-table {
+        width: 100%;
+        min-width: 640px;
+        border-collapse: collapse;
+      }
+
+      .schedule-table th,
+      .schedule-table td {
+        border: 2px solid var(--border-color);
+        padding: 10px;
+        text-align: left;
+      }
+
+      .schedule-table th {
+        color: var(--electric-blue);
+        font-family: var(--font-pixel);
+        font-size: 0.55rem;
+        font-weight: 400;
+        line-height: 1.8;
+      }
+
+      .schedule-table td {
+        color: var(--text-gray);
+        font-size: 1.2rem;
+        line-height: 1.4;
+      }
+
+      @media (max-width: 768px) {
+        .seminar-page {
+          padding-top: 6rem;
+        }
+
+        .seminar-section .schedule-scroll-hint {
+          display: block;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .seminar-page .note-panel-header {
+          align-items: flex-start;
+          gap: 0.75rem;
+        }
+
+        .seminar-page .note-panel-title {
+          font-size: 0.85rem;
+          line-height: 1.7;
+        }
+
+        .seminar-details {
+          grid-template-columns: 1fr;
+          gap: 0.15rem;
+        }
+
+        .seminar-details dd + dt {
+          margin-top: var(--space-xs);
+        }
+      }
+    </style>
+  </head>
+  <body data-background-only>
+    <a class="skip-link" href="#main">SKIP TO CONTENT</a>
+
+    <div class="scanlines" aria-hidden="true"></div>
+    <div class="star-field" id="starField" aria-hidden="true"></div>
+
+    <nav class="pixel-nav" aria-label="Page navigation">
+      <div class="nav-inner">
+        <a href="../../index.html" class="nav-logo" aria-label="Return to Tianle Yang's homepage">&gt;_</a>
+        <div class="nav-links">
+          <a href="../../index.html" class="nav-link">HOME</a>
+        </div>
+      </div>
+    </nav>
+
+    <main id="main" tabindex="-1">
+      <section class="section seminar-page" aria-labelledby="seminar-title">
+        <div class="note-panel">
+          <div class="note-panel-header">
+            <span class="note-panel-icon" aria-hidden="true"></span>
+            <div>
+              <span class="note-panel-kicker">READING SEMINAR / FALL 2026</span>
+              <h1 class="note-panel-title" id="seminar-title">Dynamics on Projective Spaces</h1>
+            </div>
+          </div>
+
+          <div class="seminar-content">
+            <section class="seminar-section" aria-labelledby="details-title">
+              <h2 id="details-title">TIME AND VENUE</h2>
+              <dl class="seminar-details">
+                <dt>Time</dt>
+                <dd>Tuesdays, 13:50&ndash;17:15 (Beijing time, UTC+8), starting <time datetime="2026-10-13">October 13, 2026</time></dd>
+                <dt>Venue</dt>
+                <dd>TBA</dd>
+                <dt>Language</dt>
+                <dd>English (planned)</dd>
+                <dt>Organizer</dt>
+                <dd>Tianle Yang &middot; <a href="mailto:10211510098@stu.ecnu.edu.cn">10211510098@stu.ecnu.edu.cn</a></dd>
+              </dl>
+              <nav class="seminar-jump-links" aria-label="Seminar sections">
+                <a href="#schedule">Schedule &amp; materials</a>
+                <a href="#topics">Topics</a>
+                <a href="#references">References</a>
+              </nav>
+            </section>
+
+            <section class="seminar-section" aria-labelledby="introduction-title">
+              <h2 id="introduction-title">INTRODUCTION</h2>
+              <p>
+                In Fall 2026, I will organize a seminar on dynamics on projective spaces.
+                We will explore recent developments connecting complex dynamics, arithmetic dynamics, and algebraic geometry.
+              </p>
+              <p>
+                I plan to give the talks in English, and guest speakers are welcome.
+                Please <a href="mailto:10211510098@stu.ecnu.edu.cn">contact me</a> if you would like to present.
+              </p>
+              <p>
+                In the AI era, attention is the most valuable resource.
+                I appreciate the time and attention you bring to this seminar,
+                and I hope to make the talks engaging and the discussions worthwhile.
+              </p>
+              <p>
+                Lecture notes will be posted on this page one week before each talk.
+                You are welcome to read ahead, explore questions with AI tools, and bring them to the seminar.
+                Recordings, when available, will be linked after each talk.
+              </p>
+            </section>
+
+            <section class="seminar-section" aria-labelledby="audience-title">
+              <h2 id="audience-title">AUDIENCE AND BACKGROUND</h2>
+              <p>
+                The seminar is intended for graduate students and researchers interested in dynamics on projective spaces.
+                Helpful background includes basic algebraic geometry, as covered in Hartshorne's <em>Algebraic Geometry</em> and Lazarsfeld's <em>Positivity in Algebraic Geometry I</em>.
+                A basic knowledge of measures and currents in complex geometry, as well as height functions and arithmetic geometry, will also be helpful.
+                Familiarity with arithmetic or complex dynamics will be helpful.
+              </p>
+              <p>
+                I plan to give the talks in English, so moderate English proficiency is expected.
+                I am also working on improving my English.
+              </p>
+            </section>
+
+            <section class="seminar-section" id="schedule" tabindex="-1" aria-labelledby="schedule-title">
+              <h2 id="schedule-title">SCHEDULE, NOTES, AND VIDEOS</h2>
+              <p class="schedule-scroll-hint" id="schedule-hint">Scroll horizontally to see all columns, including video links.</p>
+              <!-- Add or duplicate rows as the schedule takes shape. -->
+              <div class="schedule-wrap" role="region" tabindex="0" aria-labelledby="schedule-title" aria-describedby="schedule-hint">
+                <table class="schedule-table" aria-labelledby="schedule-title">
+                  <thead>
+                    <tr>
+                      <th scope="col">DATE</th>
+                      <th scope="col">TOPIC</th>
+                      <th scope="col">LECTURE NOTES</th>
+                      <th scope="col">Bilibili</th>
+                      <th scope="col">YouTube</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><time datetime="2026-10-13">Oct. 13</time> (planned)</td>
+                      <td>Moduli spaces of dynamical systems on projective spaces</td>
+                      <td>To be posted</td>
+                      <td>&mdash;</td>
+                      <td>&mdash;</td>
+                    </tr>
+                    <tr>
+                      <td><time datetime="2026-10-20">Oct. 20</time> (planned)</td>
+                      <td>Equilibrium measures, canonical heights, and bifurcation</td>
+                      <td>To be posted</td>
+                      <td>&mdash;</td>
+                      <td>&mdash;</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            <section class="seminar-section" id="topics" tabindex="-1" aria-labelledby="topics-title">
+              <h2 id="topics-title">PLANNED TOPICS</h2>
+              <p>
+                Topics may include:
+              </p>
+              <ul>
+                <li>Moduli spaces of dynamical systems on projective spaces</li>
+                <li>Equilibrium measures, canonical heights, and bifurcation</li>
+                <li>Equidistribution theorem</li>
+                <li>Special/exceptional maps</li>
+                <li>Unlikely intersections in dynamics</li>
+                <li>Rigidity in dynamics</li>
+                <li>Dynamical uniform boundedness</li>
+                <li>Valuation theory and the valuative tree for surfaces</li>
+                <li>Singularities of ramification divisors</li>
+                <li>Other possible related topics</li>
+              </ul>
+            </section>
+
+            <section class="seminar-section" id="references" tabindex="-1" aria-labelledby="references-title">
+              <h2 id="references-title">REFERENCES</h2>
+              <p>
+                Possible references include the following books and papers:
+              </p>
+              <ul>
+                <li>
+                  Laura DeMarco. <a href="https://doi.org/10.1142/9789813272880_0121" target="_blank" rel="noopener noreferrer">&quot;Critical Orbits and Arithmetic Equidistribution&quot;</a>
+                </li>
+                <li>
+                  Laura DeMarco. <a href="https://doi.org/10.5802/afst.1573" target="_blank" rel="noopener noreferrer">&quot;Dynamical Moduli Spaces and Elliptic Curves&quot;</a>
+                </li>
+                <li>
+                  Laura DeMarco. <a href="https://doi.org/10.1007/s00208-002-0404-7" target="_blank" rel="noopener noreferrer">&quot;Dynamics of Rational Maps: Lyapunov Exponents, Bifurcations, and Capacity&quot;</a>
+                </li>
+                <li>
+                  Charles Favre and Mattias Jonsson. <a href="https://doi.org/10.1007/b100262" target="_blank" rel="noopener noreferrer">&quot;The Valuative Tree&quot;</a>
+                </li>
+                <li>
+                  T. Gauthier, Johan Taflin, and Gabriel Vigny. <a href="https://taflin.perso.math.cnrs.fr/PCF-sparsity.pdf" target="_blank" rel="noopener noreferrer">&quot;Sparsity of Postcritically Finite Maps of P<sup>k</sup> and Beyond: A Complex Analytic Approach&quot;</a>
+                </li>
+                <li>
+                  Patrick Ingram, Rohini Ramadas, and Joseph Silverman. <a href="https://wrap.warwick.ac.uk/id/eprint/173768/" target="_blank" rel="noopener noreferrer">&quot;Post-Critically Finite Maps on P<sup>n</sup> for n &ge; 2 Are Sparse&quot;</a>
+                </li>
+                <li>
+                  Zhuchao Ji, Jiarui Song, and Junyi Xie. <a href="https://arxiv.org/abs/2609.24701v1" target="_blank" rel="noopener noreferrer">&quot;Exceptional Maps and Abelian Points in Backward Orbits&quot;</a>
+                </li>
+                <li>
+                  Zhuchao Ji and Junyi Xie. <a href="https://doi.org/10.48550/arXiv.2302.02583" target="_blank" rel="noopener noreferrer">&quot;DAO for Curves&quot;</a>
+                </li>
+                <li>
+                  Zhuchao Ji and Junyi Xie. <a href="https://arxiv.org/abs/2607.12561v2" target="_blank" rel="noopener noreferrer">&quot;Genus and Gonality of Small Curves, Dynamical Uniform Boundedness, and Bifurcation&quot;</a>
+                </li>
+                <li>
+                  Zhuchao Ji and Junyi Xie. <a href="https://doi.org/10.4171/jems/1750" target="_blank" rel="noopener noreferrer">&quot;The Multiplier Spectrum Morphism Is Generically Injective&quot;</a>
+                </li>
+                <li>
+                  Alon Levy. <a href="https://doi.org/10.4064/aa146-1-2" target="_blank" rel="noopener noreferrer">&quot;The Space of Morphisms on Projective Space&quot;</a>
+                </li>
+                <li>
+                  Yujie Luo and Sheng Meng. <a href="https://arxiv.org/abs/2608.02114" target="_blank" rel="noopener noreferrer">&quot;Log Calabi-Yau Structure for Endomorphisms on P<sup>n</sup>&quot;</a>
+                </li>
+                <li>
+                  Sheng Meng. <a href="https://doi.org/10.1093/imrn/rnac308" target="_blank" rel="noopener noreferrer">&quot;Log Calabi-Yau Structure of Projective Threefolds Admitting Polarized Endomorphisms&quot;</a>
+                </li>
+                <li>
+                  J. H. Silverman. <a href="https://doi.org/10.1090/crmm/030" target="_blank" rel="noopener noreferrer">&quot;Moduli Spaces and Arithmetic Dynamics&quot;</a>
+                </li>
+                <li>
+                  Xinyi Yuan and Shou-Wu Zhang. <a href="https://doi.org/10.2307/jj.31510370" target="_blank" rel="noopener noreferrer">&quot;Adelic Line Bundles on Quasi-Projective Varieties&quot;</a>
+                </li>
+                <li>
+                  Robin Zhang. <a href="https://arxiv.org/abs/2609.13431" target="_blank" rel="noopener noreferrer">&quot;Dynamical Uniform Boundedness for Unicritical Polynomials and Elliptic Curves of Large Rank&quot;</a>
+                </li>
+              </ul>
+            </section>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="pixel-footer">
+      <div class="footer-inner">
+        <p class="footer-text">Dynamics on Projective Spaces &bull; Fall 2026</p>
+        <p class="footer-sub">ORGANIZED BY TIANLE YANG</p>
+      </div>
+    </footer>
+
+    <script src="../../scripts/main.js"></script>
+  </body>
+</html>
